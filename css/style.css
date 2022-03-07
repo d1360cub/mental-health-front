@@ -100,7 +100,7 @@ section:nth-child(even) {
   border: var(--border);
   background-color: var(--blue);
   border-radius: 5rem;
-  color: #fff;
+  color: #fff !important;
   /* cursor: pointer; */
   /* font-size: 1.7rem; */
 }
@@ -141,7 +141,7 @@ section:nth-child(even) {
   padding: 1rem 0;
 }
 
-.btn-appointment {
+.btn-appointment, .btn-search {
   display: inline-block;
   margin-top: 1rem;
   padding: 1rem;
@@ -162,7 +162,7 @@ section:nth-child(even) {
   margin-left: .5rem;
 } */
 
-.btn-appointment:hover {
+.btn-appointment:hover, .btn-search:hover {
   background: #fff;
   color: var(--blue);
   margin-left: 1rem;
@@ -210,6 +210,60 @@ section:nth-child(even) {
 }
 
 /* SECTION DOCTORS */
+fieldset {
+  border: var(--border);
+  border-radius: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-size: 2rem;
+  padding: 0rem 1.25rem;
+}
+
+input {
+  border: var(--border);
+  border-radius: 1.125rem;
+  max-width: 200rem;
+  flex-grow: 1.5;
+  padding: 0 1.25rem;
+}
+
+.btn-search {
+  margin-top: 0rem;
+  margin-left: 1rem;
+  max-width: 12.5rem;
+}
+
+ul.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 2rem;
+  border-radius: 1.125rem;
+  transition: var(--black) .2s ease-out;
+}
+
+ul.pagination li a.active {
+  background-color: var(--blue);
+  color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
 .doctors .doctors__box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -295,6 +349,11 @@ section:nth-child(even) {
   section {
     padding: 2rem;
   }
+
+  fieldset {
+    align-self: start;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -330,12 +389,25 @@ section:nth-child(even) {
     margin: 2.5rem;
   }
 
+  input {
+    flex-grow: 1;
+  }
 }
 
 @media (max-width: 450px) {
 
   html {
     font-size: 50%;
+  }
+
+  fieldset {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-search {
+    width:30rem;
   }
 
 }
