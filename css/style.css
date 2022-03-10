@@ -369,6 +369,10 @@ ul.pagination li a:hover:not(.active) {
 }
 
 /* FOOTER */
+.footer {
+  text-transform: capitalize;
+}
+
 .footer .footer__box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
