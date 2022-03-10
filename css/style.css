@@ -264,6 +264,16 @@ ul.pagination li a.active {
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
+
+/* section__box-container hacer COMPONENTE EN REACT */
+.section__box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap:2rem;
+}
+/* section__box-container */
+
+
 .doctors .doctors__box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -319,6 +329,33 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
   box-shadow: var(--box-shadow);
 }
 
+
+/* FOOTER */
+.footer .footer__box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+}
+
+.footer .footer__box-container .footer__box h3 {
+  font-size: 2.5rem;
+}
+
+.footer .footer__box-container .footer__box a {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .footer__box-container .footer__box a i {
+  padding-right: .5rem;
+  color: var(--blue);
+}
+
+.footer .footer__box-container .footer__box a:hover i {
+  padding-right: 2rem;
+}
 
 
 
