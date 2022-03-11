@@ -1,45 +1,70 @@
-# Mental Health: Consultas Psicológicas en Linea 🧠
-**Descripción del Proyecto**  
-*Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-explicabo porro sint doloremque quidem possimus asperiores laborum
-repellendus praesentium eveniet odio, libero maxime corporis sed quam?
-Nesciunt eum perferendis odio.*   
-`HTML`, `CSS`, `JavaScript`,`TypeScript`, `React`.   
-## Repositorios del proyecto 📁
-* ### [mental-health-backend]()  
-* ### [mental-health-frontend](https://github.com/d1360cub/mental-health-front) 📌  
+# Getting Started with Create React App
 
-## Frontend Javascript construido con 🛠️ 
-*Nuestro [back-end]() lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-explicabo porro sint doloremque quidem possimus asperiores laborum
-repellendus praesentium eveniet odio, libero maxime corporis sed quam?
-Nesciunt eum perferendis odio.*  
-* [CRA]() - version x.x.x.
-* [TypeScript](https://www.typescriptlang.org/) - Lenguaje de programación fuertemente tipado que se basa en JavaScript
-* [React]() - Libreria ...    
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Ejecutando localmente 🚀   
-Se puede ejecutar desde la linea de comandos:  
-```
-... despues de clonar el repositorio
-cd mental-health-frontend
-npm install
-zzzzzzz 
-``` 
-Luego navegar hacia `http://localhost:3000/`  
-## Descripción
-La UI permite las operaciones CRUD traves de la API REST de las siguientes:
-- [Model/Entidad](src/app/): lorem ipsum dolor sit amet consectetur.
-- [Model/Entidad](): lorem ipsum dolor sit amet consectetur.
-- [Model/Entidad](): lorem ipsum dolor sit amet consectetur.
-- [Model/Entidad](): lorem ipsum dolor sit amet consectetur.
-- [Model/Entidad](): lorem ipsum dolor sit amet consectetur.
-- [Model/Entidad](): lorem ipsum dolor sit amet consectetur.  
+## Available Scripts
 
-## Si encuentra un error o quiere sugerir una mejora 📧
-Siéntase libre de informar algun problema aquí: 
-[https://github.com/d1360cub/mental-health-front/issues](https://github.com/d1360cub/mental-health-front/issues)
-## Licencia 📄
-¿Qué es eso? 😆     
+In the project directory, you can run:
 
-⌨️ con ❤️ por [Team 02 - MakeItReal TOPv20](https://makeitreal.camp/) 😊
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
