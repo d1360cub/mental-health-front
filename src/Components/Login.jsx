@@ -2,7 +2,7 @@ import React from "react";
 import LoginImage from "../image/login.jpg";
 import "./Login.css"
 
-function Login(props) {
+function Login() {
   return (
     <div>
       <header className="header">
