@@ -1,0 +1,22 @@
+:root {
+  --blue:#1977cc;
+  --black: #444;
+  --light-color: #777;
+  --box-shadow: .5rem .5rem 0 rgba(25, 119, 204, .2);
+  --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+  --border: .2rem solid var(--blue)
+}
+ .home-Welcome p {
+  font-size: 2rem;
+  color: var(--black);
+  line-height: 1.8;
+  text-shadow: var(--text-shadow);
+}
+.home_content__parrafo{
+  display: block;
+}
+.home_content__parrafo>p{
+  font-size: 2rem;
+  color: var(--black);
+  line-height: 1.8;
+}
