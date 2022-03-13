@@ -76,7 +76,7 @@ section:nth-child(even) {
 .btn-appointment, .btn-search {
   display: inline-block;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0.6rem;
   /* padding-left: 1rem; */
   border: var(--border);
   background-color: var(--blue);
