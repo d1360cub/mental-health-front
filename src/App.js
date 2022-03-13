@@ -1,7 +1,5 @@
 import ViewerDoctor from './Pages/ViewerDoctor';
 
-
-
 function App() {
   return (
     <div className="App">  
