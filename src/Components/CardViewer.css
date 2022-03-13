@@ -1,7 +1,4 @@
-:root{
-  --blue:#1977cc;
-  --border: .2rem solid var(--blue)
-}
+
 .home_content--card{
   display: flex;
   margin:0 auto;
