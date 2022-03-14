@@ -6,7 +6,7 @@ import imageCalender from '../image/calendario.png'
  import './HomeViewerDoctor.css'
 import './pageHome.css'
 
-const characters=Array.from({length:6},(_,i)=>(i))
+const characters=Array.from({length:1},(_,i)=>(i))
 
 const informationCard =
 {
@@ -15,14 +15,14 @@ const informationCard =
   "lastName":"Suarez",
   "enlaces":[
     { "path":"Chat"  ,   "url":"#" },
-    { "path":"H. clinica"   ,   "url":"#" }
+    // { "path":"H. clinica"   ,   "url":"#" }
   ]
 }
 const DateDoctos=
 {
   "nameDoctor":"rodolfo",
   "lastNameDoctor":"castillo",
-  "profile":"Dr"
+  //  "profile":"Dr"
 }
 const ViewerDoctor=()=>{
   return(
