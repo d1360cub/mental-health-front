@@ -2,6 +2,7 @@ import React from "react";
 import "./HomePage.css";
 import home from "../../image/home-mind-img.svg";
 import about from "../../image/about-us-img.svg";
+import Doctors from "../Doctors/Doctors";
 
 export default function HomePage() {
   return (
@@ -125,6 +126,12 @@ export default function HomePage() {
         </div>
       </section>
       {/* <!-- Services - fin --> */}
+
+      {/* <!-- Doctors - fin --> */}
+      <Doctors />
+      {/* <!-- Doctors - fin --> */}
+
+      
     </>
   );
 }
