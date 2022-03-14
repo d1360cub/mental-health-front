@@ -25,6 +25,7 @@
   font-size: 1.7rem;
   color: var(--black);
   margin-left: 2rem;
+  text-align: center;
 }
 
 .header .header__navigation a:hover {

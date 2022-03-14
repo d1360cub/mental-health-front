@@ -1,13 +1,13 @@
-import React from "react";
+import { useRef } from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 export default function Header() {
 
-  let menu = document.querySelector('#header__menu-btn-responsive');
-  let navbar = document.querySelector('.header__navigation');
+  const menu = useRef();
+  
   const showMenu = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
+    menu.current.classList.toggle('active');
   }
 
   return (
@@ -15,7 +15,7 @@ export default function Header() {
       <a href="/" className="header__logo">
         <i className="fa fa-brain"></i> Mental Health
       </a>
-      <nav className="header__navigation">
+      <nav className="header__navigation" ref={menu} >
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
