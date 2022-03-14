@@ -58,6 +58,73 @@ export default function HomePage() {
         </div>
       </section>
       {/* <!-- About fin --> */}
+
+      {/* <!-- Services - inicio  --> */}
+      <section className="services" id="services">
+        <h1 className="section-heading"><span>services</span></h1>
+        <div className="services__box-container">
+          <div className="services__box">
+            <i className="fas fa-user-md"></i>
+            <h3>Psicología clínica</h3>
+            <p>
+              El especialista trata de identificar y rehabilitar procesos de
+              pensamiento o conductas insanas
+            </p>
+            <a href="" className="btn-appointment">doctors</a>
+          </div>
+
+          <div className="services__box">
+            <i className="fa fa-user-doctor"></i>
+            <h3>Psicología clínica</h3>
+            <p>
+              El especialista trata de identificar y rehabilitar procesos de
+              pensamiento o conductas insanas
+            </p>
+            <a href="" className="btn-appointment">doctors</a>
+          </div>
+
+          <div className="services__box">
+            <i className="fa fa-user-doctor"></i>
+            <h3>Psicología clínica</h3>
+            <p>
+              El especialista trata de identificar y rehabilitar procesos de
+              pensamiento o conductas insanas
+            </p>
+            <a href="" className="btn-appointment">doctors</a>
+          </div>
+
+          <div className="services__box">
+            <i className="fa fa-user-doctor"></i>
+            <h3>Psicología clínica</h3>
+            <p>
+              El especialista trata de identificar y rehabilitar procesos de
+              pensamiento o conductas insanas
+            </p>
+            <a href="" className="btn-appointment">doctors</a>
+          </div>
+
+          <div className="services__box">
+            <i className="fa fa-user-doctor"></i>
+            <h3>Psicología clínica</h3>
+            <p>
+              El especialista trata de identificar y rehabilitar procesos de
+              pensamiento o conductas insanas
+            </p>
+            <a href="" className="btn-appointment">doctors</a>
+          </div>
+
+          <div className="services__box">
+            <i className="fa fa-user-doctor"></i>
+            <h3>Psicología clínica</h3>
+            <p>
+              El especialista trata de identificar y rehabilitar procesos de
+              pensamiento o conductas insanas
+            </p>
+            <a href="" className="btn-appointment">doctors</a>
+          </div>
+        </div>
+      </section>
+      {/* <!-- Services - fin --> */}
     </>
   );
 }
