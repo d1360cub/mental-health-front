@@ -1,6 +1,6 @@
-const ImagePaciente =({picturePerfil}) =>{
+const ImagePatient =({pictureProfile}) =>{
   return(
-    <img src={picturePerfil} alt=""></img>
+    <img src={pictureProfile} alt=""></img>
   )
 }
-export default ImagePaciente;
+export default ImagePatient;

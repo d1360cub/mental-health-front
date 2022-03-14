@@ -1,16 +1,13 @@
 .home{
   display: none;
   }
-
   .home .home_content {
-    /*flex: 1 1 45rem;*/
     display: flex;
     flex-direction:row;
     align-items: center;
     border: 0.1rem solid black;
     width: 100%;
-  }
-  
+  }  
   .home_content--citas{
     margin: 0 auto;
     width: 50%;
@@ -21,9 +18,6 @@
     gap:10px;
     padding-top:15px ;
   }
-
-
-
   .home_content--calender{
     padding-top: 1rem;
     margin: 0 auto;
@@ -79,7 +73,6 @@
     .btn-appointment{
       padding: 0.5;
     }
-  
     input {
       flex-grow: 1;
     }

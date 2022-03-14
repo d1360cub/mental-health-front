@@ -1,7 +1,7 @@
 
 import CardViewer from '../Components/CardViewer';
 import Welcome from '../Components/Welcome'
-import imagePerfil from '../image/doc-350x350.png'
+import imageProfile from '../image/doc-350x350.png'
 import imageCalender from '../image/calendario.png'
  import './HomeViewerDoctor.css'
 import './pageHome.css'
@@ -10,7 +10,7 @@ const characters=Array.from({length:6},(_,i)=>(i))
 
 const informationCard =
 {
-  "imagePerfil":imagePerfil,
+  "imagePerfil":imageProfile,
   "name":"alexander",
   "lastName":"Suarez",
   "enlaces":[

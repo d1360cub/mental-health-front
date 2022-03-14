@@ -95,7 +95,6 @@
       border-radius: .5rem;
       box-shadow: var(--box-shadow);
       width: 30rem;
-      /**-- border: var(--border);*/
       background: #f5f5f5;
       transform: scale(0);
       opacity: 0;

@@ -11,7 +11,7 @@ const CardViewer=(props)=>{
     <div className="home_content--card">
     <div className="home_content--imagen">
       <figure>
-        <FotoPerfil picturePerfil={props.imagePerfil} alt=""/>
+        <FotoPerfil pictureProfile={props.imagePerfil} alt=""/>
       </figure>  
     </div>
     <div className="home-content__card--perfil">
