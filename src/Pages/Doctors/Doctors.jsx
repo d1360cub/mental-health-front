@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Doctors.css";
+import doctor from "../../image/doc-350x350.png";
 
 export default function Doctors() {
   return (
@@ -30,7 +31,7 @@ export default function Doctors() {
       </ul>
       <div className="doctors__box-container">
         <div className="box">
-          <img src="image/doc-350x350.png" alt="" />
+          <img src={doctor} alt="" />
           <h3>wendy</h3>
           <span>Psicología Educacional</span>
           <div className="social">
@@ -42,7 +43,7 @@ export default function Doctors() {
         </div>
 
         <div className="box">
-          <img src="image/doc-350x350.png" alt="" />
+          <img src={doctor} alt="" />
           <h3>wendy</h3>
           <span>Psicología Educacional</span>
           <div className="social">
@@ -54,7 +55,7 @@ export default function Doctors() {
         </div>
 
         <div className="box">
-          <img src="image/doc-350x350.png" alt="" />
+          <img src={doctor} alt="" />
           <h3>wendy</h3>
           <span>Psicología Clínica y de la Salud</span>
           <div className="social">
@@ -66,7 +67,7 @@ export default function Doctors() {
         </div>
 
         <div className="box">
-          <img src="image/doc-350x350.png" alt="" />
+          <img src={doctor} alt="" />
           <h3>wendy</h3>
           <span>Psicología Clínica y de la Salud</span>
           <div className="social">
@@ -78,7 +79,7 @@ export default function Doctors() {
         </div>
 
         <div className="box">
-          <img src="image/doc-350x350.png" alt="" />
+          <img src={doctor} alt="" />
           <h3>wendy</h3>
           <span>Psicología Social Comunitaria</span>
           <div className="social">
@@ -90,7 +91,7 @@ export default function Doctors() {
         </div>
 
         <div className="box">
-          <img src="image/doc-350x350.png" alt="" />
+          <img src={doctor} alt="" />
           <h3>wendy</h3>
           <span>Psicología Social Comunitaria</span>
           <div className="social">
