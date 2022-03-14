@@ -1,5 +1,4 @@
 /* HOME */
-
 .home {
   display: flex;
   align-items: center;
@@ -32,5 +31,39 @@
   color: var(--light-color);
   line-height: 1.8;
   padding: 1rem 0;
+}
+
+/* SECTION ABOUT */
+.about .about__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .about__row .about__image {
+  flex: 1 1 45rem;
+}
+
+.about .about__row .about__image img {
+  width: 100%;
+}
+
+.about .about__row .about__content {
+  flex: 1 1 45rem;
+}
+
+.about .about__row .about__content h3 {
+  color: var(--black);
+  text-shadow: var(--text-shadow);
+  font-size: 4rem;
+  line-height: 1.8;
+}
+
+.about .about__row .about__content p {
+  color: var(--light-color);
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.8;
 }
 
