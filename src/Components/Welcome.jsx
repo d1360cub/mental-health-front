@@ -1,12 +1,12 @@
-import Nombre from './Nombre';
 import  './Welcome.css'
+
 const Welcome =(props)=>{
   return (
     <div className="home-Welcome">
     <p className="home-Welcome-message">bienvenid@ {props.perfil}
       <br/>
       <span id="home-Welcome--doctor">
-        <Nombre name={props.nameDoctor} lastName={props.lastNameDoctor}/>
+        <h3>{props.nameDoctor} {props.lastNameDoctor}</h3>
       </span> 
       </p>
       {

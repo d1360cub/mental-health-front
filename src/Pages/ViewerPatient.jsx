@@ -1,11 +1,10 @@
-
 import CardViewer from '../Components/CardViewer';
 import Welcome from '../Components/Welcome'
 import imageProfile from '../image/doc-350x350.png'
 import imageCalender from '../image/calendario.png'
  import './HomeViewer.css'
 
-const characters=Array.from({length:6},(_,i)=>(i))
+const characters=Array.from({length:1},(_,i)=>(i))
 
 const informationCard =
 {
@@ -14,14 +13,12 @@ const informationCard =
   "lastName":"Suarez",
   "enlaces":[
     { "path":"Chat"  ,   "url":"#" },
-    { "path":"H. clinica"   ,   "url":"#" }
   ]
 }
 const DateDoctos=
 {
   "nameDoctor":"rodolfo",
   "lastNameDoctor":"castillo",
-   "profile":"Dr"
 }
 const ViewerDoctor=()=>{
   return(

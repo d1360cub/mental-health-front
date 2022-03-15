@@ -1,6 +1,6 @@
 
  .home-Welcome p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--black);
   line-height: 1.8;
   text-shadow: var(--text-shadow);
@@ -9,7 +9,7 @@
   display: block;
 }
 .home_content__parrafo>p{
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--black);
   line-height: 1.8;
 }

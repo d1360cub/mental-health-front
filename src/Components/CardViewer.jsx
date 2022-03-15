@@ -1,9 +1,6 @@
 
-import FotoPerfil from './FotoPerfil'
-import Nombre from './Nombre'
 import Enlace from './Enlace'
 import './CardViewer.css'
-
 
 const CardViewer=(props)=>{
   
@@ -11,11 +8,11 @@ const CardViewer=(props)=>{
     <div className="home_content--card">
     <div className="home_content--imagen">
       <figure>
-        <FotoPerfil pictureProfile={props.imagePerfil} alt=""/>
+        <img src={props.imagePerfil} alt=""></img>
       </figure>  
     </div>
     <div className="home-content__card--perfil">
-      <Nombre name={props.name} lastName={props.lastName}/>
+      <h3>{props.name} {props.lastName}</h3>
       <p>
         <span>esquisofremia, </span>
         <span>edad, </span>

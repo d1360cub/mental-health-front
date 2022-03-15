@@ -3,6 +3,8 @@ import './App.css';
 import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
 import Register from './Components/Register'
+import ViewerDoctor from "./Pages/ViewerDoctor";
+import ViewerPatient from "./Pages/ViewerPatient";
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
       <Routes>
         <Route path="/" exact element={ <HomePage /> } />
         <Route path="/register" element={ <Register />} />
+        <Route path="/viewerDoctor" element={ <ViewerDoctor />}/>
+        <Route path="/viewerPatient" element={ <ViewerPatient />}
+         />
       </Routes>
     </BrowserRouter>
   );
