@@ -1,0 +1,113 @@
+/* SECTION DOCTORS */
+fieldset {
+  border: var(--border);
+  border-radius: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-size: 2rem;
+  padding: 0rem 1.25rem;
+}
+
+input {
+  border: var(--border);
+  border-radius: 1.125rem;
+  max-width: 200rem;
+  flex-grow: 1.5;
+  padding: 0 1.25rem;
+}
+
+.btn-search {
+  margin-top: 0rem;
+  margin-left: 1rem;
+  max-width: 12.5rem;
+}
+
+ul.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+ul.pagination li {
+  display: inline;
+}
+
+ul.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 2rem;
+  border-radius: 1.125rem;
+  transition: var(--black) 0.2s ease-out;
+}
+
+ul.pagination li a.active {
+  background-color: var(--blue);
+  color: white;
+}
+
+ul.pagination li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.doctors .doctors__box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.doctors .doctors__box-container .box {
+  text-align: center;
+  background: #fff;
+  border-radius: 0.5rem;
+  /* border:var(--border); */
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+}
+
+.doctors .doctors__box-container .box img {
+  height: 20rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.doctors .doctors__box-container .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+.doctors .doctors__box-container .box span {
+  color: var(--blue);
+  font-size: 1.5rem;
+}
+
+.doctors .doctors__box-container .box .social {
+  padding-top: 2rem;
+}
+
+.doctors .doctors__box-container .box .social a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 0.5rem;
+  border: var(--border);
+  margin: 0.3rem;
+}
+
+.doctors .doctors__box-container .box .social a:hover {
+  background: #fff;
+  color: var(--blue);
+  box-shadow: var(--box-shadow);
+}

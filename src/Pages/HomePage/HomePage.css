@@ -1,0 +1,133 @@
+/* HOME */
+.home {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 10rem;
+}
+
+.home .home__image {
+  flex: 1 1 45rem;
+}
+
+.home .home__image img {
+  width: 100%;
+}
+
+.home .home__content {
+  flex: 1 1 45rem;
+}
+
+.home .home__content h3 {
+  font-size: 4.5rem;
+  color: var(--black);
+  line-height: 1.8;
+  text-shadow: var(--text-shadow);
+}
+
+.home .home__content p {
+  font-size: 1.7rem;
+  color: var(--light-color);
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
+/* SECTION ABOUT */
+.about .about__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .about__row .about__image {
+  flex: 1 1 45rem;
+}
+
+.about .about__row .about__image img {
+  width: 100%;
+}
+
+.about .about__row .about__content {
+  flex: 1 1 45rem;
+}
+
+.about .about__row .about__content h3 {
+  color: var(--black);
+  text-shadow: var(--text-shadow);
+  font-size: 4rem;
+  line-height: 1.8;
+}
+
+.about .about__row .about__content p {
+  color: var(--light-color);
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+/* SECTIONS SERVICES */
+.services .services__box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 2rem;
+}
+
+.services .services__box-container .services__box {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  /* border: var(--border); */
+  padding: 2.5rem;
+}
+
+.services .services__box-container .services__box i {
+  color: var(--blue);
+  font-size: 5rem;
+  padding-bottom: 0.5rem;
+}
+
+.services .services__box-container .services__box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.services .services__box-container .services__box p {
+  color: var(--light-color);
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+
+/* FOOTER */
+.footer {
+  text-transform: capitalize;
+}
+
+.footer .footer__box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+}
+
+.footer .footer__box-container .footer__box h3 {
+  font-size: 2.5rem;
+}
+
+.footer .footer__box-container .footer__box a {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .footer__box-container .footer__box a i {
+  padding-right: 0.5rem;
+  color: var(--blue);
+}
+
+.footer .footer__box-container .footer__box a:hover i {
+  padding-right: 2rem;
+}
