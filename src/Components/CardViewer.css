@@ -1,0 +1,42 @@
+
+.home_content--card{
+  display: flex;
+  margin:0 auto;
+  gap: 1rem;
+  width: 90%;
+  height:20rem;
+  border-radius:15px;
+  background: rgb(158, 224, 220);
+  border: 0.1rem solid black;
+}
+.home_content--imagen{
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+.home-content__card--perfil{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+  font-size: 1.5rem; ;
+}
+.home_content--imagen  img{
+  width: 10rem;
+  border-radius:100%; 
+  box-shadow: 2px 2px 5px rgb(194, 159, 117);
+}
+.home_content__enlaces{
+    gap: 2rem;
+    display: flex;
+    justify-content: left;
+}
+
+@media(max-width:1200px){
+  .home_content__enlaces{
+  display: inline-flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+}
