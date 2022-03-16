@@ -5,26 +5,19 @@ import './HomeViewer.css'
 
 const ViewerPatient=({datapatients,datadoctor})=>{
   const links=[
-    { "path":"Chat"  ,   "url":"#" },
-     { "path":"H. clinica"   ,   "url":"#" }
+    { "path":"Chat"  ,   "url":"#" }
    ];
   return(
     <div>  
       <section className="home" id="home">
       <Welcome 
-      nameDoctor={datadoctor.name}
-      lastNameDoctor={datadoctor.lastName}
-      profile={datadoctor.profile}   
+      nameDoctor={datapatients[4].name}
+      lastNameDoctor={datapatients[4].lastName}
+        
        />
       <div className="home_content"> 
         <div className ="home_content--citas" >
-          {
-            datapatients.map(element=>{
-              return(
-              <CardViewer information={element} links={links}/>       
-              )
-            } )
-          }
+              <CardViewer information={datadoctor} links={links}/>       
         </div>
         <div className ="home_content--calender">
           <img src={imageCalender} alt=""/>
