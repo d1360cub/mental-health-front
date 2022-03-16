@@ -1,50 +1,27 @@
 
 import CardViewer from '../Components/CardViewer';
 import Welcome from '../Components/Welcome'
-import imageProfile from '../image/doc-350x350.png'
 import imageCalender from '../image/calendario.png'
- import './HomeViewer.css'
+import './HomeViewer.css'
 
-const characters=Array.from({length:6},(_,i)=>(i))
+const ViewerDoctor=({datapatients,datadoctor})=>{
 
-const informationCard =
-{
-  "imagePerfil":imageProfile,
-  "name":"alexander",
-  "lastName":"Suarez",
-  "enlaces":[
-    { "path":"Chat"  ,   "url":"#" },
-    { "path":"H. clinica"   ,   "url":"#" }
-  ]
-}
-const DateDoctos=
-{
-  "nameDoctor":"rodolfo",
-  "lastNameDoctor":"castillo",
-   "profile":"Dr"
-}
-const ViewerDoctor=()=>{
   return(
     <div>  
       <section className="home" id="home">
       <Welcome 
-      nameDoctor={DateDoctos.nameDoctor}
-      lastNameDoctor={DateDoctos.lastNameDoctor}
-      perfil={DateDoctos.profile}
+      nameDoctor={datadoctor.name}
+      lastNameDoctor={datadoctor.lastName}
+      profile={datadoctor.profile}   
        />
       <div className="home_content"> 
         <div className ="home_content--citas" >
           {
-            characters.map(()=>{
+            datapatients.map(element=>{
               return(
-              <CardViewer 
-              imagePerfil={informationCard.imagePerfil} 
-              name={informationCard.name} 
-              lastName={informationCard.lastName}
-              enlaces={informationCard.enlaces}
-              />       
+              <CardViewer information={element} />       
               )
-            })
+            } )
           }
         </div>
         <div className ="home_content--calender">
