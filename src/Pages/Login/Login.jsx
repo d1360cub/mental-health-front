@@ -1,14 +1,15 @@
 import React from "react";
-import LoginImage from "../image/login.jpg";
+import { Link } from "react-router-dom"
+import LoginImage from "../../image/login.jpg";
 import "./Login.css"
 
 function Login() {
   return (
     <div>
       <header className="header">
-        <a href="/index.html" className="header__logo">
+        <Link to="/" className="header__logo">
           <i class="fa fa-brain"></i> Mental Health
-        </a>
+        </Link>
       </header>
       <div className="landing">
         <section className="register" id="register">
@@ -24,15 +25,13 @@ function Login() {
               <input type="password" id="password" name="password" />
             </fieldset>
           </form>
-          <a href="#" className="password">
-            ¿Olvidaste tu contraseña?
-          </a>
-          <button className="login">Iniciar sesión</button>
+          <div className="click">
+            <Link to="/" className="password">¿Olvidaste tu contraseña?</Link>
+            <button className="login">Iniciar sesión</button>
+          </div>
           <div className="first-time">
             ¿Es tu primera vez?{" "}
-            <a href="/register.html" className="question">
-              Regístrate
-            </a>
+            <Link to="/register" className="question">Regístrate</Link>
           </div>
         </section>
         <img src={LoginImage} alt="login" className="image" />

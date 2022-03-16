@@ -1,19 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import "./Register.css";
 
 function Register() {
   return (
-    <div>
+    <div className="register">
       <div className="title">Mental Health</div>
       <div className="subtitle">Registro</div>
       <div className="question">
         <div className="question__doctor">
           {" "}
-          <a href="#">¿Doctor?</a>
+          <Link to="/">¿Doctor?</Link>
         </div>
         <div className="question__patient">
           {" "}
-          <a href="#">¿Paciente?</a>
+          <Link to="/">¿Paciente?</Link>
         </div>
       </div>
       <form action="" method="post">
