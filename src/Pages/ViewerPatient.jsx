@@ -20,7 +20,7 @@ const DateDoctos=
   "nameDoctor":"rodolfo",
   "lastNameDoctor":"castillo",
 }
-const ViewerDoctor=()=>{
+const ViewerPatient=()=>{
   return(
     <div>  
       <section className="home" id="home">
@@ -52,4 +52,4 @@ const ViewerDoctor=()=>{
 </div>
   )
 }
-export default ViewerDoctor;
+export default ViewerPatient;

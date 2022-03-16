@@ -5,7 +5,10 @@ import imageCalender from '../image/calendario.png'
 import './HomeViewer.css'
 
 const ViewerDoctor=({datapatients,datadoctor})=>{
-
+  const links=[
+    { "path":"Chat"  ,   "url":"#" },
+     { "path":"H. clinica"   ,   "url":"#" }
+   ];
   return(
     <div>  
       <section className="home" id="home">
@@ -19,7 +22,7 @@ const ViewerDoctor=({datapatients,datadoctor})=>{
           {
             datapatients.map(element=>{
               return(
-              <CardViewer information={element} />       
+              <CardViewer information={element} links={links}/>       
               )
             } )
           }

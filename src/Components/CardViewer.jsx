@@ -2,11 +2,8 @@
 import Enlace from './Enlace'
 import './CardViewer.css'
 
-const CardViewer=({information})=>{
-  const enlaces=[
-        { "path":"Chat"  ,   "url":"#" },
-         { "path":"H. clinica"   ,   "url":"#" }
-       ];
+const CardViewer=({information,links})=>{
+
   return(
     <div className="home_content--card">
     <div className="home_content--imagen">
@@ -23,7 +20,7 @@ const CardViewer=({information})=>{
       </p>
       <div className="home_content__enlaces">
         {
-          enlaces.map( element => {
+          links.map( element => {
             return <Enlace path={element.path} url={element.url}/> ;      
           })
         } 
