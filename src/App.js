@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 import Login from "./Components/Login"
-=======
-import { BrowserRouter, Route, Routes } from "react-router-dom";
->>>>>>> develop
 import './App.css';
 import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
@@ -12,11 +9,6 @@ import ViewerPatient from "./Pages/ViewerPatient";
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Login />
-    </div>
-=======
     <BrowserRouter>
       <Header />
 
@@ -28,7 +20,6 @@ function App() {
          />
       </Routes>
     </BrowserRouter>
->>>>>>> develop
   );
 }
 
