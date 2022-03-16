@@ -1,5 +1,5 @@
 .box{
-  text-align: center;
+    text-align: center;
   background: #fff;
   border-radius: 0.5rem;
   /* border:var(--border); */
@@ -22,9 +22,15 @@
     font-size: 1.5rem;
 }
 .appoiment{
-  margin-top: 0rem;
-  margin-left: 1rem;
-  max-width: 12.5rem;
+  height: 5rem;
+  width: 5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 0.5rem;
+  border: var(--border);
+  margin: 0.3rem;
 }
 .appoiment:hover{
   background: #fff;
