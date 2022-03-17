@@ -20,9 +20,9 @@ const ViewerDoctor=({datapatients,datadoctor})=>{
       <div className="home_content"> 
         <div className ="home_content--citas" >
           {
-            datapatients.map(element=>{
+            datapatients.map((element,idx)=>{
               return(
-              <CardViewer information={element} links={links}/>       
+              <CardViewer information={element} links={links} key={idx}/>       
               )
             } )
           }

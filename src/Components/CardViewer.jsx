@@ -2,10 +2,10 @@
 import Enlace from './Enlace'
 import './CardViewer.css'
 
-const CardViewer=({information,links})=>{
+const CardViewer=({information,links,key})=>{
 
   return(
-    <div className="home_content--card">
+    <div className="home_content--card" key={key}>
     <div className="home_content--imagen">
       <figure>
         <img src={information.imageprofile} alt=""></img>
@@ -20,8 +20,8 @@ const CardViewer=({information,links})=>{
       </p>
       <div className="home_content__enlaces">
         {
-          links.map( element => {
-            return <Enlace path={element.path} url={element.url}/> ;      
+          links.map( (element,idx) => {
+            return <Enlace path={element.path} url={element.url} key={idx}/> ;      
           })
         } 
       </div>

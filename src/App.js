@@ -10,7 +10,6 @@ import datadoctor from './assets/dataDoctor'
 
 
 function App() {
- console.log(datadoctor)
   return (
     <BrowserRouter>
       <Header />

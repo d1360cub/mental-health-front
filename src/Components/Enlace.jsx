@@ -1,7 +1,7 @@
 
-const Enlace=({path,url})=>{
+const Enlace=({path,url,key})=>{
   return(
-    <a className="btn-appointment" href={url}  > {path} </a>
+    <a className="btn-appointment" href={url} key={key} > {path} </a>
   )
 }
 export default Enlace;
