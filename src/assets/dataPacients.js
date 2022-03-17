@@ -5,7 +5,7 @@ const data=[
     "consultationRequest":"depresion",
     "age":"26",
     "location":"santander",
-    "imageprofile":"https://rickandmortyapi.com/api/character/avatar/21.jpeg"
+    "imageprofile":"https://rickandmortyapi.com/api/character/avatar/21.jpeg",
   },
   {
     "name":"pool",
