@@ -3,8 +3,8 @@ import './App.css';
 import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
 import Register from './Pages/Register/Register';
-import ViewerDoctor from "./Pages/ViewerDoctor";
-import ViewerPatient from "./Pages/ViewerPatient";
+import ViewerDoctor from './Pages/viewerDoctor/ViewerDoctor.jsx';
+import ViewerPatient from "./Pages/viewerPatient/ViewerPatient";
 import datapatients from "./assets/dataPacients"
 import datadoctor from './assets/dataDoctor'
 import Login from "./Pages/Login/Login";

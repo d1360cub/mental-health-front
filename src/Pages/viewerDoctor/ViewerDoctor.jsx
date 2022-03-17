@@ -1,8 +1,8 @@
 
-import CardViewer from '../Components/CardViewer';
-import Welcome from '../Components/Welcome'
-import imageCalender from '../image/calendario.png'
-import './HomeViewer.css'
+import CardViewer from '../../Components/CardViewer';
+import Welcome from '../../Components/Welcome'
+import imageCalender from '../../image/calendario.png'
+import '../HomeViewer.css'
 
 const ViewerDoctor=({datapatients,datadoctor})=>{
   const links=[
