@@ -11,7 +11,6 @@ function Register() {
       ...form,
       [name]: value
     });
-    console.log(form)
   }
   const handleSubmit = (event) => {
     event.preventDefault();
