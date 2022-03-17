@@ -1,17 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poly&family=Poppins&display=swap');
-
-* {
-  margin: 0px;
-  box-sizing: border-box;
-}
-
-body {
+.register{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  gap: 20px;
-  background-color: whitesmoke;
+
 }
 
 .title {
@@ -42,6 +33,7 @@ body {
 
 fieldset {
   border: none;
+  padding: 0px;
 }
 
 label, .question, .session {
