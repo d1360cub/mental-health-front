@@ -12,17 +12,17 @@ export default function Header() {
 
   return (
     <header className="header">
-      <a href="/" className="header__logo">
+      <NavLink to="/" className="header__logo">
         <i className="fa fa-brain"></i> Mental Health
-      </a>
+      </NavLink>
       <nav className="header__navigation" ref={menu} >
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#doctors">Doctors</a>
-        <a href="/login.html" className="btn-users">
+        <NavLink to="#home" className="header__nav-link">Home</NavLink>
+        <NavLink to="#about" className="header__nav-link">About</NavLink>
+        <NavLink to="#services" className="header__nav-link">Services</NavLink>
+        <NavLink to="#doctors" className="header__nav-link">Doctors</NavLink>
+        <NavLink to="/login" className="btn-header-users header__nav-link">
           Users
-        </a>
+        </NavLink>
       </nav>
 
       <div id="header__menu-btn-responsive" className="fas fa-bars" onClick={showMenu}></div>
