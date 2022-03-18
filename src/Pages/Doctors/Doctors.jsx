@@ -1,6 +1,6 @@
 import React from 'react';
-import "./Doctors.css";
-import doctor from "../../image/doc-350x350.png";
+import './Doctors.css';
+import doctor from '../../image/doc-350x350.png';
 
 export default function Doctors() {
   return (
@@ -8,13 +8,15 @@ export default function Doctors() {
       <h1 className="section-heading"><span>doctors</span></h1>
       <form action="#" method="post" target="_blank">
         <fieldset>
-          <label for="search">Encuentra a tu especialista...</label>
-          <input
-            type="search"
-            id="search"
-            name="search"
-            placeholder="Nombre, ciudad, especialidad..."
-          />
+          <label htmlFor="search">
+            Encuentra a tu especialista...
+            <input
+              type="search"
+              id="search"
+              name="search"
+              placeholder="Nombre, ciudad, especialidad..."
+            />
+          </label>
           <input type="submit" value="Buscar" className="btn-search" />
         </fieldset>
       </form>
