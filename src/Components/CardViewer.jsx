@@ -20,8 +20,8 @@ const CardViewer=({information,links})=>{
       </p>
       <div className="home_content__enlaces">
         {
-          links.map( (element,idx) => {
-            return <Enlace path={element.path} url={element.url} key={idx}/> ;      
+          links.map( (element) => {
+            return <Enlace path={element.path} url={element.url} key={element.id}/> ;      
           })
         } 
       </div>
