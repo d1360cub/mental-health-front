@@ -1,0 +1,12 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__image {
+  width: 50%;
+}
