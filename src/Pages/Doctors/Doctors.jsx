@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Doctors.css";
 import Doctorcard from '../../Components/Doctorcard/Doctorcard';
 import doctorsList from '../../DB/doctors'
 import Searchdoctor from '../../Components/Doctorcard/Searchdoctor';
 import Pagination from '../../Components/Doctorcard/Pagination';
-
+import getDoctors from '../../services/doctorCard';
 
 
 export default function Doctors() {
+  
+
+  const[doctors, setDoctors]= useState([])
   const[card, setCard]=useState(1)
-  const[porCard, setPorCard]=useState(4)
-  const maximo= doctorsList.length / porCard;
+  const[porCard, setPorCard]=useState(8)
+  const maximo= doctors.length / porCard;
+
+  const fetchDoctors= async ()=>{
+    const data = await getDoctors();
+    setDoctors(data);
+    
+  };
+
+  useEffect(()=>{
+    fetchDoctors();
+  }, []);
    
   return (
     <section className="doctors" id="doctors">
@@ -23,7 +36,7 @@ export default function Doctors() {
         <Pagination card={card} setCard={setCard} maximo={maximo} />
       </div>
       <div className="doctors__box-container">
-        {doctorsList.slice(
+        {doctors.slice(
           (card -1) * porCard, 
           (card-1) * porCard + porCard
           ).map((doctor, index)=> <Doctorcard key={index} image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id}/>)}

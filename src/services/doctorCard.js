@@ -1,10 +1,10 @@
 const API_URL = "http://localhost:8080/api";
 
-const showAllPerson = async () =>{
+const getDoctors = async () =>{
     try {
-        const response = await fetch (`${API_URL}/person`);
-        const persons = await response.json();
-        return persons;
+        const response = await fetch (`${API_URL}/doctors`);
+        const people = await response.json();
+        return people;
         
     } catch (error) {
         throw new Error(error);
@@ -13,4 +13,4 @@ const showAllPerson = async () =>{
 
 }
 
-export default showAllPerson;
+export default getDoctors;
