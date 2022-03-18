@@ -1,6 +1,12 @@
 
 import Login from "./Components/Login"
 import './App.css';
+import { render } from "react-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
 import Register from './Components/Register'

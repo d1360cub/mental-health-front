@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Doctorcard.css";
-import {Link} from "react-router-dom";
 import doctorImage  from "../../image/doc-350x350.png";
+import Button  from "./Button/button"
+import { NavLink } from 'react-router-dom';
 
 
 const Doctorcard =({image=doctorImage, name, services, description, id})=>{
+  
     return(    
       <div className="box">
         <img src={image} alt="" />
-          <h3>{name}</h3>
+          <h3><NavLink  to="/">{name}</NavLink></h3>
           <p>{services}</p>
           <p>{description}</p>
-          <Link className="appoiment" to={"doctors" + id}> Make an appoiment</Link>
+          <Button className="appoiment" type="submit" name="Appoiment" />
         
       </div> 
     
