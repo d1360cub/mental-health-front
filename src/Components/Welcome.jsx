@@ -1,16 +1,16 @@
 import  './Welcome.css'
 
-const Welcome =(props)=>{
+const Welcome =({information})=>{
   return (
-    <div className="home-Welcome">
-    <p className="home-Welcome-message">bienvenid@ {props.profile}
+    <div  className="home-Welcome">
+    <div className="home-Welcome-message">  bienvenid@  {information.license? <span>Dr</span> : <></> }
       <br/>
       <span id="home-Welcome--doctor">
-        <h3>{props.nameDoctor} {props.lastNameDoctor}</h3>
+        <h3>{information.name} {information.lastName}</h3>
       </span> 
-      </p>
+    </div>
       {
-        props.profile
+        information.license
         ? 
           <div className="home_content__parrafo">
             <p> <strong> Tus proximas citas son:</strong> </p>

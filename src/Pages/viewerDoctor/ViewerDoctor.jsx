@@ -1,28 +1,48 @@
 
+import { useState,useEffect } from 'react';
 import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome'
 import imageCalender from '../../image/calendario.png'
+import listAllUsers from '../../services/user'
 import '../HomeViewer.css'
 
-const ViewerDoctor=({datapatients,datadoctor})=>{
+const ViewerDoctor=()=>{
+
+  const [patients,setPatients]=useState([])
+  const [doctors,setDoctors]=useState([])
+
+  const listPerson=async()=>{
+  const data  = await listAllUsers();
+  setPatients(data);
+  setDoctors(data);
+  }
+
+  const patientsFilter = patients.filter(element => !element.license)
+  const doctorFilter = doctors.filter(element => {return !element.services}).filter(elet=>elet.license==="60877")
+  
+  useEffect(()=>{
+    listPerson();
+  },[])
+
   const links=[
     { "path":"Chat"  ,   "url":"#" },
      { "path":"H. clinica"   ,   "url":"#" }
    ];
+
   return(
     <div>  
       <section className="home" id="home">
-      <Welcome 
-      nameDoctor={datadoctor.name}
-      lastNameDoctor={datadoctor.lastName}
-      profile={datadoctor.profile}   
-       />
+        {
+          doctorFilter.map((element, index)=>{
+            return  <Welcome information={element} key={index}/>
+          })
+        }
       <div className="home_content"> 
         <div className ="home_content--citas" >
           {
-            datapatients.map((element,idx)=>{
+            patientsFilter.map((element,index)=>{
               return(
-              <CardViewer information={element} links={links} key={idx}/>       
+              <CardViewer information={element} links={links} key={index}/>       
               )
             } )
           }

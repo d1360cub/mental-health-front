@@ -2,10 +2,10 @@
 import Enlace from './Enlace'
 import './CardViewer.css'
 
-const CardViewer=({information,links,key})=>{
+const CardViewer=({information,links})=>{
 
   return(
-    <div className="home_content--card" key={key}>
+    <div  className="home_content--card" >
     <div className="home_content--imagen">
       <figure>
         <img src={information.imageprofile} alt=""></img>
@@ -14,9 +14,9 @@ const CardViewer=({information,links,key})=>{
     <div className="home-content__card--perfil">
       <h3>{information.name} {information.lastName}</h3>
       <p>
-        <span>{information.consultationRequest}, </span>
-        <span>{information.age}, </span>
-        <span>{information.location}, </span>
+        <span>{information.services}, </span>
+        <span>{information.phone}, </span>
+        <span>{information.mail}, </span> 
       </p>
       <div className="home_content__enlaces">
         {
