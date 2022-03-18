@@ -1,13 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
 import Register from './Pages/Register/Register';
-import ViewerDoctor from "./Pages/ViewerDoctor";
-import ViewerPatient from "./Pages/ViewerPatient";
-import Login from "./Pages/Login/Login";
-import ProtectedRoutes from "./Routes/ProtectedRoutes";
-import Page404 from "./Pages/Page404/Page404";
+import ViewerDoctor from './Pages/ViewerDoctor';
+import ViewerPatient from './Pages/ViewerPatient';
+import Login from './Pages/Login/Login';
+import ProtectedRoutes from './Routes/ProtectedRoutes';
+import Page404 from './Pages/Page404/Page404';
 
 function App() {
   return (
