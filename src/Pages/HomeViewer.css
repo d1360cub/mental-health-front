@@ -37,21 +37,23 @@
 
   
   .home .home_content {
-    display: flex;
-    flex-direction:row;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 800px;
     align-items: center;
     border: 0.1rem solid black;
-    width: 100%;
+    width: 100%;   
   }  
   .home_content--citas{
     margin: 0 auto;
-    width: 50%;
-    height: 80rem;
+    width: 100%;
+    height: 100%;
     background: rgb(217, 249, 252);
     display: grid;
-    overflow-y: auto;
+    overflow-y: scroll;
     gap:10px;
     padding-top:15px ;
+    
   }
   .home_content--calender{
     padding-top: 1rem;
