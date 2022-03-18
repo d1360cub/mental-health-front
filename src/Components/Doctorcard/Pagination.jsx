@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./Pagination.css";
 
 
 function Pagination({card, setCard, maximo}) {
@@ -13,14 +14,13 @@ function Pagination({card, setCard, maximo}) {
         setNumPage(numPage - 1);
         setCard(card - 1);
     }
-    console.log()
+    
   return (
-    <div>
-        
-        <p onClick={prevPage}>Prev</p>
+    <div className='pagination'>
+        <span onClick={prevPage}>Prev</span>
         <p>{numPage}</p>
-        <p> de {maximo}</p>
-        <p onClick={nextPage}> Next</p>
+        <p> {maximo}</p>
+        <span onClick={nextPage}> Next</span>
         
     </div>
   )

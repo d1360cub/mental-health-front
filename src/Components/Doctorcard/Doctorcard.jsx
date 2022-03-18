@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Doctorcard.css";
 import doctorImage  from "../../image/doc-350x350.png";
 import Button  from "./Button/button"
 import { NavLink } from 'react-router-dom';
+
 
 
 const Doctorcard =({image=doctorImage, name, services, description, id})=>{

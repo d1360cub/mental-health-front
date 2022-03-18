@@ -17,6 +17,7 @@ export default function Doctors() {
       <h1 className="section-heading"><span>Doctors</span></h1>
       <div>
         <Searchdoctor/>    
+        
       </div>
       <div>
         <Pagination card={card} setCard={setCard} maximo={maximo} />
@@ -25,7 +26,7 @@ export default function Doctors() {
         {doctorsList.slice(
           (card -1) * porCard, 
           (card-1) * porCard + porCard
-          ).map((doctor)=> <Doctorcard image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id}/>)}
+          ).map((doctor, index)=> <Doctorcard key={index} image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id}/>)}
       </div>
     </section>
   )
