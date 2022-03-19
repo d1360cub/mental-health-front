@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 function ProtectedRoutes() {
+  const isLogged = false;
 
-  const isLogged = true;
-
-  return isLogged ? <Outlet /> : <Navigate to="login" />
+  return isLogged ? <Outlet /> : <Navigate to="login" />;
 }
 
 export default ProtectedRoutes;
