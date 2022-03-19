@@ -19,12 +19,12 @@ const newUser = async (newRegister) => {
 
 export default newUser;
 
-export const listAllUsers = async ()=>{
-  try{
-    const response=await fetch(`${API_URL}/user`);
+export const listAllUsers = async () => {
+  try {
+    const response = await fetch(`${API_URL}/user`);
     const persons = await response.json();
     return persons;
-  }catch(error){
-    throw new Error(error)
+  } catch (error) {
+    throw new Error(error);
   }
 };

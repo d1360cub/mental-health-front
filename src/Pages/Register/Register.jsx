@@ -35,7 +35,7 @@ function Register() {
         <fieldset>
           <label htmlFor="name">
             Nombre
-            <input type="text" id="name" name="name" onChange={handleChange}/>
+            <input type="text" id="name" name="name" onChange={handleChange} />
           </label>
         </fieldset>
         <fieldset>
