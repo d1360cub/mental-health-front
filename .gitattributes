@@ -1,0 +1,5 @@
+*.vcproj    eol=lf
+*.sh        eol=lf
+*.js    eol=lf
+*.jsx   eol=lf
+*.json  eol=lf
