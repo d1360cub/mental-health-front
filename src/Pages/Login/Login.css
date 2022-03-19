@@ -2,35 +2,6 @@
   text-decoration: none;
 }
 
-.header {
-  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .2);
-  padding: 2rem;
-  width: 100%;
-  line-height: 4.2rem;
-  z-index: 1000;
-}
-
-.header a {
-  text-decoration: none;
-}
-
-.header__logo {
-  font-size: 2.5rem;
-  color: #444;
-}
-
-.header__logo i {
-  color: #1977cc;
-}
-
-.welcome {
-  font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 40px;
-  color: #1977cc;
-  text-align: center;
-}
-
 .subtitle {
   font-size: 3rem;
   font-weight: 500;
@@ -79,16 +50,6 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-button {
-  background-color: #1977cc;
-  border: none;
-  border-radius: 18px;
-  color: white;
-  line-height: 36px;
-  width: 200px;
-  align-self: center;
 }
 
 .password {
