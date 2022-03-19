@@ -7,7 +7,7 @@
   font-weight: 500;
   line-height: 40px;
   color: #4b4b4b;
-  padding: 5rem 0rem 1rem;
+  padding: 8rem 0rem 1rem;
 }
 
 fieldset {
@@ -30,9 +30,7 @@ input {
   border-top-style: solid;
   border-left-style: solid;
   border-radius: 6px;
-  width: 100%;
   height: 30px;
-  border: 20px 0;
 }
 
 input:focus {
@@ -43,6 +41,7 @@ input:focus {
 .click{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .first-time{
@@ -85,10 +84,6 @@ input:focus {
     font-size: 55%;
   }
 
-  .landing {
-    margin: 4rem;
-  }
-
 }
 
 @media (min-width: 992px) {
@@ -99,6 +94,7 @@ input:focus {
 
   .landing {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 4rem;
@@ -106,7 +102,7 @@ input:focus {
   }
 
   .image {
-    display: block;
+    display: flex;
   }
 
 }
