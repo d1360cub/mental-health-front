@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import './Doctors.css';
 import Doctorcard from '../../Components/Doctorcard/Doctorcard';
@@ -8,6 +9,7 @@ import getDoctors from '../../services/doctorCard';
 export default function Doctors() {
   const [doctors, setDoctors] = useState([]);
   const [card, setCard] = useState(1);
+  // eslint-disable-next-line no-unused-vars
   const [porCard, setPorCard] = useState(8);
   const maximo = doctors.length / porCard;
 
@@ -34,6 +36,7 @@ export default function Doctors() {
         {doctors.slice(
           (card - 1) * porCard,
           (card - 1) * porCard + porCard,
+        // eslint-disable-next-line react/no-array-index-key
         ).map((doctor, index) => <Doctorcard key={index} image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id} />)}
       </div>
     </section>
