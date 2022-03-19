@@ -1,0 +1,33 @@
+.box{
+  text-align: center;
+  background: #fff;
+  border-radius: 0.5rem;
+  /* border:var(--border); */
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+}
+.box img {
+    height: 20rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.box h3 {
+    color: var(--black);
+    font-size: 2.5rem;
+}
+.box p {
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+.appoiment{
+  margin-top: 0rem;
+  margin-left: 1rem;
+  max-width: 12.5rem;
+}
+.appoiment:hover{
+  background: #fff;
+  color: var(--blue);
+  box-shadow: var(--box-shadow);
+}
