@@ -38,36 +38,36 @@ function Register() {
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="last-name">
+            <label htmlFor="lastName">
               Apellido
               <input
                 type="text"
-                id="last-name"
-                name="last-name"
+                id="lastName"
+                name="lastName"
                 onChange={handleChange}
                 size="20"
               />
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="cellphone">
+            <label htmlFor="phone">
               Celular
               <input
                 type="tel"
-                id="cellphone"
-                name="cellphone"
+                id="phone"
+                name="phone"
                 onChange={handleChange}
                 size="20.5"
               />
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="email">
+            <label htmlFor="mail">
               Email
               <input
                 type="email"
-                id="email"
-                name="email"
+                id="mail"
+                name="mail"
                 onChange={handleChange}
                 size="22"
               />
@@ -85,16 +85,16 @@ function Register() {
               />
             </label>
           </fieldset>
+          <div className="btn__centered">
+            <button type="submit" className="btn-appointment">
+              Regístrate
+            </button>
+          </div>
         </form>
         <div className="session">
           ¿Ya eres un miembro?
           <Link to="/login">Inicia sesión</Link>
         </div>
-        <Link to="/ViewerDoctor">
-          <button type="submit" className="btn-appointment">
-            Regístrate
-          </button>
-        </Link>
       </div>
     </div>
   );
