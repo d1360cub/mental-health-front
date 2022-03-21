@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 import Doctors from '../Doctors/Doctors';
 import Home from '../Home/Home';
@@ -10,8 +11,6 @@ export default function HomePage() {
     <>
       <Home />
       <About />
-
-      {/* <!-- Services - inicio  --> */}
       <section className="services" id="services">
         <h1 className="section-heading"><span>services</span></h1>
         <div className="services__box-container">
@@ -22,7 +21,9 @@ export default function HomePage() {
               El especialista trata de identificar y rehabilitar procesos de
               pensamiento o conductas insanas
             </p>
-            <a href="" className="btn-appointment">doctors</a>
+            <Link to="/ViewerDoctor">
+              <button type="submit" className="btn-appointment">doctors</button>
+            </Link>
           </div>
 
           <div className="services__box">
@@ -32,7 +33,9 @@ export default function HomePage() {
               El especialista trata de identificar y rehabilitar procesos de
               pensamiento o conductas insanas
             </p>
-            <a href="" className="btn-appointment">doctors</a>
+            <Link to="/ViewerDoctor">
+              <button type="submit" className="btn-appointment">doctors</button>
+            </Link>
           </div>
 
           <div className="services__box">
@@ -42,7 +45,9 @@ export default function HomePage() {
               El especialista trata de identificar y rehabilitar procesos de
               pensamiento o conductas insanas
             </p>
-            <a href="" className="btn-appointment">doctors</a>
+            <Link to="/ViewerDoctor">
+              <button type="submit" className="btn-appointment">doctors</button>
+            </Link>
           </div>
 
           <div className="services__box">
@@ -52,7 +57,9 @@ export default function HomePage() {
               El especialista trata de identificar y rehabilitar procesos de
               pensamiento o conductas insanas
             </p>
-            <a href="" className="btn-appointment">doctors</a>
+            <Link to="/ViewerDoctor">
+              <button type="submit" className="btn-appointment">doctors</button>
+            </Link>
           </div>
 
           <div className="services__box">
@@ -62,7 +69,9 @@ export default function HomePage() {
               El especialista trata de identificar y rehabilitar procesos de
               pensamiento o conductas insanas
             </p>
-            <a href="" className="btn-appointment">doctors</a>
+            <Link to="/ViewerDoctor">
+              <button type="submit" className="btn-appointment">doctors</button>
+            </Link>
           </div>
 
           <div className="services__box">
@@ -72,17 +81,13 @@ export default function HomePage() {
               El especialista trata de identificar y rehabilitar procesos de
               pensamiento o conductas insanas
             </p>
-            <a href="" className="btn-appointment">doctors</a>
+            <Link to="/ViewerDoctor">
+              <button type="submit" className="btn-appointment">doctors</button>
+            </Link>
           </div>
         </div>
       </section>
-      {/* <!-- Services - fin --> */}
-
-      {/* <!-- Doctors - fin --> */}
       <Doctors />
-      {/* <!-- Doctors - fin --> */}
-
-      {/* <!-- Footer - inicio --> */}
       <section className="footer">
         <div className="footer__box-container">
           <div className="footer__box">
@@ -111,7 +116,7 @@ export default function HomePage() {
               {' '}
               doctors
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fa fa-brain" />
               {' '}
@@ -155,31 +160,31 @@ export default function HomePage() {
 
           <div className="footer__box">
             <h3>Contact Info</h3>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fas fa-phone" />
               {' '}
               +51-123-456-789
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fas fa-mobile" />
               {' '}
               +51 975275260
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fas fa-envelope" />
               {' '}
               team07.topv20
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fab fa-whatsapp" />
               {' '}
               +51 945678912
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fa fa-map-location" />
               {' '}
@@ -189,30 +194,30 @@ export default function HomePage() {
 
           <div className="footer__box">
             <h3>Follow Us</h3>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fab fa-linkedin" />
               {' '}
               Linkedin
             </a>
-            <a href="#" target="__blank">
+            <a href="#home" target="__blank">
               <i className="fab fa-twitter" />
               {' '}
               Twitter
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fab fa-facebook-f" />
               {' '}
               Facebook
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fab fa-instagram" />
               {' '}
               Instagram
             </a>
-            <a href="#">
+            <a href="#home">
               {' '}
               <i className="fab fa-pinterest-p" />
               {' '}
