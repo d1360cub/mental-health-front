@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
       </nav>
 
-      <div id="header__menu-btn-responsive" className="fas fa-bars" onClick={showMenu} />
+      <div id="header__menu-btn-responsive" className="fas fa-bars" onClick={showMenu} aria-hidden="true" />
     </header>
   );
 }
