@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
-function Enlace({ path, url }) {
+import { HashLink as Link } from 'react-router-hash-link';
+
+function Enlace({ path }) {
   return (
-    <a className="btn-appointment" href={url}>
+    <Link to="/" className="btn-header-users header__nav-link">
       {path}
-    </a>
+    </Link>
   );
 }
 export default Enlace;

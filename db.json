@@ -182,27 +182,51 @@
     },
     {
       "name": "Diego",
-      "last-name": "dfsfdasf",
-      "cellphone": "45345345",
-      "email": "ab@ab.com",
+      "lastName": "dfsfdasf",
+      "phone": "45345345",
+      "mail": "ab@ab.com",
       "password": "123456",
       "id": 21
     },
     {
       "name": "Comunicaciones y administracion(2)",
-      "last-name": "fdfa",
-      "cellphone": "45345345",
-      "email": "ab@ab.com",
+      "lastName": "fdfa",
+      "phone": "45345345",
+      "mail": "ab@ab.com",
       "password": "tgfhfghgh",
       "id": 22
     },
     {
       "name": "Release 1.0",
-      "last-name": "dfsfdasf",
-      "cellphone": "12132342",
-      "email": "ab@ab.com",
+      "lastName": "dfsfdasf",
+      "phone": "12132342",
+      "mail": "ab@ab.com",
       "password": "fdsfd",
       "id": 23
+    },
+    {
+      "name": "24",
+      "lastName": "24",
+      "phone": "24",
+      "mail": "prueba@form.com",
+      "password": "24",
+      "id": 24
+    },
+    {
+      "name": "25",
+      "lastName": "25",
+      "phone": "25",
+      "mail": "prueba@form.com",
+      "password": "25",
+      "id": 25
+    },
+    {
+      "name": "26",
+      "lastName": "26",
+      "phone": "26",
+      "mail": "prueba@form.com",
+      "password": "26",
+      "id": 26
     }
   ],
   "services": [
@@ -267,133 +291,150 @@
       "services": "otros"
     }
   ],
-  "doctors" : [{
-    "name":"Wendy Medina",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":1
-}, {
-    "name":"Marina Serrato",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":2
-},
-{
-    "name":"Fabian Perez",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":3
-}, {
-    "name":"Claudia Gonzales",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":4
-},{
-    "name":"José Gomez",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":5
-}, {
-    "name":"Ferney Medina",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":6
-},
-{
-    "name":"Elsa Serrato",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":1
-}, {
-    "name":"Oscar Lopez",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":2
-},
-{
-    "name":"Isabel Contreras",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":3
-}, {
-    "name":"Juan Morales",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":4
-},{
-    "name":"Daissy Monrroy",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":5
-}, {
-    "name":"Ruben Rodriguez",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":6
-},
-{
-  "name":"Wendy Medina",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":1
-}, {
-  "name":"Marina Serrato",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":2
-},
-{
-  "name":"Fabian Perez",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":3
-}, {
-  "name":"Claudia Gonzales",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":4
-},{
-  "name":"José Gomez",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":5
-}, {
-  "name":"Ferney Medina",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":6
-},
-{
-  "name":"Elsa Serrato",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":1
-}, {
-  "name":"Oscar Lopez",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":2
-},
-{
-  "name":"Isabel Contreras",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":3
-}, {
-  "name":"Juan Morales",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":4
-},{
-  "name":"Daissy Monrroy",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":5
-}, {
-  "name":"Ruben Rodriguez",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":6
-}]
-  
+  "doctors": [
+    {
+      "name": "Wendy Medina",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Marina Serrato",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Fabian Perez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Claudia Gonzales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "José Gomez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ferney Medina",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Elsa Serrato",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Oscar Lopez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Isabel Contreras",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Juan Morales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "Daissy Monrroy",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ruben Rodriguez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Wendy Medina",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Marina Serrato",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Fabian Perez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Claudia Gonzales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "José Gomez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ferney Medina",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Elsa Serrato",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Oscar Lopez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Isabel Contreras",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Juan Morales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "Daissy Monrroy",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ruben Rodriguez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    }
+  ]
 }
