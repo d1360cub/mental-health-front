@@ -1,92 +1,17 @@
 import React from 'react';
 import './HomePage.css';
-import { Link } from 'react-router-dom';
 
 import Doctors from '../Doctors/Doctors';
 import Home from '../Home/Home';
 import About from '../About/About';
+import Services from '../Services/Services';
 
 export default function HomePage() {
   return (
     <>
       <Home />
       <About />
-      <section className="services" id="services">
-        <h1 className="section-heading"><span>services</span></h1>
-        <div className="services__box-container">
-          <div className="services__box">
-            <i className="fas fa-user-md" />
-            <h3>Psicología clínica</h3>
-            <p>
-              El especialista trata de identificar y rehabilitar procesos de
-              pensamiento o conductas insanas
-            </p>
-            <Link to="/ViewerDoctor">
-              <button type="submit" className="btn-appointment">doctors</button>
-            </Link>
-          </div>
-
-          <div className="services__box">
-            <i className="fa fa-user-doctor" />
-            <h3>Psicología clínica</h3>
-            <p>
-              El especialista trata de identificar y rehabilitar procesos de
-              pensamiento o conductas insanas
-            </p>
-            <Link to="/ViewerDoctor">
-              <button type="submit" className="btn-appointment">doctors</button>
-            </Link>
-          </div>
-
-          <div className="services__box">
-            <i className="fa fa-user-doctor" />
-            <h3>Psicología clínica</h3>
-            <p>
-              El especialista trata de identificar y rehabilitar procesos de
-              pensamiento o conductas insanas
-            </p>
-            <Link to="/ViewerDoctor">
-              <button type="submit" className="btn-appointment">doctors</button>
-            </Link>
-          </div>
-
-          <div className="services__box">
-            <i className="fa fa-user-doctor" />
-            <h3>Psicología clínica</h3>
-            <p>
-              El especialista trata de identificar y rehabilitar procesos de
-              pensamiento o conductas insanas
-            </p>
-            <Link to="/ViewerDoctor">
-              <button type="submit" className="btn-appointment">doctors</button>
-            </Link>
-          </div>
-
-          <div className="services__box">
-            <i className="fa fa-user-doctor" />
-            <h3>Psicología clínica</h3>
-            <p>
-              El especialista trata de identificar y rehabilitar procesos de
-              pensamiento o conductas insanas
-            </p>
-            <Link to="/ViewerDoctor">
-              <button type="submit" className="btn-appointment">doctors</button>
-            </Link>
-          </div>
-
-          <div className="services__box">
-            <i className="fa fa-user-doctor" />
-            <h3>Psicología clínica</h3>
-            <p>
-              El especialista trata de identificar y rehabilitar procesos de
-              pensamiento o conductas insanas
-            </p>
-            <Link to="/ViewerDoctor">
-              <button type="submit" className="btn-appointment">doctors</button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Services />
       <Doctors />
       <section className="footer">
         <div className="footer__box-container">
