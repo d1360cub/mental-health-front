@@ -232,63 +232,108 @@
   "services": [
     {
       "id": 1,
-      "services": "motivacion"
+      "icon": "fa fa-user-doctor",
+      "service": "motivacion",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 2,
-      "services": "violencia"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "violencia",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 3,
-      "services": "autoestima"
+      "icon": "fa fa-user-doctor",
+      "service": "autoestima",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 4,
-      "services": "manejo de emociones"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "manejo de emociones",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 5,
-      "services": "estres"
+      "icon": "fa fa-user-doctor",
+      "service": "estres",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 6,
-      "services": "problemas de pareja"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "problemas de pareja",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 7,
-      "services": "trauma"
+      "icon": "fa fa-user-doctor",
+      "service": "trauma",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 8,
-      "services": "sexualidad"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "sexualidad",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 9,
-      "services": "duelo"
+      "icon": "fa fa-user-doctor",
+      "service": "duelo",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 10,
-      "services": "problemas de sueño"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "problemas de sueño",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 11,
-      "services": "problemas familiares"
+      "icon": "fa fa-user-doctor",
+      "service": "problemas familiares",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 12,
-      "services": "trastornos conducto alimentaria"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "trastornos conducto alimentaria",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 13,
-      "services": "control de impulsos"
+      "icon": "fa fa-user-doctor",
+      "service": "control de impulsos",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 14,
-      "services": "trabajo"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "trabajo",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 15,
-      "services": "otros"
+      "icon": "fa fa-user-doctor",
+      "service": "otros",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     }
   ],
   "doctors": [
