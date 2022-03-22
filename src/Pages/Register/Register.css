@@ -1,35 +1,23 @@
-.register{
+.landingReg{
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 40px;
-  color: #1977cc;
-  padding-top: 50px;
-}
-
-.subtitle {
+.subtitleReg {
   font-family: 'Poppins', sans-serif;
   font-size: 28px;
   font-weight: 600;
   line-height: 40px;
+  padding-top: 10rem;
 }
 
 .question {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  padding: 1rem 1rem;
 }
 
-.question__patient {
-  color: #1977cc;
-}
 
 fieldset {
   border: none;
@@ -42,7 +30,13 @@ label, .question, .session {
   font-weight: 400;
   line-height: 18px;
   text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-  padding: 2rem 0rem;
+}
+
+.session {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  align-items: center;
 }
 
 a {
@@ -65,14 +59,27 @@ input:focus {
   background: #F3F3F3;
 }
 
-button {
-  background-color: #1977cc;
-  border: none;
-  border-radius: 18px;
-  font-family: 'Poly', serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 36px;
-  width: 200px;
-  color: white;
+.btn__centered {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+
+  html {
+    font-size: 55%;
+  }
+
+  .landing {
+    margin: 4rem;
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  html {
+    font-size: 65%;
+  }
+
 }

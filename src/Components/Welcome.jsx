@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './Welcome.css';
 
 function Welcome({ information }) {
@@ -6,7 +7,7 @@ function Welcome({ information }) {
       <div className="home-Welcome-message">
         {' '}
         bienvenid@
-        {information.license ? <span>Dr</span> : <></> }
+        {information.license ? <span>Dr</span> : <div />}
         <br />
         <span id="home-Welcome--doctor">
           <h3>

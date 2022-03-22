@@ -182,218 +182,304 @@
     },
     {
       "name": "Diego",
-      "last-name": "dfsfdasf",
-      "cellphone": "45345345",
-      "email": "ab@ab.com",
+      "lastName": "dfsfdasf",
+      "phone": "45345345",
+      "mail": "ab@ab.com",
       "password": "123456",
       "id": 21
     },
     {
       "name": "Comunicaciones y administracion(2)",
-      "last-name": "fdfa",
-      "cellphone": "45345345",
-      "email": "ab@ab.com",
+      "lastName": "fdfa",
+      "phone": "45345345",
+      "mail": "ab@ab.com",
       "password": "tgfhfghgh",
       "id": 22
     },
     {
       "name": "Release 1.0",
-      "last-name": "dfsfdasf",
-      "cellphone": "12132342",
-      "email": "ab@ab.com",
+      "lastName": "dfsfdasf",
+      "phone": "12132342",
+      "mail": "ab@ab.com",
       "password": "fdsfd",
       "id": 23
+    },
+    {
+      "name": "24",
+      "lastName": "24",
+      "phone": "24",
+      "mail": "prueba@form.com",
+      "password": "24",
+      "id": 24
+    },
+    {
+      "name": "25",
+      "lastName": "25",
+      "phone": "25",
+      "mail": "prueba@form.com",
+      "password": "25",
+      "id": 25
+    },
+    {
+      "name": "26",
+      "lastName": "26",
+      "phone": "26",
+      "mail": "prueba@form.com",
+      "password": "26",
+      "id": 26
     }
   ],
   "services": [
     {
       "id": 1,
-      "services": "motivacion"
+      "icon": "fa fa-user-doctor",
+      "service": "motivacion",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 2,
-      "services": "violencia"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "violencia",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 3,
-      "services": "autoestima"
+      "icon": "fa fa-user-doctor",
+      "service": "autoestima",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 4,
-      "services": "manejo de emociones"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "manejo de emociones",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 5,
-      "services": "estres"
+      "icon": "fa fa-user-doctor",
+      "service": "estres",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 6,
-      "services": "problemas de pareja"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "problemas de pareja",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 7,
-      "services": "trauma"
+      "icon": "fa fa-user-doctor",
+      "service": "trauma",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 8,
-      "services": "sexualidad"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "sexualidad",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 9,
-      "services": "duelo"
+      "icon": "fa fa-user-doctor",
+      "service": "duelo",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 10,
-      "services": "problemas de sueño"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "problemas de sueño",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 11,
-      "services": "problemas familiares"
+      "icon": "fa fa-user-doctor",
+      "service": "problemas familiares",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 12,
-      "services": "trastornos conducto alimentaria"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "trastornos conducto alimentaria",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": true
     },
     {
       "id": 13,
-      "services": "control de impulsos"
+      "icon": "fa fa-user-doctor",
+      "service": "control de impulsos",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 14,
-      "services": "trabajo"
+      "icon": "fa-solid fa-star-of-life",
+      "service": "trabajo",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     },
     {
       "id": 15,
-      "services": "otros"
+      "icon": "fa fa-user-doctor",
+      "service": "otros",
+      "description": "El especialista trata de identificar y rehabilitar procesos de pensamiento o conductas insanas",
+      "publish": false
     }
   ],
-  "doctors" : [{
-    "name":"Wendy Medina",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":1
-}, {
-    "name":"Marina Serrato",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":2
-},
-{
-    "name":"Fabian Perez",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":3
-}, {
-    "name":"Claudia Gonzales",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":4
-},{
-    "name":"José Gomez",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":5
-}, {
-    "name":"Ferney Medina",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":6
-},
-{
-    "name":"Elsa Serrato",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":1
-}, {
-    "name":"Oscar Lopez",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":2
-},
-{
-    "name":"Isabel Contreras",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":3
-}, {
-    "name":"Juan Morales",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":4
-},{
-    "name":"Daissy Monrroy",
-    "services": "Psicólogia educacional",
-    "description": "Psicóloga con especialidad en el seguimiento en niños",
-    "id":5
-}, {
-    "name":"Ruben Rodriguez",
-    "services": "Psicólogia clínica",
-    "description": "Experiencia en tratamientos clínicos en adultos",
-    "id":6
-},
-{
-  "name":"Wendy Medina",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":1
-}, {
-  "name":"Marina Serrato",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":2
-},
-{
-  "name":"Fabian Perez",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":3
-}, {
-  "name":"Claudia Gonzales",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":4
-},{
-  "name":"José Gomez",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":5
-}, {
-  "name":"Ferney Medina",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":6
-},
-{
-  "name":"Elsa Serrato",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":1
-}, {
-  "name":"Oscar Lopez",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":2
-},
-{
-  "name":"Isabel Contreras",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":3
-}, {
-  "name":"Juan Morales",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":4
-},{
-  "name":"Daissy Monrroy",
-  "services": "Psicólogia educacional",
-  "description": "Psicóloga con especialidad en el seguimiento en niños",
-  "id":5
-}, {
-  "name":"Ruben Rodriguez",
-  "services": "Psicólogia clínica",
-  "description": "Experiencia en tratamientos clínicos en adultos",
-  "id":6
-}]
-  
+  "doctors": [
+    {
+      "name": "Wendy Medina",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Marina Serrato",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Fabian Perez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Claudia Gonzales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "José Gomez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ferney Medina",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Elsa Serrato",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Oscar Lopez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Isabel Contreras",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Juan Morales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "Daissy Monrroy",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ruben Rodriguez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Wendy Medina",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Marina Serrato",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Fabian Perez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Claudia Gonzales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "José Gomez",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ferney Medina",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Elsa Serrato",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Oscar Lopez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Isabel Contreras",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Juan Morales",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "Daissy Monrroy",
+      "services": "Psicólogia educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ruben Rodriguez",
+      "services": "Psicólogia clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    }
+  ]
 }

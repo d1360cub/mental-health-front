@@ -29,16 +29,16 @@ function ViewerDoctor() {
   return (
     <div>
       <section className="home" id="home">
-        {
-          doctorFilter.map((element) => <Welcome information={element} key={element.id} />)
-        }
+        {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
         <div className="home_content">
           <div className="home_content--citas">
-            {
-            patientsFilter.map((element) => (
-              <CardViewer information={element} links={links} key={element.id} />
-            ))
-          }
+            {patientsFilter.map((element) => (
+              <CardViewer
+                information={element}
+                links={links}
+                key={element.id}
+              />
+            ))}
           </div>
           <div className="home_content--calender">
             <img src={imageCalender} alt="" />
