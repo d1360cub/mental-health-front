@@ -13,9 +13,14 @@ export default function Doctors() {
   const [porCard, setPorCard] = useState(8);
   const maximo = doctors.length / porCard;
 
-  const fetchDoctors = async () => {
-    const data = await getDoctors();
+  const fetchDoctors = async (query = {}) => {
+    const data = await getDoctors(query);
     setDoctors(data);
+    setCard(1);
+  };
+
+  const handleSearch = (searchQuery) => {
+    fetchDoctors({ services_like: searchQuery });
   };
 
   useEffect(() => {
@@ -26,7 +31,7 @@ export default function Doctors() {
     <section className="doctors" id="doctors">
       <h1 className="section-heading"><span>Doctors</span></h1>
       <div>
-        <Searchdoctor />
+        <Searchdoctor onSearch={handleSearch} />
 
       </div>
       <div>
