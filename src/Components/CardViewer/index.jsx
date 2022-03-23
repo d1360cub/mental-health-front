@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Enlace from './Enlace';
+import Enlace from '../Enlace';
 import './CardViewer.css';
 
 function CardViewer({ information, links }) {
