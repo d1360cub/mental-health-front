@@ -339,145 +339,145 @@
   "doctors": [
     {
       "name": "Wendy Medina",
-      "services": "Psicólogia educacional",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 1
     },
     {
       "name": "Marina Serrato",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 2
     },
     {
       "name": "Fabian Perez",
-      "services": "Psicólogia educacional",
+      "services": "Psicología duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 3
     },
     {
       "name": "Claudia Gonzales",
-      "services": "Psicólogia clínica",
+      "services": "Manejo de emociones",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 4
     },
     {
       "name": "José Gomez",
-      "services": "Psicólogia educacional",
+      "services": "Psicología del duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 5
     },
     {
       "name": "Ferney Medina",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 6
     },
     {
       "name": "Elsa Serrato",
-      "services": "Psicólogia educacional",
+      "services": "Manejo de emociones",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 1
     },
     {
       "name": "Oscar Lopez",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 2
     },
     {
       "name": "Isabel Contreras",
-      "services": "Psicólogia educacional",
+      "services": "Psicología del duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 3
     },
     {
       "name": "Juan Morales",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 4
     },
     {
       "name": "Daissy Monrroy",
-      "services": "Psicólogia educacional",
+      "services": "Manejo de emociones",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 5
     },
     {
       "name": "Ruben Rodriguez",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 6
     },
     {
       "name": "Wendy Medina",
-      "services": "Psicólogia educacional",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 1
     },
     {
       "name": "Marina Serrato",
-      "services": "Psicólogia clínica",
+      "services": "Manejo de emociones",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 2
     },
     {
       "name": "Fabian Perez",
-      "services": "Psicólogia educacional",
+      "services": "Psicología del duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 3
     },
     {
       "name": "Claudia Gonzales",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 4
     },
     {
       "name": "José Gomez",
-      "services": "Psicólogia educacional",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 5
     },
     {
       "name": "Ferney Medina",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 6
     },
     {
       "name": "Elsa Serrato",
-      "services": "Psicólogia educacional",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 1
     },
     {
       "name": "Oscar Lopez",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 2
     },
     {
       "name": "Isabel Contreras",
-      "services": "Psicólogia educacional",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 3
     },
     {
       "name": "Juan Morales",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 4
     },
     {
       "name": "Daissy Monrroy",
-      "services": "Psicólogia educacional",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 5
     },
     {
       "name": "Ruben Rodriguez",
-      "services": "Psicólogia clínica",
+      "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 6
     }
