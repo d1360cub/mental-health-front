@@ -42,7 +42,7 @@ export default function Doctors() {
           (card - 1) * porCard,
           (card - 1) * porCard + porCard,
         // eslint-disable-next-line react/no-array-index-key
-        ).map((doctor, index) => <Doctorcard key={index} image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id} />)}
+        ).map((doctor) => <Doctorcard key={doctor.id} image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id} />)}
       </div>
     </section>
   );
