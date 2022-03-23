@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { HashLink as Link } from 'react-router-hash-link';
 
 function Enlace({ path }) {
@@ -8,4 +8,10 @@ function Enlace({ path }) {
     </Link>
   );
 }
+Enlace.propTypes = {
+  path: PropTypes.string,
+};
+Enlace.defaultProps = {
+  path: '',
+};
 export default Enlace;

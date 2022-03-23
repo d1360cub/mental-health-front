@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import './Welcome.css';
 
 function Welcome({ information }) {
@@ -41,4 +41,10 @@ function Welcome({ information }) {
     </div>
   );
 }
+Welcome.propTypes = {
+  information: PropTypes.objectOf(PropTypes.string),
+};
+Welcome.defaultProps = {
+  information: {},
+};
 export default Welcome;
