@@ -21,9 +21,6 @@ function Register() {
     <div className="register">
       <div className="landingReg">
         <div className="subtitleReg">Registro</div>
-        <div className="question">
-          <Link to="/">¿Quieres prestar tus servicios con nosotros?</Link>
-        </div>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <label htmlFor="name">
@@ -95,6 +92,11 @@ function Register() {
           ¿Ya eres un miembro?
           <Link to="/login">Inicia sesión</Link>
         </div>
+        <Link to="/doctor-warning">
+          <button type="submit" className="btn-appointment">
+            ¿Doctor?
+          </button>
+        </Link>
       </div>
     </div>
   );

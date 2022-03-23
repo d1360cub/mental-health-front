@@ -8,6 +8,8 @@ import ViewerPatient from './Pages/viewerPatient/ViewerPatient';
 import Login from './Pages/Login/Login';
 import ProtectedRoutes from './Routes/ProtectedRoutes';
 import Page404 from './Pages/Page404/Page404';
+import DoctorSignup from './Pages/DoctorSignup/DoctorSignup';
+import Modal from './Components/Modal/Modal';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/" exact element={<HomePage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/doctor-signup" element={<DoctorSignup />} />
+        <Route path="/doctor-warning" element={<Modal />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
