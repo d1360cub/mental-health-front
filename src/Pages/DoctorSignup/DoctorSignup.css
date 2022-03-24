@@ -1,0 +1,29 @@
+.landing__doctor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitle__doctor {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+  padding: 10rem 1rem 1rem;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  border: 1px solid #1977cc;
+  border-radius: 6px;
+  vertical-align: text-top;
+}
+
+.table {
+  display: grid;
+  grid-template-rows: 1fr;
+}
