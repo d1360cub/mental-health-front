@@ -27,8 +27,6 @@ label, .first-time {
 
 input {
   border: 1px solid #1977cc;
-  border-top-style: solid;
-  border-left-style: solid;
   border-radius: 6px;
   height: 30px;
 }
