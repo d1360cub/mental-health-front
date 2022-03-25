@@ -26,11 +26,11 @@ function CardViewer({ information, links }) {
             ,
             {' '}
           </span>
-          <span>
+          {/* <span>
             {information.mail}
             ,
             {' '}
-          </span>
+          </span> */}
         </p>
         <div className="home_content__enlaces">
           {links.map((element) => (

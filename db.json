@@ -179,54 +179,6 @@
       "phone": 3266835993,
       "license": "76839",
       "services": ""
-    },
-    {
-      "name": "Diego",
-      "lastName": "dfsfdasf",
-      "phone": "45345345",
-      "mail": "ab@ab.com",
-      "password": "123456",
-      "id": 21
-    },
-    {
-      "name": "Comunicaciones y administracion(2)",
-      "lastName": "fdfa",
-      "phone": "45345345",
-      "mail": "ab@ab.com",
-      "password": "tgfhfghgh",
-      "id": 22
-    },
-    {
-      "name": "Release 1.0",
-      "lastName": "dfsfdasf",
-      "phone": "12132342",
-      "mail": "ab@ab.com",
-      "password": "fdsfd",
-      "id": 23
-    },
-    {
-      "name": "24",
-      "lastName": "24",
-      "phone": "24",
-      "mail": "prueba@form.com",
-      "password": "24",
-      "id": 24
-    },
-    {
-      "name": "25",
-      "lastName": "25",
-      "phone": "25",
-      "mail": "prueba@form.com",
-      "password": "25",
-      "id": 25
-    },
-    {
-      "name": "26",
-      "lastName": "26",
-      "phone": "26",
-      "mail": "prueba@form.com",
-      "password": "26",
-      "id": 26
     }
   ],
   "services": [
