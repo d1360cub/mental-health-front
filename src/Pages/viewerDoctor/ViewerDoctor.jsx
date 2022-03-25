@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome';
-// import imageCalender from '../../image/calendario.png';
 import { listAllUsers } from '../../services/user';
 import Calendar from '../../Components/Calendar';
 import '../HomeViewer.css';
