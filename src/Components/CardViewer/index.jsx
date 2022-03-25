@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/prop-types */
-import Enlace from './Enlace';
+import PropTypes from 'prop-types';
+import Enlace from '../Enlace';
 import './CardViewer.css';
 
 function CardViewer({ information, links }) {
@@ -17,9 +16,21 @@ function CardViewer({ information, links }) {
           {information.lastName}
         </h3>
         <p>
-          <span>{information.services}, </span>
-          <span>{information.phone}, </span>
-          <span>{information.mail}, </span>
+          <span>
+            {information.services}
+            ,
+            {' '}
+          </span>
+          <span>
+            {information.phone}
+            ,
+            {' '}
+          </span>
+          <span>
+            {information.mail}
+            ,
+            {' '}
+          </span>
         </p>
         <div className="home_content__enlaces">
           {links.map((element) => (
@@ -30,4 +41,13 @@ function CardViewer({ information, links }) {
     </div>
   );
 }
+CardViewer.propTypes = {
+  information: PropTypes.objectOf(PropTypes.string),
+  links: PropTypes.arrayOf(PropTypes.string),
+};
+CardViewer.defaultProps = {
+  information: {},
+  links: [],
+};
+
 export default CardViewer;
