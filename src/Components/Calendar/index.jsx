@@ -27,6 +27,7 @@ function FullCalendarApp() {
       slotMaxTime="19:00"
       allDaySlot={false}
       expandRows
+      height="100%"
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
       initialView="timeGridWeek"
       slotLabelFormat={{ hour: 'numeric', minute: '2-digit' }}
@@ -36,8 +37,6 @@ function FullCalendarApp() {
       events={events}
       eventColor="green"
       nowIndicator="true"
-      // dateClick={(e) => console.log(e.dateStr)}
-      // eventClick={(e) => console.log(e.event.id)}
     />
   );
 }

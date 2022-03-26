@@ -13,3 +13,6 @@
   color: var(--black);
   line-height: 1.8;
 }
+.home-Welcome__message{
+  font-size: 16px;
+}

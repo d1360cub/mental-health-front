@@ -3,7 +3,7 @@ import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome';
 import { listAllUsers } from '../../services/user';
 import Calendar from '../../Components/Calendar';
-import '../HomeViewer.css';
+import './ViewerDoctor.css';
 
 function ViewerDoctor() {
   const [patients, setPatients] = useState([]);
@@ -22,8 +22,7 @@ function ViewerDoctor() {
   }, []);
 
   const links = [
-    { path: 'Chat', url: '#', id: 1 },
-    { path: 'H. clinica', url: '#', id: 2 },
+    { path: 'H. clinica', url: '#', id: '2' },
   ];
 
   return (
@@ -41,7 +40,7 @@ function ViewerDoctor() {
             ))}
           </div>
           <div className="home_content--calender">
-            <Calendar />
+            <Calendar className="home_content__calenderio" />
           </div>
         </div>
       </section>

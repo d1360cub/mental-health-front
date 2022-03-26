@@ -22,8 +22,11 @@
   width: 60%;
   font-size: 1.5rem; ;
 }
+.home-content__card--perfil p,h3{
+  font-size: 1.2rem;
+}
 .home_content--imagen  img{
-  width: 10rem;
+  width: 8rem;
   border-radius:100%; 
   box-shadow: 2px 2px 5px rgb(194, 159, 117);
 }
