@@ -1,16 +1,17 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 import PropTypes from 'prop-types';
+import './InfoPersonal.css';
 
 function InfoPersonal({ name, lastName, mail, nacionalidad, residencia }) {
   return (
-    <div>
-      <img src="" alt="" />
-      <h3>
+    <div className="infopersonal">
+      <h3 className="nombre">
         {name}
         {' '}
         {lastName}
       </h3>
-      <ul>
+      <ul className="informacion">
         <li>{nacionalidad}</li>
         <li>{residencia}</li>
         <li>{mail}</li>

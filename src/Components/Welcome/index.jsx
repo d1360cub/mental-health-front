@@ -23,7 +23,7 @@ function Welcome({ information }) {
             <div className="home_content__parrafo">
               <p>
                 {' '}
-                <strong> Tus proximas citas son:</strong>
+                <strong> Tus proximas citas</strong>
                 {' '}
               </p>
             </div>
@@ -32,7 +32,7 @@ function Welcome({ information }) {
             <div className="home_content__parrafo">
               <p>
                 {' '}
-                <strong> Tu proxima cita es con:</strong>
+                <strong> Tu proxima cita</strong>
                 {' '}
               </p>
             </div>

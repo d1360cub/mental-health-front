@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import CardViewer from '../../Components/CardViewer';
-import Welcome from '../../Components/Welcome';
 import Checklist from '../../Components/Checklist/Checklist';
 import InfoPersonal from '../../Components/InfoPersonal/InfoPersonal';
 import { listAllUsers, getUser } from '../../services/user';
@@ -35,7 +35,6 @@ function ViewerPatient() {
   return (
     <div>
       <section className="home" id="home">
-        {patientsFilterOnly.map((element) => <Welcome information={element} key={element.id} />)}
         <div>
           <InfoPersonal
             key={infoPer?.id}
