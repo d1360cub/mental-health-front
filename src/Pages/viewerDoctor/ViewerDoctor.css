@@ -1,4 +1,4 @@
-.home{
+.homeDoctor{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -10,7 +10,7 @@
     padding: 0.6rem;
   }
 
-  .home .home_content {
+  .homeDoctor .home_content {
     display: grid;
     grid-template-columns: 1fr 2fr;
     height: 800px;

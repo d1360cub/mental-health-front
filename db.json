@@ -5,7 +5,9 @@
       "name": "Mya",
       "lastName": "Abernathy",
       "mail": "Kira.Paucek20@gmail.com",
-      "phone": "2565136111",
+      "phone": 2565136111,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "autoestima"
     },
@@ -14,7 +16,9 @@
       "name": "Lina",
       "lastName": "Watsica",
       "mail": "Cedrick.Collier1@hotmail.com",
-      "phone": "9252008554",
+      "phone": 9252008554,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "autoestima"
     },
@@ -23,7 +27,9 @@
       "name": "Whitney",
       "lastName": "Altenwerth",
       "mail": "Pierre.Bogan93@gmail.com",
-      "phone": "9293187854",
+      "phone": 9293187854,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "estres"
     },
@@ -32,7 +38,9 @@
       "name": "Tomas",
       "lastName": "Marvin",
       "mail": "Miracle76@gmail.com",
-      "phone": "2904911353",
+      "phone": 2904911353,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "trauma"
     },
@@ -41,7 +49,9 @@
       "name": "Gregg",
       "lastName": "Gleason",
       "mail": "Aliyah52@hotmail.com",
-      "phone": "6666394718",
+      "phone": 6666394718,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "duelo"
     },
@@ -50,7 +60,9 @@
       "name": "Adrien",
       "lastName": "Bernier",
       "mail": "Cleora.Rempel26@hotmail.com",
-      "phone": "7705614617",
+      "phone": 7705614617,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "trabajo"
     },
@@ -59,7 +71,9 @@
       "name": "Ned",
       "lastName": "Mills",
       "mail": "Chadrick_Reinger@yahoo.com",
-      "phone": "14826390711",
+      "phone": 14826390711,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "otros"
     },
@@ -68,7 +82,9 @@
       "name": "Charlie",
       "lastName": "Johnston",
       "mail": "Rebeka74@yahoo.com",
-      "phone": "9186406823",
+      "phone": 9186406823,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "problemas familiares"
     },
@@ -77,7 +93,9 @@
       "name": "Oliver",
       "lastName": "Wolff",
       "mail": "Aurelia47@yahoo.com",
-      "phone": "7913120022",
+      "phone": 7913120022,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "problemas de pareja"
     },
@@ -86,7 +104,9 @@
       "name": "Marcos",
       "lastName": "Reynolds",
       "mail": "Shemar.McLaughlin3@hotmail.com",
-      "phone": "3366814995",
+      "phone": 3366814995,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "violencia"
     },
@@ -95,7 +115,9 @@
       "name": "Norma",
       "lastName": "Kautzer",
       "mail": "Houston_Runte69@yahoo.com",
-      "phone": "5313256644",
+      "phone": 5313256644,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "estres"
     },
@@ -104,7 +126,9 @@
       "name": "Ramiro",
       "lastName": "Heidenreich",
       "mail": "Penelope27@gmail.com",
-      "phone": "7814119784",
+      "phone": 7814119784,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "trabajo"
     },
@@ -113,7 +137,9 @@
       "name": "Lenny",
       "lastName": "Lakin",
       "mail": "Dianna_Runte15@yahoo.com",
-      "phone": "2703470767",
+      "phone": 2703470767,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "",
       "services": "autoestima"
     },
@@ -122,7 +148,9 @@
       "name": "Rogers",
       "lastName": "Homenick",
       "mail": "Barbara.Davis@yahoo.com",
-      "phone": "4193791869",
+      "phone": 4193791869,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "96840",
       "services": ""
     },
@@ -131,7 +159,9 @@
       "name": "Brooke",
       "lastName": "Gutkowski",
       "mail": "Elna.Walker@gmail.com",
-      "phone": "8068829124",
+      "phone": 8068829124,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "63353",
       "services": ""
     },
@@ -140,7 +170,9 @@
       "name": "Caitlyn",
       "lastName": "Schuppe",
       "mail": "Triston.Nicolas42@yahoo.com",
-      "phone": "8289605807",
+      "phone": 8289605807,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "22143",
       "services": ""
     },
@@ -149,7 +181,9 @@
       "name": "Fae",
       "lastName": "Jast",
       "mail": "Rosina.Kling@yahoo.com",
-      "phone": "8955625079",
+      "phone": 8955625079,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "99212",
       "services": ""
     },
@@ -158,7 +192,9 @@
       "name": "Corrine",
       "lastName": "Schuppe",
       "mail": "Demarcus_Gaylord@hotmail.com",
-      "phone": "3106323443",
+      "phone": 3106323443,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "60877",
       "services": ""
     },
@@ -167,7 +203,9 @@
       "name": "Maxime",
       "lastName": "Gutkowski",
       "mail": "Justyn_Bernier91@gmail.com",
-      "phone": "8427001275",
+      "phone": 8427001275,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "65635",
       "services": ""
     },
@@ -176,7 +214,9 @@
       "name": "Dorcas",
       "lastName": "Lang",
       "mail": "Mohammed_Bahringer82@gmail.com",
-      "phone": "3266835993",
+      "phone": 3266835993,
+      "nacionalidad": "Colombia",
+      "residencia": "Bogotá",
       "license": "76839",
       "services": ""
     }
@@ -290,145 +330,169 @@
   ],
   "doctors": [
     {
-      "name": "Wendy Medina",
+      "name": "Wendy",
+      "lastname": "Medina",
       "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 1
     },
     {
-      "name": "Marina Serrato",
+      "name": "Marina",
+      "lastname": "Serrato",
       "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 2
     },
     {
-      "name": "Fabian Perez",
+      "name": "Fabian",
+      "lastname": "Perez",
       "services": "Psicología duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 3
     },
     {
-      "name": "Claudia Gonzales",
+      "name": "Claudia",
+      "lastname": "Gonzales",
       "services": "Manejo de emociones",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 4
     },
     {
-      "name": "José Gomez",
+      "name": "José",
+      "lastname": "Gomez",
       "services": "Psicología del duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 5
     },
     {
-      "name": "Ferney Medina",
+      "name": "Ferney",
+      "lastname": "Medina",
       "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 6
     },
     {
-      "name": "Elsa Serrato",
+      "name": "Elsa",
+      "lastname": "Serrato",
       "services": "Manejo de emociones",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 1
     },
     {
-      "name": "Oscar Lopez",
+      "name": "Oscar",
+      "lastname": "Lopez",
       "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 2
     },
     {
-      "name": "Isabel Contreras",
+      "name": "Isabel",
+      "lastname": "Contreras",
       "services": "Psicología del duelo",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 3
     },
     {
-      "name": "Juan Morales",
+      "name": "Juan",
+      "lastname": "Morales",
       "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 4
     },
     {
-      "name": "Daissy Monrroy",
+      "name": "Daissy",
+      "lastname": "Monrroy",
       "services": "Manejo de emociones",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ruben",
+      "lastname": "Rodriguez",
+      "services": "Psicología clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Wendy",
+      "lastname": "Medina",
+      "services": "Psicología educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Marina",
+      "lastname": "Serrato",
+      "services": "Manejo de emociones",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Fabian",
+      "lastname": "Perez",
+      "services": "Psicología del duelo",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Claudia",
+      "lastname": "Gonzales",
+      "services": "Psicología clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "José",
+      "lastname": "Gomez",
+      "services": "Psicología educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 5
+    },
+    {
+      "name": "Ferney",
+      "lastname": "Medina",
+      "services": "Psicología clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 6
+    },
+    {
+      "name": "Elsa",
+      "lastname": "Serrato",
+      "services": "Psicología educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 1
+    },
+    {
+      "name": "Oscar",
+      "lastname": "Lopez",
+      "services": "Psicología clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 2
+    },
+    {
+      "name": "Isabel",
+      "lastname": "Contreras",
+      "services": "Psicología educacional",
+      "description": "Psicóloga con especialidad en el seguimiento en niños",
+      "id": 3
+    },
+    {
+      "name": "Juan ",
+      "lastname": "Morales",
+      "services": "Psicología clínica",
+      "description": "Experiencia en tratamientos clínicos en adultos",
+      "id": 4
+    },
+    {
+      "name": "Daissy",
+      "lastname": "Monrroy",
+      "services": "Psicología educacional",
       "description": "Psicóloga con especialidad en el seguimiento en niños",
       "id": 5
     },
     {
       "name": "Ruben Rodriguez",
-      "services": "Psicología clínica",
-      "description": "Experiencia en tratamientos clínicos en adultos",
-      "id": 6
-    },
-    {
-      "name": "Wendy Medina",
-      "services": "Psicología educacional",
-      "description": "Psicóloga con especialidad en el seguimiento en niños",
-      "id": 1
-    },
-    {
-      "name": "Marina Serrato",
-      "services": "Manejo de emociones",
-      "description": "Experiencia en tratamientos clínicos en adultos",
-      "id": 2
-    },
-    {
-      "name": "Fabian Perez",
-      "services": "Psicología del duelo",
-      "description": "Psicóloga con especialidad en el seguimiento en niños",
-      "id": 3
-    },
-    {
-      "name": "Claudia Gonzales",
-      "services": "Psicología clínica",
-      "description": "Experiencia en tratamientos clínicos en adultos",
-      "id": 4
-    },
-    {
-      "name": "José Gomez",
-      "services": "Psicología educacional",
-      "description": "Psicóloga con especialidad en el seguimiento en niños",
-      "id": 5
-    },
-    {
-      "name": "Ferney Medina",
-      "services": "Psicología clínica",
-      "description": "Experiencia en tratamientos clínicos en adultos",
-      "id": 6
-    },
-    {
-      "name": "Elsa Serrato",
-      "services": "Psicología educacional",
-      "description": "Psicóloga con especialidad en el seguimiento en niños",
-      "id": 1
-    },
-    {
-      "name": "Oscar Lopez",
-      "services": "Psicología clínica",
-      "description": "Experiencia en tratamientos clínicos en adultos",
-      "id": 2
-    },
-    {
-      "name": "Isabel Contreras",
-      "services": "Psicología educacional",
-      "description": "Psicóloga con especialidad en el seguimiento en niños",
-      "id": 3
-    },
-    {
-      "name": "Juan Morales",
-      "services": "Psicología clínica",
-      "description": "Experiencia en tratamientos clínicos en adultos",
-      "id": 4
-    },
-    {
-      "name": "Daissy Monrroy",
-      "services": "Psicología educacional",
-      "description": "Psicóloga con especialidad en el seguimiento en niños",
-      "id": 5
-    },
-    {
-      "name": "Ruben Rodriguez",
+      "lastname": "Rodriguez",
       "services": "Psicología clínica",
       "description": "Experiencia en tratamientos clínicos en adultos",
       "id": 6

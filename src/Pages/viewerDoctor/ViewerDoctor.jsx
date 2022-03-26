@@ -27,7 +27,7 @@ function ViewerDoctor() {
 
   return (
     <div>
-      <section className="home" id="home">
+      <section className="homeDoctor">
         {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
         <div className="home_content">
           <div className="home_content--citas">
@@ -40,7 +40,7 @@ function ViewerDoctor() {
             ))}
           </div>
           <div className="home_content--calender">
-            <Calendar className="home_content__calenderio" />
+            <Calendar />
           </div>
         </div>
       </section>
