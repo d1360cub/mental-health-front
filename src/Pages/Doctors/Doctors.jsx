@@ -4,7 +4,7 @@ import './Doctors.css';
 import Doctorcard from '../../Components/Doctorcard/Doctorcard';
 import Searchdoctor from '../../Components/Doctorcard/Searchdoctor';
 import Pagination from '../../Components/Doctorcard/Pagination';
-import getDoctors from '../../services/doctorCard';
+import { getDoctors } from '../../services/doctor';
 
 export default function Doctors() {
   const [doctors, setDoctors] = useState([]);
