@@ -3,7 +3,7 @@ import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome';
 import imageCalender from '../../image/calendario.png';
 import { listAllUsers } from '../../services/user';
-import '../HomeViewer.css';
+import './ViewerPatient.css';
 
 function ViewerPatient() {
   const [patients, setPatients] = useState([]);
