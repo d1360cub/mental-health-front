@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome';
-import imageCalender from '../../image/calendario.png';
+import Checklist from '../../Components/Checklist/Checklist';
 import { listAllUsers } from '../../services/user';
 import '../HomeViewer.css';
 
@@ -40,8 +40,8 @@ function ViewerPatient() {
               />
             ))}
           </div>
-          <div className="home_content--calender">
-            <img src={imageCalender} alt="" />
+          <div>
+            <Checklist />
           </div>
         </div>
       </section>

@@ -1,0 +1,127 @@
+html {
+    height: 100%;
+    display: flex;
+  }
+  body {
+    width: 100%;
+    margin: auto;
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .todo-list {
+    background: #fff;
+    font-size: 15px;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+   
+   .button {
+    outline: none;
+    padding: 8px;
+    font-size: 15px;
+    border: 0px solid;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--blue);
+  }
+  .button[disabled]{
+    opacity: 0.3;
+  }
+  
+ .file-input{
+    padding: 2px;
+    background: #f8f8f8;
+  }
+  
+  .file-input > .text {
+    outline: none;
+    padding: 0px 10px;
+    font-size: 15px;
+    width: 230px;
+    height: 46px;
+    background:transparent;
+    border: 0px solid;
+  }
+  
+  .todo {
+    display: block;
+    position: relative;
+    padding: 1em 1em 1em 16%;
+    margin: 0 auto;
+    cursor: pointer; 
+    border-bottom: solid 1px #ddd; 
+}
+  
+  .todo.new-item {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeIn .3s linear forwards;
+  }
+  
+  .todo__state {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #ddd);
+  }
+  
+  .todo__text {
+    text-align: left;
+}
+  
+  .todo__icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: var(--blue);
+    
+    fill: none;
+    stroke: stroke;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
+  
+.todo__circle {
+    stroke: stroke;
+    stroke-dasharray: 1 6;
+    stroke-width: 0;
+    
+    transform-origin: 13.5px 12.5px;
+    transform: scale(0.4) rotate(0deg);  
+}
+  
+  .todo__box { 
+    stroke-dasharray: 56.1053, 56.1053;
+    stroke-dashoffset: 0;
+    transition-delay: 0.2; 
+  }
+  .todo__check {
+    stroke:stroke;
+    stroke-dasharray: 9.8995, 9.8995; 
+    stroke-dashoffset: 9.8995;
+    transition-duration:0.4; 
+  }
+  .todo__line {
+    stroke-dasharray: 168, 1684; 
+    stroke-dashoffset: 168;
+  }
+     
+  @keyframes fadeIn {
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
