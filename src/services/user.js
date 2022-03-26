@@ -28,3 +28,13 @@ export const listAllUsers = async () => {
     throw new Error(error);
   }
 };
+
+export const getUser = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/user/${id}`);
+    const people = await response.json();
+    return people;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
