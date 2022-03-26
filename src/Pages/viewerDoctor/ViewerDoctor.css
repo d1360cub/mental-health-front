@@ -38,6 +38,12 @@
   .home_content__calenderio, .fc-view-harness, .fc-view-harness-active{
     height: 745px;
   }
+  .home-content__card--perfil{
+    text-align: left;
+  }
+  .home-Welcome{
+    text-align: left;
+  }
 
   @media(min-width:1600){
     .home_content__calender{

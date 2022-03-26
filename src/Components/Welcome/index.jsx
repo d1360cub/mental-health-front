@@ -21,7 +21,7 @@ function Welcome({ information }) {
             <div className="home_content__parrafo">
               <p>
                 {' '}
-                <strong> Tus proximas citas</strong>
+                <strong> Tus proximas citas son :</strong>
                 {' '}
               </p>
             </div>
