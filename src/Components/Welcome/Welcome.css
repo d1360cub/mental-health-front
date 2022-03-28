@@ -1,4 +1,3 @@
-
  .home-Welcome p {
   font-size: 1.8rem;
   color: var(--black);
@@ -12,4 +11,7 @@
   font-size: 1.8rem;
   color: var(--black);
   line-height: 1.8;
+}
+.home-Welcome__message{
+  font-size: 16px;
 }
