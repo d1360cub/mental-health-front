@@ -20,7 +20,7 @@
 .container-all{
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   visibility: hidden;
   opacity: 0;
   transition: all 600ms;
@@ -79,6 +79,10 @@
   display: inline;
 }
 @media screen and (max-width: 900px){
+  .container-all{
+    position: fixed;
+    top: 7rem;
+  }
   .popup{
     flex-direction: column;
     height: 100%;

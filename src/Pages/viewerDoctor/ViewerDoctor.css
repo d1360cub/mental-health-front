@@ -48,13 +48,6 @@
     text-align: left;
   }
 
-  @media(min-width:1600){
-    .home_content__calender{
-      width: 100%;
-      height: 70%;
-    }
-  }
-
   @media(max-width:1200px){
     .home .home_content {
       display: block;
@@ -62,6 +55,9 @@
   .home_content--citas{
   
     width: 100%;
+    }
+    .homeDoctor .home_content {
+      display: inline-block;
     }
   }
 
