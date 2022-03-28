@@ -21,30 +21,23 @@ function ViewerDoctor() {
     listPerson();
   }, []);
 
-  const links = [
-    { path: 'H. clinica', url: '#', id: '2' },
-  ];
-
   return (
-    <div className="container-prueba">
-      <section className="homeDoctor">
-        {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
-        <div className="home_content">
-          <div className="home_content--citas">
-            {patientsFilter.map((element) => (
-              <CardViewer
-                information={element}
-                links={links}
-                key={element.id}
-              />
-            ))}
-          </div>
-          <div className="home_content--calender">
-            <Calendar />
-          </div>
+    <section className="homeDoctor">
+      {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
+      <div className="home_content">
+        <div className="home_content--citas">
+          {patientsFilter.map((element) => (
+            <CardViewer
+              information={element}
+              key={element.id}
+            />
+          ))}
         </div>
-      </section>
-    </div>
+        <div className="home_content--calender">
+          <Calendar />
+        </div>
+      </div>
+    </section>
   );
 }
 export default ViewerDoctor;

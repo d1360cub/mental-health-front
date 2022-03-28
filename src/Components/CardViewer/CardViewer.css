@@ -23,7 +23,7 @@
   font-size: 1.5rem;
 }
 .home-content__card--perfil p,h3{
-  font-size: 1.2rem;
+  font-size: auto;
 }
 .home_content--imagen  img{
   width: 8rem;
@@ -35,7 +35,9 @@
     display: flex;
     justify-content: left;
 }
-
+#H-clinica{
+  width: 15rem;
+}
 
 @media(max-width:1200px){
   .home_content__enlaces{
