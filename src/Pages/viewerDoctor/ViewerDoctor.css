@@ -1,6 +1,3 @@
-section:nth-child(even) {
-  background: #edf1f542;
-}
 .homeDoctor{
   display: flex;
   align-items: center;
