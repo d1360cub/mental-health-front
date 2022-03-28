@@ -1,3 +1,6 @@
+.container-prueba{
+  position: relative;
+}
 .homeDoctor{
   display: flex;
   align-items: center;

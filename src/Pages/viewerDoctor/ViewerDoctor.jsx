@@ -26,7 +26,7 @@ function ViewerDoctor() {
   ];
 
   return (
-    <div>
+    <div className="container-prueba">
       <section className="homeDoctor">
         {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
         <div className="home_content">
