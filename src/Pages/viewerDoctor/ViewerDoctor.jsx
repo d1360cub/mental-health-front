@@ -28,6 +28,7 @@ function ViewerDoctor() {
         <div className="home_content--citas">
           {patientsFilter.map((element) => (
             <CardViewer
+              viewer
               information={element}
               key={element.id}
             />
