@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Enlace from '../Enlace';
+import imageProfile from '../../image/doc-350x350.png';
 import './CardViewer.css';
 
 function CardViewer({ information, links }) {
@@ -7,12 +8,13 @@ function CardViewer({ information, links }) {
     <div className="home_content--card">
       <div className="home_content--imagen">
         <figure>
-          <img src={information.imageprofile} alt="" />
+          <img src={imageProfile} alt="" />
         </figure>
       </div>
       <div className="home-content__card--perfil">
         <h3>
           {information.name}
+          {' '}
           {information.lastName}
         </h3>
         <p>
@@ -43,7 +45,7 @@ function CardViewer({ information, links }) {
 }
 CardViewer.propTypes = {
   information: PropTypes.objectOf(PropTypes.string),
-  links: PropTypes.arrayOf(PropTypes.string),
+  links: PropTypes.arrayOf(Object),
 };
 CardViewer.defaultProps = {
   information: {},

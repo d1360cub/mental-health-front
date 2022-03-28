@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome';
-import imageCalender from '../../image/calendario.png';
 import { listAllUsers } from '../../services/user';
-import '../HomeViewer.css';
+import Calendar from '../../Components/Calendar';
+import './ViewerDoctor.css';
 
 function ViewerDoctor() {
   const [patients, setPatients] = useState([]);
@@ -22,13 +22,12 @@ function ViewerDoctor() {
   }, []);
 
   const links = [
-    { path: 'Chat', url: '#', id: 1 },
-    { path: 'H. clinica', url: '#', id: 2 },
+    { path: 'H. clinica', url: '#', id: '2' },
   ];
 
   return (
     <div>
-      <section className="home" id="home">
+      <section className="homeDoctor">
         {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
         <div className="home_content">
           <div className="home_content--citas">
@@ -41,7 +40,7 @@ function ViewerDoctor() {
             ))}
           </div>
           <div className="home_content--calender">
-            <img src={imageCalender} alt="" />
+            <Calendar />
           </div>
         </div>
       </section>
