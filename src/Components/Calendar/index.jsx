@@ -8,14 +8,14 @@ const events = [
   {
     id: 1014254,
     title: 'cita con alejandra',
-    start: '2022-03-25T10:00:00',
-    end: '2022-03-25T11:00:00',
+    start: '2022-03-29T10:00:00',
+    end: '2022-03-29T11:00:00',
   },
   {
     id: 258789,
     title: 'cita con mafe',
-    start: '2022-03-25T13:00:00',
-    end: '2022-03-25T14:00:00',
+    start: '2022-03-30T13:00:00',
+    end: '2022-03-30T14:00:00',
   },
 ];
 function FullCalendarApp() {
