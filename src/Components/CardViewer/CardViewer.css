@@ -4,7 +4,7 @@
   margin:0 auto;
   gap: 1rem;
   width: 90%;
-  height:20rem;
+  height:15rem;
   border-radius:15px;
   background: rgb(158, 224, 220);
   border: 0.1rem solid black;
@@ -20,10 +20,13 @@
   flex-direction: column;
   justify-content: space-evenly;
   width: 60%;
-  font-size: 1.5rem; ;
+  font-size: 1.5rem;
+}
+.home-content__card--perfil p,h3{
+  font-size: 1.2rem;
 }
 .home_content--imagen  img{
-  width: 10rem;
+  width: 8rem;
   border-radius:100%; 
   box-shadow: 2px 2px 5px rgb(194, 159, 117);
 }
@@ -31,6 +34,9 @@
     gap: 2rem;
     display: flex;
     justify-content: left;
+}
+#H-clinica{
+  width: 15rem;
 }
 
 @media(max-width:1200px){

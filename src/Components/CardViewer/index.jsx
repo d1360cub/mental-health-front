@@ -1,18 +1,22 @@
 import PropTypes from 'prop-types';
-import Enlace from '../Enlace';
+import { useState } from 'react';
+import imageProfile from '../../image/doc-350x350.png';
+import HistoryModal from '../HistoryModal';
 import './CardViewer.css';
 
-function CardViewer({ information, links }) {
+function CardViewer({ information, viewer }) {
+  const [modal, setModal] = useState(false);
   return (
     <div className="home_content--card">
       <div className="home_content--imagen">
         <figure>
-          <img src={information.imageprofile} alt="" />
+          <img src={imageProfile} alt="" />
         </figure>
       </div>
       <div className="home-content__card--perfil">
         <h3>
           {information.name}
+          {' '}
           {information.lastName}
         </h3>
         <p>
@@ -32,22 +36,25 @@ function CardViewer({ information, links }) {
             {' '}
           </span>
         </p>
-        <div className="home_content__enlaces">
-          {links.map((element) => (
-            <Enlace path={element.path} url={element.url} key={element.id} />
-          ))}
-        </div>
+        {viewer
+          ? (
+            <>
+              <button type="button" onClick={() => setModal(true)} className="btn-header-users header__nav-link" id="H-clinica"> Historia Clinica </button>
+              <HistoryModal modal={modal} setModal={setModal} informationPatient={information} />
+            </>
+          )
+          : <div />}
       </div>
     </div>
   );
 }
 CardViewer.propTypes = {
   information: PropTypes.objectOf(PropTypes.string),
-  links: PropTypes.arrayOf(PropTypes.string),
+  viewer: PropTypes.bool,
 };
 CardViewer.defaultProps = {
   information: {},
-  links: [],
+  viewer: false,
 };
 
 export default CardViewer;

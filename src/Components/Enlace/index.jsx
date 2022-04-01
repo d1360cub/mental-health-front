@@ -3,7 +3,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 function Enlace({ path }) {
   return (
-    <Link to="/" className="btn-header-users header__nav-link">
+    <Link to="#modal" className="btn-header-users header__nav-link">
       {path}
     </Link>
   );

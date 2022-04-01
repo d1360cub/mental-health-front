@@ -50,6 +50,7 @@ function ViewerPatient() {
           <div className="home_content--citas">
             {doctorFilter.map((element) => (
               <CardViewer
+                viewer={false}
                 information={element}
                 links={links}
                 key={element.id}

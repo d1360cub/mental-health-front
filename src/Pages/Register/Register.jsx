@@ -23,62 +23,67 @@ function Register() {
         <div className="subtitleReg">Registro</div>
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <label htmlFor="name">
+            <label htmlFor="name" className="register__label">
               Nombre
+              <br />
               <input
                 type="text"
                 id="name"
                 name="name"
                 onChange={handleChange}
-                size="20"
+                size="30"
               />
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="lastName">
+            <label htmlFor="lastName" className="register__label">
               Apellido
+              <br />
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
                 onChange={handleChange}
-                size="20"
+                size="30"
               />
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="phone">
+            <label htmlFor="phone" className="register__label">
               Celular
+              <br />
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 onChange={handleChange}
-                size="20.5"
+                size="30"
               />
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="mail">
+            <label htmlFor="mail" className="register__label">
               Email
+              <br />
               <input
                 type="email"
                 id="mail"
                 name="mail"
                 onChange={handleChange}
-                size="22"
+                size="30"
               />
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="password">
+            <label htmlFor="password" className="register__label">
               Contraseña
+              <br />
               <input
                 type="password"
                 id="password"
                 name="password"
                 onChange={handleChange}
-                size="17"
+                size="30"
               />
             </label>
           </fieldset>

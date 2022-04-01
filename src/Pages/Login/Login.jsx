@@ -13,12 +13,12 @@ function Login() {
     }
   };
   return (
-    <div className="landing">
+    <div className="register__landing">
       <section className="register" id="register">
         <div className="subtitle">Iniciar sesión</div>
         <form action="login" onSubmit="">
           <fieldset>
-            <label htmlFor="mail">
+            <label htmlFor="mail" className="login__label">
               Email *
               <input
                 type="email"
@@ -30,7 +30,7 @@ function Login() {
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="password">
+            <label htmlFor="password" className="login__label">
               Contraseña *
               <input
                 type="password"

@@ -13,8 +13,8 @@
   padding: 10rem 1rem 1rem;
 }
 
-label {
-  display: block;
+.doctors__label {
+  text-align: left;
 }
 
 textarea {
