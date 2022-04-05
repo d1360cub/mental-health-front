@@ -9,8 +9,7 @@ export const newUser = async (newRegister) => {
       },
       body: JSON.stringify(newRegister),
     };
-    console.log('🚀 ~ file: user.js ~ line 12 ~ newUser ~ payload', payload);
-    const response = await fetch(`${API_URL}/user`, payload);
+    const response = await fetch(`${API_URL}/users`, payload);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -20,7 +19,7 @@ export const newUser = async (newRegister) => {
 
 export const listAllUsers = async () => {
   try {
-    const response = await fetch(`${API_URL}/user`);
+    const response = await fetch(`${API_URL}/users`);
     const persons = await response.json();
     return persons;
   } catch (error) {
@@ -30,7 +29,7 @@ export const listAllUsers = async () => {
 
 export const getUser = async (id) => {
   try {
-    const response = await fetch(`${API_URL}/user/${id}`);
+    const response = await fetch(`${API_URL}/users/${id}`);
     const people = await response.json();
     return people;
   } catch (error) {

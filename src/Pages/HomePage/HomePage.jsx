@@ -1,7 +1,6 @@
 import React from 'react';
 import './HomePage.css';
 
-import Doctors from '../Doctors/Doctors';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Services from '../Services/Services';
@@ -12,7 +11,7 @@ export default function HomePage() {
       <Home />
       <About />
       <Services />
-      <Doctors />
+
       <section className="footer">
         <div className="footer__box-container">
           <div className="footer__box">
