@@ -1,14 +1,15 @@
 const API_URL = 'http://localhost:8080/api';
 
-const newUser = async (newRegister) => {
-  const payload = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newRegister),
-  };
+export const newUser = async (newRegister) => {
   try {
+    const payload = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newRegister),
+    };
+    console.log('🚀 ~ file: user.js ~ line 12 ~ newUser ~ payload', payload);
     const response = await fetch(`${API_URL}/user`, payload);
     const data = await response.json();
     return data;
@@ -16,8 +17,6 @@ const newUser = async (newRegister) => {
     throw new Error(error);
   }
 };
-
-export default newUser;
 
 export const listAllUsers = async () => {
   try {
