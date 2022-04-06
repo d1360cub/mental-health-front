@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LoginImage from '../../image/login.jpg';
 import './Login.css';
@@ -12,13 +12,28 @@ function Login() {
       tipo.type = 'password';
     }
   };
+  const [form, setForm] = useState({});
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setForm(
+      {
+        ...form,
+        [name]: value,
+      },
+    );
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(form);
+    setForm({});
+  };
   return (
     <div className="register__landing">
       <section className="register" id="register">
         <div className="subtitle">Iniciar sesión</div>
-        <form action="login" onSubmit="">
+        <form action="login" onSubmit={handleSubmit}>
           <fieldset>
-            <label htmlFor="mail" className="login__label">
+            <label htmlFor="mail" className="login__label" onChange={handleChange}>
               Email *
               <input
                 type="email"
@@ -30,7 +45,7 @@ function Login() {
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="password" className="login__label">
+            <label htmlFor="password" className="login__label" onChange={handleChange}>
               Contraseña *
               <input
                 type="password"
@@ -45,9 +60,7 @@ function Login() {
         </form>
         <div className="click">
           <Link to="/" className="password">¿Olvidaste tu contraseña?</Link>
-          <Link to="/ViewerPatient" className="question">
-            <button className="btn-appointment" type="submit">Iniciar sesión</button>
-          </Link>
+          <button className="btn-appointment" type="submit">Iniciar sesión</button>
         </div>
         <div className="first-time">
           ¿Es tu primera vez?
