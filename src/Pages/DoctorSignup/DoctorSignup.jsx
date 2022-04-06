@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import newDoctor from '../../services/doctor';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../store/actions';
 import './DoctorSignup.css';
 
 function DoctorSignup() {
+  const dispatch = useDispatch();
   const [form, setForm] = useState({});
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm({
       ...form,
       [name]: value,
+      role: 'doctor',
     });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    newDoctor(form);
+    dispatch(createUser(form));
     setForm({});
   };
   return (
@@ -21,13 +24,13 @@ function DoctorSignup() {
       <div className="subtitle__doctor">Bienvenido, Doctor</div>
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <label htmlFor="name" className="doctors__label">
+          <label htmlFor="firstName" className="doctors__label">
             Nombre
             <br />
             <input
               type="text"
-              id="name"
-              name="name"
+              id="firstName"
+              name="firstName"
               size="30"
               onChange={handleChange}
             />
@@ -88,13 +91,13 @@ function DoctorSignup() {
           </fieldset>
         </div>
         <fieldset>
-          <label htmlFor="mail" className="doctors__label">
+          <label htmlFor="email" className="doctors__label">
             Email
             <br />
             <input
               type="email"
-              id="mail"
-              name="mail"
+              id="email"
+              name="email"
               onChange={handleChange}
               size="30"
             />

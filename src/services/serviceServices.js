@@ -1,8 +1,8 @@
-const API_URL = 'http://localhost:8080/api';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const getAllServices = async () => {
   try {
-    const response = await fetch(`${API_URL}/services`);
+    const response = await fetch(`${API_URL}/api/services`);
     const services = await response.json();
     return services;
   } catch (error) {

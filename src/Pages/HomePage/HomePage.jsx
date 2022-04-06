@@ -1,10 +1,10 @@
 import React from 'react';
 import './HomePage.css';
 
-import Doctors from '../Doctors/Doctors';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Services from '../Services/Services';
+import Doctors from '../Doctors/Doctors';
 
 export default function HomePage() {
   return (
@@ -151,7 +151,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* <!-- Footer - fin --> */}
     </>
   );
 }
