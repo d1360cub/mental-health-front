@@ -36,3 +36,20 @@ export const getUser = async (id) => {
     throw new Error(error);
   }
 };
+
+export const login = async (user) => {
+  try {
+    const payload = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    };
+    const response = await fetch(`${API_URL}/auth/local/login`, payload);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};

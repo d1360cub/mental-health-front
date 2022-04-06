@@ -1,9 +1,12 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import LoginImage from '../../image/login.jpg';
 import './Login.css';
+import { validateUser } from '../../store/actions';
 
 function Login() {
+  const dispatch = useDispatch();
   const showPassword = () => {
     const tipo = document.getElementById('password');
     if (tipo.type === 'password') {
@@ -24,14 +27,14 @@ function Login() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    dispatch(validateUser(form));
     setForm({});
   };
   return (
     <div className="register__landing">
       <section className="register" id="register">
         <div className="subtitle">Iniciar sesión</div>
-        <form action="login" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <fieldset>
             <label htmlFor="mail" className="login__label" onChange={handleChange}>
               Email *
@@ -55,13 +58,13 @@ function Login() {
                 placeholder="contraseña"
               />
             </label>
-            <button className="btn-appointment" type="submit" onClick={showPassword}>Mostrar contraseña</button>
+            <button className="btn-appointment" onClick={showPassword} type="button">Mostrar contraseña</button>
           </fieldset>
+          <div className="click">
+            <Link to="/" className="password">¿Olvidaste tu contraseña?</Link>
+            <button type="submit" className="btn-appointment">Iniciar sesión</button>
+          </div>
         </form>
-        <div className="click">
-          <Link to="/" className="password">¿Olvidaste tu contraseña?</Link>
-          <button className="btn-appointment" type="submit">Iniciar sesión</button>
-        </div>
         <div className="first-time">
           ¿Es tu primera vez?
           <Link to="/register" className="question">Regístrate</Link>
