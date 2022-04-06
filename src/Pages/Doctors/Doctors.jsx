@@ -7,15 +7,15 @@ import Pagination from '../../Components/Doctorcard/Pagination';
 import { getDoctors } from '../../services/doctor';
 
 export default function Doctors() {
-  const [doctors, setDoctors] = useState([]);
+  const [users, setUsers] = useState([]);
   const [card, setCard] = useState(1);
   // eslint-disable-next-line no-unused-vars
   const [porCard, setPorCard] = useState(8);
-  const maximo = doctors.length / porCard;
+  const maximo = users.length / porCard;
 
   const fetchDoctors = async (query = {}) => {
     const data = await getDoctors(query);
-    setDoctors(data);
+    setUsers(data);
     setCard(1);
   };
 
@@ -38,11 +38,12 @@ export default function Doctors() {
         <Pagination card={card} setCard={setCard} maximo={maximo} />
       </div>
       <div className="doctors__box-container">
-        {doctors.slice(
+        {users.slice(
           (card - 1) * porCard,
           (card - 1) * porCard + porCard,
         // eslint-disable-next-line react/no-array-index-key
-        ).map((doctor) => <Doctorcard key={doctor.id} image={doctor.image} name={doctor.name} services={doctor.services} description={doctor.description} id={doctor.id} />)}
+        // eslint-disable-next-line no-underscore-dangle
+        ).map((user) => <Doctorcard key={user._id} image={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} id={user.id} />)}
       </div>
     </section>
   );
