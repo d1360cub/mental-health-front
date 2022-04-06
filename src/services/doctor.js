@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const newDoctor = async (newDoctorRegister) => {
   const payload = {
@@ -9,7 +9,7 @@ const newDoctor = async (newDoctorRegister) => {
     body: JSON.stringify(newDoctorRegister),
   };
   try {
-    const response = await fetch(`${API_URL}/doctors`, payload);
+    const response = await fetch(`${API_URL}/api/users`, payload);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -22,7 +22,7 @@ export default newDoctor;
 export const getDoctors = async (query = {}) => {
   try {
     const queryString = new URLSearchParams(query).toString();
-    const response = await fetch(`${API_URL}/doctors?${queryString}`);
+    const response = await fetch(`${API_URL}/api/users?${queryString}`);
     const people = await response.json();
     return people;
   } catch (error) {

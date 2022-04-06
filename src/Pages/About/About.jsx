@@ -7,7 +7,7 @@ function About() {
   return (
     <section className="about" id="about">
       <h1 className="section-heading">
-        <span>about us</span>
+        <span>Nosotros</span>
       </h1>
       <div className="about__row">
         <div className="about__image">
@@ -20,7 +20,7 @@ function About() {
           </h3>
           <p>
             Deja de pagar costosas consultas ambulatorias. Nuestro concepto de
-            `&dquot;`consulta por uso`&dquot;` te da la garantía de acceder a un psícologo de
+            &apos;consulta por uso&apos; te da la garantía de acceder a un psicólogo de
             forma fácil, rápida y económica.
           </p>
           <p>
@@ -30,7 +30,7 @@ function About() {
             salud.
           </p>
           <Link to="/login" className="btn-appointment">
-            Make an Appointment
+            Programa tu cita
           </Link>
         </div>
       </div>

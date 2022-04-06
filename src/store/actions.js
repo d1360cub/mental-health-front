@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import {
   ADD_USER,
   GET_USERS,
@@ -10,7 +9,7 @@ import {
 } from '../services/user';
 
 export const addUser = (user) => ({ type: ADD_USER, payload: user });
-export const getAllUsers = () => ({ type: GET_USERS, payload: user });
+export const getAllUsers = (users) => ({ type: GET_USERS, payload: users });
 
 export const createUser = (user) => async (dispatch) => {
   const userCreated = await newUser(user);

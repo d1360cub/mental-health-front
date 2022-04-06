@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api';
+const API_URL = process.env.REACT_APP_API_URL;
 
 export const newUser = async (newRegister) => {
   try {
@@ -9,7 +9,7 @@ export const newUser = async (newRegister) => {
       },
       body: JSON.stringify(newRegister),
     };
-    const response = await fetch(`${API_URL}/users`, payload);
+    const response = await fetch(`${API_URL}/api/users`, payload);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -19,7 +19,7 @@ export const newUser = async (newRegister) => {
 
 export const listAllUsers = async () => {
   try {
-    const response = await fetch(`${API_URL}/users`);
+    const response = await fetch(`${API_URL}/api/users`);
     const persons = await response.json();
     return persons;
   } catch (error) {
@@ -29,7 +29,7 @@ export const listAllUsers = async () => {
 
 export const getUser = async (id) => {
   try {
-    const response = await fetch(`${API_URL}/users/${id}`);
+    const response = await fetch(`${API_URL}/api/users/${id}`);
     const people = await response.json();
     return people;
   } catch (error) {
