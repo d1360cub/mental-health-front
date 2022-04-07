@@ -36,3 +36,20 @@ export const getUser = async (id) => {
     throw new Error(error);
   }
 };
+
+export const login = async (user) => {
+  try {
+    const payload = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    };
+    const response = await fetch('https://mental--health--back.herokuapp.com/auth/local/login', payload);
+    const token = await response.json();
+    localStorage.setItem('token', token);
+  } catch (error) {
+    throw new Error(error);
+  }
+};

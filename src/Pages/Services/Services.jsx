@@ -18,18 +18,17 @@ export default function Services() {
   return (
     <section className="services" id="services">
       <h1 className="section-heading">
-        <span>services</span>
+        <span>Servicios</span>
       </h1>
       <div className="services__box-container">
         {services.map((servicio, index) => (
           <ServiceCard
             // eslint-disable-next-line react/no-array-index-key
             key={index}
-            id={servicio.id}
-            icon={servicio.icon}
-            service={servicio.service}
+            // eslint-disable-next-line no-underscore-dangle
+            id={servicio._id}
+            service={servicio.title}
             description={servicio.description}
-            publish={servicio.publish}
           />
         ))}
       </div>
