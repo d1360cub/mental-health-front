@@ -46,9 +46,9 @@ export const login = async (user) => {
       },
       body: JSON.stringify(user),
     };
-    const response = await fetch(`${API_URL}/auth/local/login`, payload);
-    const data = await response.json();
-    return data;
+    const response = await fetch('https://mental--health--back.herokuapp.com/auth/local/login', payload);
+    const token = await response.json();
+    localStorage.setItem('token', token);
   } catch (error) {
     throw new Error(error);
   }

@@ -1,9 +1,9 @@
 import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { validateUser } from '../../store/actions';
 import LoginImage from '../../image/login.jpg';
 import './Login.css';
-import { validateUser } from '../../store/actions';
 
 function Login() {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function Login() {
       },
     );
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch(validateUser(form));
     setForm({});
@@ -36,12 +36,12 @@ function Login() {
         <div className="subtitle">Iniciar sesión</div>
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <label htmlFor="mail" className="login__label" onChange={handleChange}>
+            <label htmlFor="email" className="login__label" onChange={handleChange}>
               Email *
               <input
                 type="email"
-                id="mail"
-                name="mail"
+                id="email"
+                name="email"
                 size="25"
                 placeholder="correo@dominio.com"
               />
