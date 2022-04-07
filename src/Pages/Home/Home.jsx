@@ -10,7 +10,7 @@ function Home() {
         <img src={brain} alt="mental health" />
       </div>
       <div className="home__content">
-        <h3>The Emotional Brain</h3>
+        <h3>El cerebro emocional</h3>
         <p>
           Diversos autores llaman así al sistema límbico. Este es el encargado
           de regular las emociones, pero no es su única función, tambien tiene
@@ -18,7 +18,7 @@ function Home() {
           fisiológicas ante ciertos estímulos.
         </p>
         <Link to="../login" className="btn-appointment">
-          Make an Appointment
+          Programa tu cita
         </Link>
       </div>
     </section>

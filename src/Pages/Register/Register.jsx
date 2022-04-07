@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import './Register.css';
-import newUser from '../../services/user';
+import { createUser } from '../../store/actions';
 
 function Register() {
   const [form, setForm] = useState({});
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm({
@@ -14,7 +16,7 @@ function Register() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    newUser(form);
+    dispatch(createUser(form));
     setForm({});
   };
   return (
@@ -23,13 +25,13 @@ function Register() {
         <div className="subtitleReg">Registro</div>
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <label htmlFor="name" className="register__label">
+            <label htmlFor="firstName" className="register__label">
               Nombre
               <br />
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="firstName"
+                name="firstName"
                 onChange={handleChange}
                 size="30"
               />
@@ -62,13 +64,13 @@ function Register() {
             </label>
           </fieldset>
           <fieldset>
-            <label htmlFor="mail" className="register__label">
+            <label htmlFor="email" className="register__label">
               Email
               <br />
               <input
                 type="email"
-                id="mail"
-                name="mail"
+                id="email"
+                name="email"
                 onChange={handleChange}
                 size="30"
               />
