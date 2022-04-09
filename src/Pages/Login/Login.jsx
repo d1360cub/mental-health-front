@@ -1,11 +1,13 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { validateUser } from '../../store/actions';
 import LoginImage from '../../image/login.jpg';
 import './Login.css';
 
 function Login() {
+  // role = useSelector((state) => state.user.role);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const showPassword = () => {
     const tipo = document.getElementById('password');
@@ -27,8 +29,9 @@ function Login() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    dispatch(validateUser(form));
+    const result = await dispatch(validateUser(form));
     setForm({});
+    navigate(result.user.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
   };
   return (
     <div className="register__landing">
