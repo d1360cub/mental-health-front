@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const newUser = async (newRegister) => {
@@ -46,9 +47,10 @@ export const login = async (user) => {
       },
       body: JSON.stringify(user),
     };
-    const response = await fetch('https://mental--health--back.herokuapp.com/auth/local/login', payload);
-    const token = await response.json();
-    localStorage.setItem('token', token);
+    const response = await fetch(`${API_URL}/auth/local/login`, payload);
+    const data = await response.json();
+    localStorage.setItem('token', data.token);
+    return data;
   } catch (error) {
     throw new Error(error);
   }
