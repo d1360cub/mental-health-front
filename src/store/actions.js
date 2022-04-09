@@ -27,4 +27,5 @@ export const showAllUsers = () => async (dispatch) => {
 export const validateUser = (user) => async (dispatch) => {
   const userLogon = await login(user);
   dispatch(loginUser(userLogon));
+  return userLogon;
 };

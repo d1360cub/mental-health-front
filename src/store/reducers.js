@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   users: [],
+  user: {},
 };
 
 // eslint-disable-next-line default-param-last
@@ -24,7 +25,7 @@ function reducers(state = initialState, action) {
     case LOGIN_USER:
       return {
         ...state,
-        users: action.payload,
+        user: action.payload,
       };
     default:
       return state;
