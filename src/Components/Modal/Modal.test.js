@@ -7,3 +7,9 @@ test('renders text', () => {
   render(<Modal />, { wrapper: MemoryRouter });
   expect(screen.getByText(/comunidad/i)).toBeInTheDocument();
 });
+
+test('render link', () => {
+  render(<Modal />, { wrapper: MemoryRouter });
+  // eslint-disable-next-line jest/valid-expect
+  expect(screen.queryAllByText('navigation'));
+});
