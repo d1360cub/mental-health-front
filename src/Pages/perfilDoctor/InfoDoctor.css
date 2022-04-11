@@ -1,0 +1,49 @@
+.calendar-perfilInfo{
+    display: grid;
+    grid-template-columns: 2fr 2fr;    
+    width: 100%;
+    margin: auto;
+    font-family: sans-serif;
+    text-align: center;
+}
+.perfilInformacion{
+    width: 100%;
+
+}
+
+.infobasica{
+    background: #fff;
+    font-size: 15px;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+.atencion{
+    background: #fff;
+    font-size: 15px;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+.expProfesional{
+    background: #fff;
+    font-size: 15px;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+.formacionAcademica{
+    background: #fff;
+    font-size: 15px;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}

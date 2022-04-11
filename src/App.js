@@ -10,7 +10,7 @@ import ProtectedRoutes from './Routes/ProtectedRoutes';
 import Page404 from './Pages/Page404/Page404';
 import DoctorSignup from './Pages/DoctorSignup/DoctorSignup';
 import Modal from './Components/Modal/Modal';
-import InfoDoctor from './Pages/perfilDoctor/perfilDoctor';
+import InfoDoctor from './Pages/perfilDoctor/InfoDoctor';
 
 function App() {
   return (

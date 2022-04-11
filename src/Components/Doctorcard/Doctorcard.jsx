@@ -27,6 +27,7 @@ Doctorcard.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   email: PropTypes.string,
+  id: PropTypes.number,
 };
 
 Doctorcard.defaultProps = {
@@ -34,6 +35,7 @@ Doctorcard.defaultProps = {
   firstName: '',
   lastName: '',
   email: '',
+  id: 0,
 };
 
 export default Doctorcard;
