@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Services.css';
+import { HashLink as Link } from 'react-router-hash-link';
 import getAllServices from '../../services/serviceServices';
 import ServiceCard from '../../Components/ServiceCard/ServiceCard';
 
@@ -31,6 +32,11 @@ export default function Services() {
             description={servicio.description}
           />
         ))}
+      </div>
+      <div className="services__button">
+        <Link to="#doctors" className="btn-appointment">
+          Encuentra a tu especialista
+        </Link>
       </div>
     </section>
   );
