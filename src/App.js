@@ -10,6 +10,7 @@ import ProtectedRoutes from './Routes/ProtectedRoutes';
 import Page404 from './Pages/Page404/Page404';
 import DoctorSignup from './Pages/DoctorSignup/DoctorSignup';
 import Modal from './Components/Modal/Modal';
+import InfoDoctor from './Pages/perfilDoctor/InfoDoctor';
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/doctor-signup" element={<DoctorSignup />} />
         <Route path="/doctor-warning" element={<Modal />} />
+        <Route path="/perfil-doctor/:doctorId" element={<InfoDoctor />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
+
         </Route>
 
         <Route path="*" element={<Page404 />} />
