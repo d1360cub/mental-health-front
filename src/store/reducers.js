@@ -3,12 +3,14 @@ import {
   GET_USERS,
   LOGIN_USER,
   GET_SERVICES,
+  GET_APPOINTMENTS,
 } from './types';
 
 const initialState = {
   users: [],
   user: {},
   services: [],
+  appointments: [2],
 };
 
 // eslint-disable-next-line default-param-last
@@ -33,6 +35,11 @@ function reducers(state = initialState, action) {
       return {
         ...state,
         services: action.payload,
+      };
+    case GET_APPOINTMENTS:
+      return {
+        ...state,
+        appointments: action.payload,
       };
     default:
       return state;

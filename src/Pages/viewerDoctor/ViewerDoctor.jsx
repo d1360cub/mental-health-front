@@ -1,32 +1,25 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CardViewer from '../../Components/CardViewer';
-import Welcome from '../../Components/Welcome';
-import { listAllUsers } from '../../services/user';
+// import Welcome from '../../Components/Welcome';
+// import { listAllUsers } from '../../services/user';
+import { showAppointByDocId } from '../../store/actions';
 import Calendar from '../../Components/Calendar';
 import './ViewerDoctor.css';
 
 function ViewerDoctor() {
-  const [patients, setPatients] = useState([]);
-  const [doctors, setDoctors] = useState([]);
-
-  const patientsFilter = patients.filter((element) => !element.license);
-  const doctorFilter = doctors.filter((element) => !element.services).filter((elet) => elet.license === '60877');
+  const dispatch = useDispatch();
+  const dataAppointments = useSelector((state) => state.appointments);
 
   useEffect(() => {
-    const listPerson = async () => {
-      const data = await listAllUsers();
-      setPatients(data);
-      setDoctors(data);
-    };
-    listPerson();
+    dispatch(showAppointByDocId('6254af21d8771b229a290688'));
   }, []);
-
   return (
     <section className="homeDoctor">
-      {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
+      {/* {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)} */}
       <div className="home_content">
         <div className="home_content--citas">
-          {patientsFilter.map((element) => (
+          {dataAppointments.map((element) => (
             <CardViewer
               viewer
               information={element}
