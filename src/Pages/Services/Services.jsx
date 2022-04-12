@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-underscore-dangle */
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './Services.css';
-import getAllServices from '../../services/serviceServices';
+import { HashLink as Link } from 'react-router-hash-link';
 import ServiceCard from '../../Components/ServiceCard/ServiceCard';
+import { showAllServices } from '../../store/actions';
 
 export default function Services() {
-  const [services, setServices] = useState([]);
-
-  const getServices = async () => {
-    const data = await getAllServices();
-    setServices(data);
-  };
-
+  const dataServices = useSelector((state) => state.services);
+  const dispatch = useDispatch();
   useEffect(() => {
-    getServices();
+    dispatch(showAllServices());
   }, []);
-
   return (
     <section className="services" id="services">
       <h1 className="section-heading">
         <span>Servicios</span>
       </h1>
       <div className="services__box-container">
-        {services.map((servicio, index) => (
+        {dataServices.map((servicio) => (
           <ServiceCard
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-            // eslint-disable-next-line no-underscore-dangle
+            key={servicio._id}
             id={servicio._id}
             service={servicio.title}
             description={servicio.description}
           />
         ))}
+      </div>
+      <div className="services__button">
+        <Link to="#doctors" className="btn-appointment">
+          Encuentra a tu especialista
+        </Link>
       </div>
     </section>
   );
