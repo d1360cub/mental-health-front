@@ -1,14 +1,20 @@
 .calendar-perfilInfo{
     display: grid;
-    grid-template-columns: 2fr 2fr;    
+    grid-template-columns: 1fr 1fr;    
     width: 100%;
     margin: auto;
     font-family: sans-serif;
     text-align: center;
+    position: relative;
+    top: 110px;
+    padding-top: 1rem;
 }
 .perfilInformacion{
     width: 100%;
 
+}
+.fotoperfil{
+    width: 50%;
 }
 
 .infobasica{
@@ -46,4 +52,22 @@
     margin-bottom: 20px;
     padding: 8px 16px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+.calendariodoctor{
+    margin: 0 auto;
+    width: 100%;
+    height: 80%;
+    position: relative;
+    right: 20%;
+    
+}
+.agendarcita{
+    padding: 0 0.5rem;
+    border: var(--border);
+    background-color: var(--blue);
+    border-radius: 1.4rem;
+    color: #fff !important;
+    width: 100%;
+    font-size: 2rem;
+    
 }

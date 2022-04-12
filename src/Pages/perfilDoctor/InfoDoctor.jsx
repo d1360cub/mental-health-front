@@ -1,18 +1,34 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
+import { getUser } from '../../services/user';
 import './InfoDoctor.css';
 
-function InfoDoctor({ image = doctorImage, firstName, lastName}) {
+function InfoDoctor({ image = doctorImage }) {
+  const [user, setUser] = useState([]);
+  const params = useParams();
+
+  const fetchDoctors = async () => {
+    const data = await getUser(params.doctorId);
+    setUser(data);
+  };
+
+  useEffect(() => {
+    fetchDoctors();
+  }, []);
   //const params = useParams();{params.doctorId}
   return (
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
         <div className="infobasica">
-          <img src={image} alt="" />
-          <h1>Nombre Doctor</h1>
+          <img className="fotoperfil" src={image} alt="" />
+          <h1>
+            {user.firstName}
+            {' '}
+            {user.lastName}
+          </h1>
           <h3>Matricula profesional</h3>
           <p>Descripción </p>
         </div>
@@ -45,6 +61,7 @@ function InfoDoctor({ image = doctorImage, firstName, lastName}) {
       </div>
       <div className="calendariodoctor">
         <Calendar />
+        <Link className="agendarcita" to="/login"> Agendar una cita</Link>
       </div>
     </div>
 
@@ -53,15 +70,11 @@ function InfoDoctor({ image = doctorImage, firstName, lastName}) {
 
 InfoDoctor.propTypes = {
   image: PropTypes.string,
-  firstName: PropTypes.string,
-  lastName: PropTypes.string,
 
 };
 
 InfoDoctor.defaultProps = {
   image: doctorImage,
-  firstName: '',
-  lastName: '',
 
 };
 
