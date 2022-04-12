@@ -31,7 +31,7 @@ export default function Doctors() {
 
   return (
     <section className="doctors" id="doctors">
-      <h1 className="section-heading"><span>Doctors</span></h1>
+      <h1 className="section-heading"><span>Doctores</span></h1>
       <div>
         <Searchdoctor onSearch={handleSearch} />
 

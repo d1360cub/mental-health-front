@@ -18,45 +18,37 @@ function InfoDoctor({ image = doctorImage }) {
   useEffect(() => {
     fetchDoctors();
   }, []);
-  //const params = useParams();{params.doctorId}
+  // const params = useParams();{params.doctorId}
   return (
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
         <div className="infobasica">
           <img className="fotoperfil" src={image} alt="" />
-          <h1>
+          <h1 className="tilesdoctor1">
             {user.firstName}
             {' '}
             {user.lastName}
           </h1>
-          <h3>Matricula profesional</h3>
-          <p>Descripción </p>
+          <h3 className="tilesdoctor1">Matricula profesional</h3>
+          <p>
+            {user?.description}
+            {' '}
+          </p>
         </div>
         <div className="atencion">
-          <h3>Areas de atención</h3>
-          <p>Adultos Maoyres</p>
-          <p>Autocuidado</p>
-          <p>Ansiedad</p>
-          <p>Deterioro cognitivo</p>
-          <p>Equilibrio e inteligencia emociona</p>
+          <h3 className="tilesdoctor1">Areas de atención</h3>
+          <p>{user?.atentionarea}</p>
         </div>
         <div className="expProfesional">
-          <h3>Expriencia profesional</h3>
-          <p>Esperiencia de 3 años en el trabajo con comunidades vulnerables</p>
+          <h3 className="tilesdoctor1">Expriencia profesional</h3>
+          <p>{user?.experience}</p>
         </div>
         <div className="formacionAcademica">
-          <h3>Formación Académica</h3>
+          <h3 className="tilesdoctor1">Formación Académica</h3>
           <p>
-            <span>Licenciatura en psicología</span>
+            <span>{user?.academic}</span>
             <br />
-            <span>Universidad de Antioquia</span>
           </p>
-          <p>
-            <span>Mestría en psicoterapia</span>
-            <br />
-            <span>Universidad Nacional</span>
-          </p>
-
         </div>
       </div>
       <div className="calendariodoctor">
