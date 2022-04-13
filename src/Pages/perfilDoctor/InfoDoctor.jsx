@@ -22,7 +22,6 @@ function InfoDoctor({ image = doctorImage }) {
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    console.log(value, name);
     setForm(
       {
         ...form,
@@ -33,7 +32,6 @@ function InfoDoctor({ image = doctorImage }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(form);
     const splitTime = form.startTime.split(':');
     splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
     const endHour = splitTime.join(':');
