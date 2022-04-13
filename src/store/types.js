@@ -4,3 +4,4 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const GET_SERVICES = 'GET_SERVICES';
 export const GET_APPOINTMENTS = 'GET_APPOINTMENTS';
 export const GET_USER = 'GET_USER';
+export const RESERVE_APPOINTMENT = 'RESERVE_APPOINTMENT';
