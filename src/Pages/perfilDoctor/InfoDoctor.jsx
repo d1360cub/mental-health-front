@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import { getUser } from '../../services/user';
+import { showAppointByDocId } from '../../store/actions';
 import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
-import { getUser } from '../../services/user';
 import './InfoDoctor.css';
 
 function InfoDoctor({ image = doctorImage }) {
   const [user, setUser] = useState([]);
   const params = useParams();
-
+  const dataAppointments = useSelector((state) => state.appointments);
+  const dispatch = useDispatch();
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
     setUser(data);
@@ -17,6 +20,7 @@ function InfoDoctor({ image = doctorImage }) {
 
   useEffect(() => {
     fetchDoctors();
+    dispatch(showAppointByDocId(params.doctorId));
   }, []);
   // const params = useParams();{params.doctorId}
   return (
@@ -52,7 +56,8 @@ function InfoDoctor({ image = doctorImage }) {
         </div>
       </div>
       <div className="calendariodoctor">
-        <Calendar />
+        <Calendar events={dataAppointments} />
+        <input type="datetime-local" />
         <Link className="agendarcita" to="/login"> Agendar una cita</Link>
       </div>
     </div>
