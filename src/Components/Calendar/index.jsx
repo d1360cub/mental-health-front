@@ -1,24 +1,11 @@
+/* eslint-disable react/prop-types */
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import './EventCalendar.css';
 
-const events = [
-  {
-    id: 1014254,
-    title: 'cita con alejandra',
-    start: '2022-04-08T15:00:00',
-    end: '2022-04-08T16:00:00',
-  },
-  {
-    id: 258789,
-    title: 'cita con mafe',
-    start: '2022-03-30T13:00:00',
-    end: '2022-03-30T14:00:00',
-  },
-];
-function FullCalendarApp() {
+function Calendar({ events }) {
   return (
     <FullCalendar
       locale="es"
@@ -40,4 +27,5 @@ function FullCalendarApp() {
     />
   );
 }
-export default FullCalendarApp;
+
+export default Calendar;

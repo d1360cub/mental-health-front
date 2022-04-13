@@ -1,44 +1,56 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable no-underscore-dangle */
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { showAppointByDocId } from '../../store/actions';
 import CardViewer from '../../Components/CardViewer';
 import Welcome from '../../Components/Welcome';
-import { listAllUsers } from '../../services/user';
 import Calendar from '../../Components/Calendar';
+import Loading from '../../Components/Loading';
 import './ViewerDoctor.css';
 
 function ViewerDoctor() {
-  const [patients, setPatients] = useState([]);
-  const [doctors, setDoctors] = useState([]);
+  const [load, setLoad] = useState(true);
+  const dispatch = useDispatch();
+  const dataAppointments = useSelector((state) => state.appointments);
+  const doctor = useSelector((state) => state.user);
+  const { user, token } = doctor;
 
-  const patientsFilter = patients.filter((element) => !element.license);
-  const doctorFilter = doctors.filter((element) => !element.services).filter((elet) => elet.license === '60877');
+  function sortAppointment(x, y) {
+    return x.start.localeCompare(y.start, 'fr', { ignorePunctuation: true });
+  }
+  const appointmentsSorted = dataAppointments.sort(sortAppointment);
 
   useEffect(() => {
-    const listPerson = async () => {
-      const data = await listAllUsers();
-      setPatients(data);
-      setDoctors(data);
-    };
-    listPerson();
-  }, []);
-
+    dispatch(showAppointByDocId(user._id));
+    setTimeout(() => {
+      setLoad(false);
+    }, 1000);
+  }, [token]);
   return (
-    <section className="homeDoctor">
-      {doctorFilter.map((element) => <Welcome information={element} key={element.id} />)}
-      <div className="home_content">
-        <div className="home_content--citas">
-          {patientsFilter.map((element) => (
-            <CardViewer
-              viewer
-              information={element}
-              key={element.id}
-            />
-          ))}
-        </div>
-        <div className="home_content--calender">
-          <Calendar />
-        </div>
-      </div>
-    </section>
+    <div>
+      {load
+        ? <Loading />
+        : (
+          <section className="homeDoctor">
+            <Welcome information={user} key={user._id} />
+            <div className="home_content">
+              <div className="home_content--citas">
+                {appointmentsSorted.map((element) => (
+                  <CardViewer
+                    key={element._id}
+                    information={element.patientId._id}
+                    viewer
+                  />
+                ))}
+              </div>
+              <div className="home_content--calender">
+                <Calendar events={appointmentsSorted} />
+              </div>
+            </div>
+          </section>
+        )}
+
+    </div>
   );
 }
 export default ViewerDoctor;
