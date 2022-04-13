@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import imageProfile from '../../image/doc-350x350.png';
-import HistoryModal from '../HistoryModal';
+// import HistoryModal from '../HistoryModal';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
 function CardViewer({ information, viewer }) {
-  const [modal, setModal] = useState(false);
+  const [/* modal */, setModal] = useState(false);
   const [user, setUser] = useState({});
   useEffect(async () => {
     const userById = await getUser(information);
@@ -49,7 +49,11 @@ function CardViewer({ information, viewer }) {
               >
                 Historia Clinica
               </button>
-              <HistoryModal modal={modal} setModal={setModal} informationPatient={information} />
+              {/* <HistoryModal
+              modal={modal}
+              setModal={setModal}
+              informationPatient={information}
+              /> */}
             </>
           )
           : <div />}
