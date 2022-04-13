@@ -1,11 +1,18 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import imageProfile from '../../image/doc-350x350.png';
-import HistoryModal from '../HistoryModal';
+// import HistoryModal from '../HistoryModal';
+import { getUser } from '../../services/user';
 import './CardViewer.css';
 
 function CardViewer({ information, viewer }) {
-  const [modal, setModal] = useState(false);
+  const [/* modal */, setModal] = useState(false);
+  const [user, setUser] = useState({});
+  useEffect(async () => {
+    const userById = await getUser(information);
+    setUser(userById);
+  }, []);
+
   return (
     <div className="home_content--card">
       <div className="home_content--imagen">
@@ -15,23 +22,18 @@ function CardViewer({ information, viewer }) {
       </div>
       <div className="home-content__card--perfil">
         <h3>
-          {information.name}
+          {user.firstName}
           {' '}
-          {information.lastName}
+          {user.lastName}
         </h3>
         <p>
           <span>
-            {information.services}
+            {user.phone}
             ,
             {' '}
           </span>
           <span>
-            {information.phone}
-            ,
-            {' '}
-          </span>
-          <span>
-            {information.mail}
+            {user.email}
             ,
             {' '}
           </span>
@@ -39,8 +41,19 @@ function CardViewer({ information, viewer }) {
         {viewer
           ? (
             <>
-              <button type="button" onClick={() => setModal(true)} className="btn-header-users header__nav-link" id="H-clinica"> Historia Clinica </button>
-              <HistoryModal modal={modal} setModal={setModal} informationPatient={information} />
+              <button
+                type="button"
+                onClick={() => setModal(true)}
+                className="btn-header-users header__nav-link"
+                id="H-clinica"
+              >
+                Historia Clinica
+              </button>
+              {/* <HistoryModal
+              modal={modal}
+              setModal={setModal}
+              informationPatient={information}
+              /> */}
             </>
           )
           : <div />}
@@ -49,11 +62,11 @@ function CardViewer({ information, viewer }) {
   );
 }
 CardViewer.propTypes = {
-  information: PropTypes.objectOf(PropTypes.string),
+  information: PropTypes.string,
   viewer: PropTypes.bool,
 };
 CardViewer.defaultProps = {
-  information: {},
+  information: '',
   viewer: false,
 };
 

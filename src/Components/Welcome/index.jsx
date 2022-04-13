@@ -7,16 +7,14 @@ function Welcome({ information }) {
       <div className="home-Welcome__message">
         {' '}
         bienvenid@
-        {information.license ? <span>  Dr.</span> : <div />}
+        {information.role ? <span>  Dr.</span> : <div />}
         <br />
         <h4 id="home-Welcome--doctor">
-          {information.name}
-          {' '}
-          {information.lastName}
+          {information.fullName}
         </h4>
       </div>
       {
-        information.license
+        information.role
           ? (
             <div className="home_content__parrafo">
               <p>
