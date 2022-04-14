@@ -5,6 +5,7 @@ import {
   GET_SERVICES,
   GET_APPOINTMENTS,
   GET_USER,
+  RESERVE_APPOINTMENT,
 } from './types';
 
 import {
@@ -23,6 +24,7 @@ export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });
 export const getServices = (services) => ({ type: GET_SERVICES, payload: services });
 export const showByDoctorId = (appointments) => ({ type: GET_APPOINTMENTS, payload: appointments });
 export const getUserId = (user) => ({ type: GET_USER, payload: user });
+export const reserveOneAppointment = (date) => ({ type: RESERVE_APPOINTMENT, payload: date });
 
 export const createUser = (user) => async (dispatch) => {
   const userCreated = await newUser(user);
