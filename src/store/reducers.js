@@ -5,6 +5,7 @@ import {
   GET_SERVICES,
   GET_APPOINTMENTS,
   GET_USER,
+  RESERVE_APPOINTMENT,
 } from './types';
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
   services: [],
   appointments: [],
   patient: [],
+  preAppointment: { start: '2022-04-14T08:00', end: '2022-04-14T09:00' },
 };
 
 // eslint-disable-next-line default-param-last
@@ -47,6 +49,11 @@ function reducers(state = initialState, action) {
       return {
         ...state,
         patient: action.payload,
+      };
+    case RESERVE_APPOINTMENT:
+      return {
+        ...state,
+        preAppointment: action.payload,
       };
     default:
       return state;
