@@ -77,7 +77,7 @@ function InfoDoctor({ image = doctorImage }) {
         <Calendar events={dataAppointments} />
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <input type="date" name="date" className="form-control" onChange={handleChange} />
+            <input type="date" name="date" min="Date().now" className="form-control" onChange={handleChange} />
             <input type="time" name="startTime" step="3600" min="00:00" className="form-control" onChange={handleChange} />
           </fieldset>
           <button type="submit" className="btn-appointment">Reservar</button>
