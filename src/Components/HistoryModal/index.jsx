@@ -4,12 +4,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { showHistoryPatient } from '../../store/actions';
 import './HistoryModal.css';
 
-function HistoryModal({ modal, setModal, patientId, fullName }) {
+function HistoryModal({ modal, setModal, userId, fullName }) {
   const cHistory = useSelector((state) => state.cHistory);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(showHistoryPatient(patientId));
+    dispatch(showHistoryPatient(userId));
   }, []);
   return (
     <div className={`container-all ${modal && 'container-all--visible'}`} id="modal">
@@ -33,13 +33,13 @@ function HistoryModal({ modal, setModal, patientId, fullName }) {
   );
 }
 HistoryModal.propTypes = {
-  patientId: PropTypes.string,
+  userId: PropTypes.string,
   modal: PropTypes.bool,
   setModal: PropTypes.func,
   fullName: PropTypes.string,
 };
 HistoryModal.defaultProps = {
-  patientId: '',
+  userId: '',
   modal: false,
   setModal: () => {},
   fullName: '',

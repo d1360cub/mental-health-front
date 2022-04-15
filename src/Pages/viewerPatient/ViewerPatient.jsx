@@ -29,7 +29,7 @@ function ViewerPatient() {
             {appointment.map((element) => (
               <CardViewer
                 viewer={false}
-                information={element.doctorId._id}
+                userId={element.doctorId._id}
                 start={element.start}
                 end={element.end}
                 key={user._id}

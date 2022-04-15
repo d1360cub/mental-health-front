@@ -5,7 +5,7 @@ import HistoryModal from '../HistoryModal';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
-function CardViewer({ patientId, start, end }) {
+function CardViewer({ userId, start, end, viewer }) {
   const [modal, setModal] = useState(false);
   const startSplitted = start.split('T');
   const endSplitted = end.split('T');
@@ -18,7 +18,7 @@ function CardViewer({ patientId, start, end }) {
   const endTime = endSplitted[1];
   const [user, setUser] = useState({});
   useEffect(async () => {
-    const userById = await getUser(patientId);
+    const userById = await getUser(userId);
     setUser(userById);
   }, []);
 
@@ -47,7 +47,7 @@ function CardViewer({ patientId, start, end }) {
             {' '}
           </span>
         </p>
-        {user.role !== 'doctor'
+        {viewer
           ? (
             <>
               <button
@@ -61,7 +61,7 @@ function CardViewer({ patientId, start, end }) {
               <HistoryModal
                 modal={modal}
                 setModal={setModal}
-                patientId={patientId}
+                userId={userId}
                 fullName={`${user.firstName} ${user.lastName}`}
               />
             </>
@@ -84,14 +84,16 @@ function CardViewer({ patientId, start, end }) {
   );
 }
 CardViewer.propTypes = {
-  patientId: PropTypes.string,
+  userId: PropTypes.string,
   start: PropTypes.string,
   end: PropTypes.string,
+  viewer: PropTypes.bool,
 };
 CardViewer.defaultProps = {
-  patientId: '',
+  userId: '',
   start: '',
   end: '',
+  viewer: false,
 };
 
 export default CardViewer;

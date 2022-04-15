@@ -38,7 +38,7 @@ function ViewerDoctor() {
                 {appointmentsSorted.map((element) => (
                   <CardViewer
                     key={element._id}
-                    patientId={element.patientId._id}
+                    userId={element.patientId._id}
                     viewer
                   />
                 ))}
