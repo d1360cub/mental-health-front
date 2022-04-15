@@ -6,6 +6,7 @@ import {
   GET_APPOINTMENTS,
   GET_USER,
   RESERVE_APPOINTMENT,
+  GET_HISTORY_PATIENT,
 } from './types';
 
 import {
@@ -17,6 +18,7 @@ import {
 
 import getAppointmentsByDoctorId from '../services/appointments';
 import getAllServices from '../services/serviceServices';
+import getCHistoryPatient from '../services/cHistory';
 
 export const addUser = (user) => ({ type: ADD_USER, payload: user });
 export const getAllUsers = (users) => ({ type: GET_USERS, payload: users });
@@ -25,6 +27,7 @@ export const getServices = (services) => ({ type: GET_SERVICES, payload: service
 export const showByDoctorId = (appointments) => ({ type: GET_APPOINTMENTS, payload: appointments });
 export const getUserId = (user) => ({ type: GET_USER, payload: user });
 export const reserveOneAppointment = (date) => ({ type: RESERVE_APPOINTMENT, payload: date });
+export const getHistoryPatient = (cHistory) => ({ type: GET_HISTORY_PATIENT, payload: cHistory });
 
 export const createUser = (user) => async (dispatch) => {
   const userCreated = await newUser(user);
@@ -55,4 +58,9 @@ export const showAppointByDocId = (id) => async (dispatch) => {
 export const getUserById = (id) => async (dispatch) => {
   const userById = await getUser(id);
   dispatch(getUserId(userById));
+};
+
+export const showHistoryPatient = (id) => async (dispatch) => {
+  const historyPatient = await getCHistoryPatient(id);
+  dispatch(getHistoryPatient(historyPatient));
 };
