@@ -9,6 +9,11 @@
     transform: translateZ(0) scale(1,1);
   }
 }
+.loading {
+  display: grid;
+  place-content: center;
+  height: 90vh;
+}
 .ldio-tadgdxk5zuk div > div {
   position: absolute;
   width: 24px;

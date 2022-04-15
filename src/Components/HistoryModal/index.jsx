@@ -1,8 +1,16 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { showHistoryPatient } from '../../store/actions';
 import './HistoryModal.css';
 
-function HistoryModal({ modal, setModal, informationPatient }) {
+function HistoryModal({ modal, setModal, patientId, fullName }) {
+  const cHistory = useSelector((state) => state.cHistory);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(showHistoryPatient(patientId));
+  }, []);
   return (
     <div className={`container-all ${modal && 'container-all--visible'}`} id="modal">
       <div className="popup">
@@ -11,24 +19,13 @@ function HistoryModal({ modal, setModal, informationPatient }) {
           <h1>
             historia clinica de
             {' '}
-            <br />
-            {' '}
-            {informationPatient.name}
-            {' '}
-            {informationPatient.lastName}
+            {fullName}
           </h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
-            quae inventore tenetur voluptate beatae deserunt error minima enim
-            cumque ratione eveniet, ad eligendi velit incidunt cupiditate
-            libero. Quisquam, ducimus facere!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            magnam tempora vero mollitia nobis, illum repellat animi
-            voluptatibus. Sed optio dolore aspernatur voluptates. Debitis sequi
-            ratione quidem facilis sed saepe.
-          </p>
+          {cHistory.map((element) => (
+            <p>
+              {element.description}
+            </p>
+          ))}
         </div>
         <button type="button" onClick={() => setModal(false)} className="btn-close-popup"> X </button>
       </div>
@@ -36,13 +33,15 @@ function HistoryModal({ modal, setModal, informationPatient }) {
   );
 }
 HistoryModal.propTypes = {
-  informationPatient: PropTypes.objectOf(PropTypes.string),
+  patientId: PropTypes.string,
   modal: PropTypes.bool,
   setModal: PropTypes.func,
+  fullName: PropTypes.string,
 };
 HistoryModal.defaultProps = {
-  informationPatient: {},
+  patientId: '',
   modal: false,
   setModal: () => {},
+  fullName: '',
 };
 export default HistoryModal;
