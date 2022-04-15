@@ -1,16 +1,14 @@
 import React from 'react';
 import './HomePage.css';
 
-import Home from '../Home/Home';
-import About from '../About/About';
 import Services from '../Services/Services';
 import Doctors from '../Doctors/Doctors';
+import Slider from '../../Components/Slider/Slider';
 
 export default function HomePage() {
   return (
     <>
-      <Home />
-      <About />
+      <Slider />
       <Services />
       <Doctors />
       <section className="footer">
