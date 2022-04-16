@@ -13,6 +13,8 @@ export default function Doctors() {
   const [porCard, setPorCard] = useState(8);
   const maximo = users.length / porCard;
 
+  const doctorFilter = users.filter((element) => element.role === 'doctor');
+
   const fetchDoctors = async (query = {}) => {
     const data = await getDoctors(query);
     setUsers(data);
@@ -29,7 +31,7 @@ export default function Doctors() {
 
   return (
     <section className="doctors" id="doctors">
-      <h1 className="section-heading"><span>Doctors</span></h1>
+      <h1 className="section-heading"><span>Doctores</span></h1>
       <div>
         <Searchdoctor onSearch={handleSearch} />
 
@@ -38,12 +40,12 @@ export default function Doctors() {
         <Pagination card={card} setCard={setCard} maximo={maximo} />
       </div>
       <div className="doctors__box-container">
-        {users.slice(
+        {doctorFilter.slice(
           (card - 1) * porCard,
           (card - 1) * porCard + porCard,
         // eslint-disable-next-line react/no-array-index-key
         // eslint-disable-next-line no-underscore-dangle
-        ).map((user) => <Doctorcard key={user._id} image={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} id={user.id} />)}
+        ).map((user) => <Doctorcard key={user._id} image={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} id={user._id} />)}
       </div>
     </section>
   );

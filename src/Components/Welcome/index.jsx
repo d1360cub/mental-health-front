@@ -6,17 +6,14 @@ function Welcome({ information }) {
     <div className="home-Welcome">
       <div className="home-Welcome__message">
         {' '}
-        bienvenid@
-        {information.license ? <span>  Dr.</span> : <div />}
-        <br />
+        Bienvenid@
+        {information.role === 'doctor' ? <span>  Dr.</span> : <div />}
         <h4 id="home-Welcome--doctor">
-          {information.name}
-          {' '}
-          {information.lastName}
+          {information.fullName}
         </h4>
       </div>
       {
-        information.license
+        information.role === 'doctor'
           ? (
             <div className="home_content__parrafo">
               <p>
@@ -30,7 +27,7 @@ function Welcome({ information }) {
             <div className="home_content__parrafo">
               <p>
                 {' '}
-                <strong> Tu proxima cita</strong>
+                <strong> Tu proxima cita es con :</strong>
                 {' '}
               </p>
             </div>
