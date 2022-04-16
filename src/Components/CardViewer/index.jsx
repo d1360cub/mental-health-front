@@ -1,15 +1,24 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import imageProfile from '../../image/doc-350x350.png';
-// import HistoryModal from '../HistoryModal';
+import HistoryModal from '../HistoryModal';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
-function CardViewer({ information, viewer }) {
-  const [/* modal */, setModal] = useState(false);
+function CardViewer({ userId, start, end, viewer }) {
+  const [modal, setModal] = useState(false);
+  const startSplitted = start.split('T');
+  const endSplitted = end.split('T');
+  const startDate = startSplitted[0].split('-');
+  const finalDate = [];
+  for (let i = 2; i >= 0; i -= 1) {
+    finalDate.push(startDate[i]);
+  }
+  const startTime = startSplitted[1];
+  const endTime = endSplitted[1];
   const [user, setUser] = useState({});
   useEffect(async () => {
-    const userById = await getUser(information);
+    const userById = await getUser(userId);
     setUser(userById);
   }, []);
 
@@ -49,24 +58,41 @@ function CardViewer({ information, viewer }) {
               >
                 Historia Clinica
               </button>
-              {/* <HistoryModal
-              modal={modal}
-              setModal={setModal}
-              informationPatient={information}
-              /> */}
+              <HistoryModal
+                modal={modal}
+                setModal={setModal}
+                userId={userId}
+                fullName={`${user.firstName} ${user.lastName}`}
+              />
             </>
           )
-          : <div />}
+          : (
+            <>
+              <div>
+                {`Fecha de inicio: ${finalDate.join('/')}`}
+              </div>
+              <div>
+                {`Hora inicio: ${startTime}`}
+              </div>
+              <div>
+                {`Hora final: ${endTime}`}
+              </div>
+            </>
+          )}
       </div>
     </div>
   );
 }
 CardViewer.propTypes = {
-  information: PropTypes.string,
+  userId: PropTypes.string,
+  start: PropTypes.string,
+  end: PropTypes.string,
   viewer: PropTypes.bool,
 };
 CardViewer.defaultProps = {
-  information: '',
+  userId: '',
+  start: '',
+  end: '',
   viewer: false,
 };
 
