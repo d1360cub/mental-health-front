@@ -10,7 +10,7 @@ function Checklist() {
   const { token } = useSelector((state) => state.user);
   const [tasks, setTasks] = useState([]);
   const fetchTasks = async (query = {}) => {
-    const data = await getTasks(query);
+    const data = await getTasks(query, token);
     setTasks(data);
   };
   useEffect(() => {

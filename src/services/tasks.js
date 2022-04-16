@@ -19,10 +19,16 @@ export const newTask = async (newTaskRegister, token) => {
   }
 };
 
-export const getTasks = async (query = {}) => {
+export const getTasks = async (query = {}, token) => {
+  const payload = {
+    headers: {
+      'Content-type': 'application/json',
+      authorization: `bearer ${token}`,
+    },
+  };
   try {
     const queryString = new URLSearchParams(query).toString();
-    const response = await fetch(`${API_URL}/api/tasks?${queryString}`);
+    const response = await fetch(`${API_URL}/api/tasks?${queryString}`, payload);
     const tasks = await response.json();
     return tasks;
   } catch (error) {
@@ -41,7 +47,6 @@ export const getTask = async (id) => {
 };
 
 export const updateTask = async (taskUpdate, token) => {
-  console.log(taskUpdate);
   const payload = {
     method: 'PATCH',
     headers: {
