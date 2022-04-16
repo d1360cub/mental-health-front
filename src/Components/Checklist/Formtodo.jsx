@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function FormTodo({ handleAddItem }) {
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAddItem({
       done: false,
       id: (+new Date()).toString(),
-      description,
+      title,
     });
-    setDescription(' ');
+    setTitle(' ');
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -20,12 +20,12 @@ function FormTodo({ handleAddItem }) {
           <input
             type="text"
             className="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <button
             className="button pink"
-            disabled={description ? '' : 'disabled'}
+            disabled={title ? '' : 'disabled'}
           >
             Add
           </button>

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import doctorImage from '../../image/doc-350x350.png';
-import Calendar from '../../Components/Calendar/index';
-import { getUser } from '../../services/user';
-=======
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,31 +6,20 @@ import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment } from '../../store/actions';
 import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
->>>>>>> develop
 import './InfoDoctor.css';
 
 function InfoDoctor({ image = doctorImage }) {
   const [user, setUser] = useState([]);
-<<<<<<< HEAD
-  const params = useParams();
-=======
   const [form, setForm] = useState({});
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
   const dispatch = useDispatch();
->>>>>>> develop
 
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
     setUser(data);
   };
 
-<<<<<<< HEAD
-  useEffect(() => {
-    fetchDoctors();
-  }, []);
-  // const params = useParams();{params.doctorId}
-=======
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm(
@@ -60,7 +41,6 @@ function InfoDoctor({ image = doctorImage }) {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
   }, []);
->>>>>>> develop
   return (
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
@@ -94,9 +74,6 @@ function InfoDoctor({ image = doctorImage }) {
         </div>
       </div>
       <div className="calendariodoctor">
-<<<<<<< HEAD
-        <Calendar />
-=======
         <Calendar events={dataAppointments} />
         <form onSubmit={handleSubmit}>
           <fieldset>
@@ -105,7 +82,6 @@ function InfoDoctor({ image = doctorImage }) {
           </fieldset>
           <button type="submit" className="btn-appointment">Reservar</button>
         </form>
->>>>>>> develop
         <Link className="agendarcita" to="/login"> Agendar una cita</Link>
       </div>
     </div>
