@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-alert */
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,8 +15,8 @@ function InfoDoctor({ image = doctorImage }) {
   const [form, setForm] = useState({});
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
+  const userLogin = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
     setUser(data);
@@ -32,15 +34,22 @@ function InfoDoctor({ image = doctorImage }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const splitTime = form.startTime.split(':');
-    splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
-    const endHour = splitTime.join(':');
-    dispatch(reserveOneAppointment({ start: `${form.date}T${form.startTime}`, end: `${form.date}T${endHour}`, doctorId: params.doctorId }));
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert('para agendar una cita primero debe de iniciar sesion ');
+    } else {
+      const splitTime = await form.startTime.split(':');
+      splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
+      const endHour = splitTime.join(':');
+      dispatch(reserveOneAppointment({ start: `${form.date}T${form.startTime}`, end: `${form.date}T${endHour}`, doctorId: params.doctorId, patientId: userLogin.user._id }));
+    }
   };
+
   useEffect(() => {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
   }, []);
+
   return (
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
@@ -77,12 +86,13 @@ function InfoDoctor({ image = doctorImage }) {
         <Calendar events={dataAppointments} />
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <input type="date" name="date" min="Date().now" className="form-control" onChange={handleChange} />
-            <input type="time" name="startTime" step="3600" min="00:00" className="form-control" onChange={handleChange} />
+            <input type="date" name="date" min="Date().now" className="form-control" onChange={handleChange} required />
+            <input type="time" name="startTime" step="3600" min="00:00" className="form-control" onChange={handleChange} required />
           </fieldset>
           <button type="submit" className="btn-appointment">Reservar</button>
         </form>
-        <Link className="agendarcita" to="/login"> Agendar una cita</Link>
+        <br />
+        <Link className="agendarcita" to="/Login"> iniciar sesion</Link>
       </div>
     </div>
 
