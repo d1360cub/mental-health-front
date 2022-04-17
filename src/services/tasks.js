@@ -1,3 +1,4 @@
+/* eslint-disable default-param-last */
 /* eslint-disable no-underscore-dangle */
 const API_URL = process.env.REACT_APP_API_URL;
 

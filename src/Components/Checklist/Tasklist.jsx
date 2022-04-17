@@ -19,13 +19,11 @@ function TaskList({ list, updateTask }) {
 
 TaskList.propTypes = {
   list: PropTypes.string,
-  setList: PropTypes.func,
   updateTask: PropTypes.func,
 };
 
 TaskList.defaultProps = {
   list: '',
-  setList: () => {},
   updateTask: () => {},
 };
 

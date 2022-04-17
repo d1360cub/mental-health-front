@@ -1,6 +1,7 @@
 .calendar-perfilInfo{
     display: grid;
-    grid-template-columns: 1fr 1fr;    
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem;
     width: 100%;
     margin: auto;
     font-family: sans-serif;
@@ -73,4 +74,21 @@
 }
 .tilesdoctor1{
     color:  var(--blue);
+}
+
+@media(width <= 768px){
+    .calendar-perfilInfo{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding-top: 3rem;
+    }
+    .calendariodoctor{
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+        position: relative;
+        right: 0%;        
+    }
 }
