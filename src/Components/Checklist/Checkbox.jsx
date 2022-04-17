@@ -1,18 +1,19 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Checkbox({ onChange, data: { id, description, done } }) {
+function Checkbox({ onChange, data: { _id, title, done } }) {
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className="todo new-item">
       <input
         className="todo__state"
-        name={id}
+        name={_id}
         type="checkbox"
         defaultChecked={done}
-        onChange={onChange}
+        onChange={(_e) => onChange({ _id, title, status: !done })}
       />
-      <div className="todo__text">{description}</div>
+      <div className="todo__text">{title}</div>
     </label>
   );
 }
