@@ -1,14 +1,15 @@
+/* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import './Welcome.css';
 
 function Welcome({ information }) {
   return (
-    <div className="home-Welcome">
+    <div className="home-Welcome" role="home-Welcome">
       <div className="home-Welcome__message">
         {' '}
         Bienvenid@
         {information.role === 'doctor' ? <span>  Dr.</span> : <div />}
-        <h4 id="home-Welcome--doctor">
+        <h4 id="home-Welcome--doctor" role="viewFullName">
           {information.fullName}
         </h4>
       </div>

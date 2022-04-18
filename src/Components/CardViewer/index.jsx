@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import imageProfile from '../../image/doc-350x350.png';
@@ -23,13 +24,13 @@ function CardViewer({ userId, start, end, viewer }) {
   }, []);
 
   return (
-    <div className="home_content--card">
+    <div className="home_content--card" role="home_content--card">
       <div className="home_content--imagen">
         <figure>
           <img src={imageProfile} alt="" />
         </figure>
       </div>
-      <div className="home-content__card--perfil">
+      <div className="home-content__card--perfil" role="home-content__card--perfil">
         <h3>
           {user.firstName}
           {' '}
