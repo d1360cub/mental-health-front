@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import doctorImage from '../../image/doc-350x350.png';
 
-function Doctorcard({ image = doctorImage, firstName, lastName, email, id }) {
+function Doctorcard({ image = doctorImage, firstName, lastName, email, id, atentionarea }) {
   return (
     <div className="box">
       <Link to={`/perfil-doctor/${id}`}>
@@ -15,7 +15,8 @@ function Doctorcard({ image = doctorImage, firstName, lastName, email, id }) {
           {' '}
           {lastName}
         </h3>
-        <p>{email}</p>
+        <h4>{email}</h4>
+        <p>{atentionarea}</p>
       </Link>
 
     </div>

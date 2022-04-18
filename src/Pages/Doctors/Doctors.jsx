@@ -45,7 +45,7 @@ export default function Doctors() {
           (card - 1) * porCard + porCard,
         // eslint-disable-next-line react/no-array-index-key
         // eslint-disable-next-line no-underscore-dangle
-        ).map((user) => <Doctorcard key={user._id} image={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} id={user._id} />)}
+        ).map((user) => <Doctorcard key={user._id} image={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} atentionarea={user.atentionarea} id={user._id} />)}
       </div>
     </section>
   );
