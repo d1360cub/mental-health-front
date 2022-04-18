@@ -20,7 +20,7 @@ import {
 import getAppointmentsByDoctorId from '../services/appointments';
 import getAllServices from '../services/serviceServices';
 import getCHistoryPatient from '../services/cHistory';
-import getTasks from '../services/tasks';
+import { getTasks } from '../services/tasks';
 
 export const addUser = (user) => ({ type: ADD_USER, payload: user });
 export const getAllUsers = (users) => ({ type: GET_USERS, payload: users });
@@ -68,7 +68,11 @@ export const showHistoryPatient = (id) => async (dispatch) => {
   dispatch(getHistoryPatient(historyPatient));
 };
 
-export const showTasksPatient = (id) => async (dispatch) => {
-  const tasksPatient = await getTasks(id);
+export const showTasksPatient = (token) => async (dispatch) => {
+  const tasksPatient = await getTasks(token);
   dispatch(getTasksPatient(tasksPatient));
+};
+
+export const updateTasks = (newTasks) => (dispatch) => {
+  dispatch(getTasksPatient(newTasks));
 };

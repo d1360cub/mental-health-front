@@ -20,7 +20,7 @@ export const newTask = async (newTaskRegister, token) => {
   }
 };
 
-export const getTasks = async (query = {}, token) => {
+export const getTasks = async (token) => {
   const payload = {
     headers: {
       'Content-type': 'application/json',
@@ -28,8 +28,7 @@ export const getTasks = async (query = {}, token) => {
     },
   };
   try {
-    const queryString = new URLSearchParams(query).toString();
-    const response = await fetch(`${API_URL}/api/tasks?${queryString}`, payload);
+    const response = await fetch(`${API_URL}/api/tasks`, payload);
     const tasks = await response.json();
     return tasks;
   } catch (error) {

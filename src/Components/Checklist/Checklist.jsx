@@ -1,26 +1,25 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { getTasks, newTask, updateTask } from '../../services/tasks';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { newTask, updateTask } from '../../services/tasks';
 import FormTodo from './Formtodo';
 import TaskList from './Tasklist';
 import './Checklist.css';
+import { showTasksPatient, updateTasks } from '../../store/actions';
 
 function Checklist() {
   const { token } = useSelector((state) => state.user);
-  const [tasks, setTasks] = useState([]);
-  const fetchTasks = async (query = {}) => {
-    const data = await getTasks(query, token);
-    setTasks(data);
-  };
+  const { tasks } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchTasks();
+    dispatch(showTasksPatient(token));
   }, []);
 
   const handleAddTask = async (_newTask) => {
     try {
       const data = await newTask(_newTask, token);
-      setTasks((prev) => [...prev, data]);
+      dispatch(updateTasks([...tasks, data]));
     } catch (error) {
       throw new Error(error);
     }
@@ -29,7 +28,7 @@ function Checklist() {
     try {
       const data = await updateTask(taskUpdate, token);
       const filterTasks = tasks.filter((task) => task._id !== data._id);
-      setTasks(filterTasks);
+      dispatch(updateTasks(filterTasks));
     } catch (error) {
       throw new Error(error);
     }
@@ -38,7 +37,7 @@ function Checklist() {
   return (
     <div>
       <FormTodo handleAddItem={handleAddTask} />
-      <TaskList list={tasks} setList={setTasks} updateTask={handleUpdateTask} />
+      <TaskList list={tasks} setList={updateTasks} updateTask={handleUpdateTask} />
     </div>
   );
 }
