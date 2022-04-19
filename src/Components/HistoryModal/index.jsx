@@ -1,16 +1,28 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { showHistoryPatient } from '../../store/actions';
+import { newCHistoryPatient } from '../../services/cHistory';
+import { showHistoryPatient, updateHistoryPatient } from '../../store/actions';
+import FormHclinic from './FormHclinic';
 import './HistoryModal.css';
 
 function HistoryModal({ modal, setModal, userId, fullName }) {
+  const { token } = useSelector((state) => state.user);
   const cHistory = useSelector((state) => state.cHistory);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(showHistoryPatient(userId));
   }, []);
+  const handleAddDescription = async (_newHistoryP) => {
+    try {
+      const data = await newCHistoryPatient({ ..._newHistoryP, patientId: userId }, token);
+      dispatch(updateHistoryPatient([...cHistory, data]));
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   return (
     <div className={`container-all ${modal && 'container-all--visible'}`} id="modal">
       <div className="popup">
@@ -21,11 +33,8 @@ function HistoryModal({ modal, setModal, userId, fullName }) {
             {' '}
             {fullName}
           </h1>
-          {cHistory.map((element) => (
-            <p>
-              {element.description}
-            </p>
-          ))}
+          <FormHclinic handleAddItem={handleAddDescription} />
+          <p>{cHistory.map((cHistories) => cHistories.description) }</p>
         </div>
         <button type="button" onClick={() => setModal(false)} className="btn-close-popup"> X </button>
       </div>

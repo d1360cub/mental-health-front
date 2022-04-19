@@ -70,6 +70,16 @@
 .btn-header-card{
   display: inline;
 }
+.todo-chistory{
+  background: #fff;
+  font-size: 15px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (max-width: 900px){
   .container-all{
     position: fixed;
