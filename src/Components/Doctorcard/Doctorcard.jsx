@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import doctorImage from '../../image/doc-350x350.png';
 
-function Doctorcard({ image = doctorImage, firstName, lastName, email, id }) {
+function Doctorcard({ image = doctorImage, firstName, lastName, email, id, atentionarea }) {
   return (
     <div className="box">
       <Link to={`/perfil-doctor/${id}`}>
@@ -15,7 +15,13 @@ function Doctorcard({ image = doctorImage, firstName, lastName, email, id }) {
           {' '}
           {lastName}
         </h3>
-        <p>{email}</p>
+        <h4>{email}</h4>
+        <p>
+          <strong>Areas de atención:</strong>
+          <br />
+          {' '}
+          {atentionarea}
+        </p>
       </Link>
 
     </div>
@@ -28,6 +34,7 @@ Doctorcard.propTypes = {
   lastName: PropTypes.string,
   email: PropTypes.string,
   id: PropTypes.number,
+  atentionarea: PropTypes.string,
 };
 
 Doctorcard.defaultProps = {
@@ -36,6 +43,7 @@ Doctorcard.defaultProps = {
   lastName: '',
   email: '',
   id: 0,
+  atentionarea: '',
 };
 
 export default Doctorcard;
