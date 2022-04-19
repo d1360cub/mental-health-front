@@ -72,3 +72,20 @@ export const updateUser = async (id, body) => {
     throw new Error(error);
   }
 };
+
+export const handleUploadImage = async (file, image) => {
+  const formData = new FormData();
+  formData.append('file', image);
+  const payload = {
+    method: 'POST',
+    body: formData,
+  };
+  try {
+    const result = await fetch(`${API_URL}/api/upload/image`, payload);
+    const data = await result.json();
+    const { url } = data;
+    return url;
+  } catch (error) {
+    throw new Error(error);
+  }
+};

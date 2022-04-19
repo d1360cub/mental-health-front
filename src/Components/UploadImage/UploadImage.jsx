@@ -1,34 +1,33 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { handleUploadImage, updateUser } from '../../services/user';
 
-function UploadImage() {
-  const API_URL = process.env.REACT_APP_API_URL;
+function UploadImage({ id }) {
   const [image, setImage] = useState(null);
   const handleChange = (event) => {
     setImage(event.target.files[0]);
   };
-  const handleUploadImage = async () => {
-    const formData = new FormData();
-    formData.append('file', image);
-    const payload = {
-      method: 'POST',
-      body: formData,
-    };
-    try {
-      const result = await fetch(`${API_URL}/api/upload/image`, payload);
-      const data = await result.json();
-      return data;
-    } catch (error) {
-      throw new Error(error);
-    }
+  const handleClick = async (avatar) => {
+    const uploadedImage = await handleUploadImage(avatar, image);
+    updateUser(id, { avatar: uploadedImage });
   };
   return (
     <div>
-      <input type="file" name="file" id="file" accept="image/*" onChange={handleChange} />
-      <button type="button" onClick={handleUploadImage}>
-        Cargar imagen
-      </button>
+      <table>
+        <td><input type="file" name="avatar" id="file" accept="image/*" onChange={handleChange} size="30" /></td>
+        <td>
+          <button type="button" onClick={handleClick} className="btn-appointment">
+            Cargar imagen
+          </button>
+        </td>
+      </table>
     </div>
   );
 }
-
+UploadImage.propTypes = {
+  id: PropTypes.string,
+};
+UploadImage.defaultProps = {
+  id: '',
+};
 export default UploadImage;
