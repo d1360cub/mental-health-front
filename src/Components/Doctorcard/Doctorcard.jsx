@@ -16,7 +16,12 @@ function Doctorcard({ image = doctorImage, firstName, lastName, email, id, atent
           {lastName}
         </h3>
         <h4>{email}</h4>
-        <p>{atentionarea}</p>
+        <p>
+          <strong>Areas de atención:</strong>
+          <br />
+          {' '}
+          {atentionarea}
+        </p>
       </Link>
 
     </div>
@@ -29,6 +34,7 @@ Doctorcard.propTypes = {
   lastName: PropTypes.string,
   email: PropTypes.string,
   id: PropTypes.number,
+  atentionarea: PropTypes.string,
 };
 
 Doctorcard.defaultProps = {
@@ -37,6 +43,7 @@ Doctorcard.defaultProps = {
   lastName: '',
   email: '',
   id: 0,
+  atentionarea: '',
 };
 
 export default Doctorcard;

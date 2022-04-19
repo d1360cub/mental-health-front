@@ -12,17 +12,13 @@ export default function Doctors() {
   // eslint-disable-next-line no-unused-vars
   const [porCard, setPorCard] = useState(8);
   const maximo = users.length / porCard;
+  const [query, setQuery] = useState('');
 
-  const doctorFilter = users.filter((element) => element.role === 'doctor');
-
-  const fetchDoctors = async (query = {}) => {
-    const data = await getDoctors(query);
+  const doctorFilter = users.filter((element) => element.role === 'doctor' && element.atentionarea.toLowerCase().includes(query));
+  const fetchDoctors = async (querys = {}) => {
+    const data = await getDoctors(querys);
     setUsers(data);
     setCard(1);
-  };
-
-  const handleSearch = (searchQuery) => {
-    fetchDoctors({ services_like: searchQuery });
   };
 
   useEffect(() => {
@@ -33,7 +29,7 @@ export default function Doctors() {
     <section className="doctors" id="doctors">
       <h1 className="section-heading"><span>Doctores</span></h1>
       <div>
-        <Searchdoctor onSearch={handleSearch} />
+        <Searchdoctor setQuery={setQuery} />
 
       </div>
       <div>
