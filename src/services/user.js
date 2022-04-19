@@ -55,3 +55,20 @@ export const login = async (user) => {
     throw new Error(error);
   }
 };
+
+export const updateUser = async (id, body) => {
+  const payload = {
+    method: 'PATCH',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/users/${id}`, payload);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};

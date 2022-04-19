@@ -13,6 +13,7 @@ import Modal from './Components/Modal/Modal';
 import InfoDoctor from './Pages/perfilDoctor/InfoDoctor';
 import UploadImage from './Components/UploadImage/UploadImage';
 import Activate from './Pages/Activate/Activate';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
-
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
         <Route path="*" element={<Page404 />} />
