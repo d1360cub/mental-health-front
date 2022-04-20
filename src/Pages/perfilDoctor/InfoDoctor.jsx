@@ -61,22 +61,22 @@ function InfoDoctor({ image = doctorImage }) {
             {user.lastName}
           </h1>
           <h3 className="tilesdoctor1">Matricula profesional</h3>
-          <p>
+          <p className="perfilParrafo">
             {user?.description}
             {' '}
           </p>
         </div>
         <div className="atencion">
           <h3 className="tilesdoctor1">Areas de atención</h3>
-          <p>{user?.atentionarea}</p>
+          <p className="perfilParrafo">{user?.atentionarea}</p>
         </div>
         <div className="expProfesional">
           <h3 className="tilesdoctor1">Expriencia profesional</h3>
-          <p>{user?.experience}</p>
+          <p className="perfilParrafo">{user?.experience}</p>
         </div>
         <div className="formacionAcademica">
           <h3 className="tilesdoctor1">Formación Académica</h3>
-          <p>
+          <p className="perfilParrafo">
             <span>{user?.academic}</span>
             <br />
           </p>
