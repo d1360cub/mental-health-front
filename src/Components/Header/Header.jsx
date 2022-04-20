@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { NavLink } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link';
+import { NavLink, Link } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import './Header.css';
 
 export default function Header() {
@@ -18,10 +18,10 @@ export default function Header() {
         Mental Health
       </NavLink>
       <nav className="header__navigation" ref={menu}>
-        <Link to="#home" className="header__nav-link">Home</Link>
-        <Link to="#about" className="header__nav-link">About</Link>
-        <Link to="#services" className="header__nav-link" smooth>Services</Link>
-        <Link to="#doctors" className="header__nav-link">Doctors</Link>
+        <NavHashLink to="/#home" className="header__nav-link">Home</NavHashLink>
+        <NavHashLink to="/#about" className="header__nav-link">About</NavHashLink>
+        <NavHashLink to="/#services" className="header__nav-link" smooth>Services</NavHashLink>
+        <NavHashLink to="/#doctors" className="header__nav-link">Doctors</NavHashLink>
         <Link to="/login" className="btn-header-users header__nav-link">
           Users
         </Link>
