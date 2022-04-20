@@ -41,8 +41,13 @@ function HistoryModal({ modal, setModal, userId, fullName }) {
                 { cHistories.description }
                 {' '}
                 <br />
-                <strong>Fecha:</strong>
+                <strong>Fecha: </strong>
                 {cHistories.createdAt}
+                <br />
+                <strong>Doctor: </strong>
+                {cHistories.doctorId.firstName}
+                {' '}
+                {cHistories.doctorId.lastName}
               </p>
             ))}
           </div>

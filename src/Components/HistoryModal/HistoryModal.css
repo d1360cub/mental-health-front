@@ -28,7 +28,7 @@
 }
 .popup{
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   height: 500px;
   position: relative;
   top:50%;
@@ -38,13 +38,13 @@
   background: white;
 }
 .img{
-  width: 40%;
+  width: 30%;
   background-image: url(./menHealth.jpg);
   background-size: cover;
   background-position: center;
 }
 .container-text{
-  width:60%;
+  width:100%;
   padding:50px;
   overflow-y:auto;
 }
