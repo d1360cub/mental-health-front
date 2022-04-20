@@ -3,7 +3,8 @@
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import sweetalert from 'sweetalert';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment } from '../../store/actions';
 import doctorImage from '../../image/doc-350x350.png';
@@ -11,6 +12,7 @@ import Calendar from '../../Components/Calendar/index';
 import './InfoDoctor.css';
 
 function InfoDoctor({ image = doctorImage }) {
+  const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [form, setForm] = useState({});
   const params = useParams();
@@ -36,12 +38,28 @@ function InfoDoctor({ image = doctorImage }) {
     event.preventDefault();
     const token = localStorage.getItem('token');
     if (!token) {
-      alert('para agendar una cita primero debe de iniciar sesion ');
+      sweetalert({
+        title: 'Te falta un ultimo paso',
+        text: 'para continuar con la solicitud de cita lo invitamos a que inicie sesion',
+        icon: 'info',
+        buttons: ['Cancelar', 'Continuar'],
+        timer: '30000',
+      }).then((respuesta) => {
+        if (respuesta) {
+          navigate('/login');
+        } else {
+          sweetalert({ text: 'resetear store', timer: '3000' });
+        }
+      });
     } else {
       const splitTime = await form.startTime.split(':');
       splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
       const endHour = splitTime.join(':');
-      dispatch(reserveOneAppointment({ start: `${form.date}T${form.startTime}`, end: `${form.date}T${endHour}`, doctorId: params.doctorId, patientId: userLogin.user._id }));
+      dispatch(reserveOneAppointment({
+        start: `${form.date}T${form.startTime}`,
+        end: `${form.date}T${endHour}`,
+        doctorId: params.doctorId,
+      }));
     }
   };
 
@@ -108,5 +126,9 @@ InfoDoctor.defaultProps = {
   image: doctorImage,
 
 };
-
+// dispatch(reserveOneAppointment({
+//   start: `${form.date}T${form.startTime}`,
+//   end: `${form.date}T${endHour}`,
+//   doctorId: params.doctorId,
+//   patientId: userLogin.user._id }));
 export default InfoDoctor;
