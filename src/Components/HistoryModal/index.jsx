@@ -12,8 +12,8 @@ function HistoryModal({ modal, setModal, userId, fullName }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(showHistoryPatient(userId));
-  }, []);
+    if (modal) dispatch(showHistoryPatient(userId));
+  }, [modal]);
   const handleAddDescription = async (_newHistoryP) => {
     try {
       const data = await newCHistoryPatient({ ..._newHistoryP, patientId: userId }, token);
@@ -34,7 +34,18 @@ function HistoryModal({ modal, setModal, userId, fullName }) {
             {fullName}
           </h1>
           <FormHclinic handleAddItem={handleAddDescription} />
-          <p>{cHistory.map((cHistories) => cHistories.description) }</p>
+          <div className="containercHisroty">
+            {cHistory.map((cHistories) => (
+              <p className="containerPCH">
+                {' '}
+                { cHistories.description }
+                {' '}
+                <br />
+                <strong>Fecha:</strong>
+                {cHistories.createdAt}
+              </p>
+            ))}
+          </div>
         </div>
         <button type="button" onClick={() => setModal(false)} className="btn-close-popup"> X </button>
       </div>

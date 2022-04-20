@@ -17,9 +17,11 @@ function FormHclinic({ handleAddItem }) {
     <form onSubmit={handleSubmit}>
       <div>
         <div>
-          <input
+          <textarea
+            className="textareaCH"
             type="text"
             value={description}
+            placeholder="Escribe aquí tus anotaciones sobre el paciente"
             onChange={(e) => setDescription(e.target.value)}
           />
           <button
