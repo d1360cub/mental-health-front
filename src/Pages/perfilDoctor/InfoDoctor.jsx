@@ -17,7 +17,7 @@ function InfoDoctor({ image = doctorImage }) {
   const [form, setForm] = useState({});
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
-  const userLogin = useSelector((state) => state.user);
+  // const userLogin = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
@@ -38,20 +38,6 @@ function InfoDoctor({ image = doctorImage }) {
     event.preventDefault();
     const token = localStorage.getItem('token');
     if (!token) {
-      sweetalert({
-        title: 'Te falta un ultimo paso',
-        text: 'para continuar con la solicitud de cita lo invitamos a que inicie sesion',
-        icon: 'info',
-        buttons: ['Cancelar', 'Continuar'],
-        timer: '30000',
-      }).then((respuesta) => {
-        if (respuesta) {
-          navigate('/login');
-        } else {
-          sweetalert({ text: 'resetear store', timer: '3000' });
-        }
-      });
-    } else {
       const splitTime = await form.startTime.split(':');
       splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
       const endHour = splitTime.join(':');
@@ -60,6 +46,18 @@ function InfoDoctor({ image = doctorImage }) {
         end: `${form.date}T${endHour}`,
         doctorId: params.doctorId,
       }));
+      sweetalert({
+        title: 'Te falta un ultimo paso',
+        text: 'para continuar con la solicitud de cita lo invitamos a que inicie sesion',
+        icon: 'info',
+        buttons: ['Cancelar', 'Continuar'],
+      }).then((respuesta) => {
+        if (respuesta) {
+          navigate('/login');
+        } else {
+          sweetalert({ text: 'resetear store', timer: '3000' });
+        }
+      });
     }
   };
 
