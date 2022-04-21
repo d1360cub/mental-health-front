@@ -19,7 +19,6 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/register" element={<Register />} />
