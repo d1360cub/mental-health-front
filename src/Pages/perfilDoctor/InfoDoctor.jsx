@@ -1,6 +1,4 @@
-/* eslint-disable no-tabs */
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-alert */
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,6 +15,7 @@ import './InfoDoctor.css';
 
 function InfoDoctor({ image = doctorImage }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [stateModal, setStateModal] = useState(false);
   const [doctor, setDoctor] = useState([]);
   const [form, setForm] = useState({});
@@ -25,7 +24,7 @@ function InfoDoctor({ image = doctorImage }) {
   const preAppointment = useSelector((state) => state.preAppointment);
   const patient = useSelector((state) => state.user);
   const { user } = patient;
-  const dispatch = useDispatch();
+
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
     setDoctor(data);
@@ -40,6 +39,7 @@ function InfoDoctor({ image = doctorImage }) {
       },
     );
   };
+
   function handleConfirm() {
     const patientId = user._id;
     const appointmentConfirm = preAppointment;
@@ -80,7 +80,7 @@ function InfoDoctor({ image = doctorImage }) {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
     if (Object.keys(preAppointment).length !== 0) { setStateModal(true); }
-  }, [params.doctorId]);
+  }, [preAppointment]);
 
   return (
     <div className="calendar-perfilInfo">
@@ -128,34 +128,41 @@ function InfoDoctor({ image = doctorImage }) {
           <ContentBotonModal>
             <Boton onClick={() => setStateModal(!stateModal)}>solicitud cita</Boton>
           </ContentBotonModal>
-          <ModalAppointment
-            stateModal={stateModal}
-            setStateModal={setStateModal}
-          >
-            <Contenido>
-              <h2>tu cita ha sido programada con el profesional:</h2>
-              <p>
-                {doctor.firstName}
-                {' '}
-                {doctor.lastName}
-              </p>
-              <span>
-                la hora de inicio es:
-                {preAppointment.start}
-              </span>
-              <br />
-              <span>
-                la hora de finalizacion es:
-                {preAppointment.end}
-              </span>
-              <br />
-              <p>
-                el valor a cancelar es:
-                {preAppointment.doctorId}
-              </p>
-              <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
-            </Contenido>
-          </ModalAppointment>
+          {(Object.keys(preAppointment).length !== 0)
+            ? (
+              <ModalAppointment
+                stateModal={stateModal}
+                setStateModal={setStateModal}
+              >
+                <Contenido>
+                  <h2>tu cita ha sido programada con el profesional:</h2>
+                  <p>
+                    {doctor.firstName}
+                    {' '}
+                    {doctor.lastName}
+                  </p>
+                  <span>
+                    el dia de la cita es :
+                    {preAppointment.start}
+                  </span>
+                  <span>
+                    la hora de inicio es:
+                    {preAppointment.start}
+                  </span>
+                  <br />
+                  <span>
+                    la hora de finalizacion es:
+                    {preAppointment.end}
+                  </span>
+                  <br />
+                  <p>
+                    el valor a cancelar es: $50.000 pesos
+                  </p>
+                  <button type="button" className="btn-appointment" onClick={handleConfirm} style={{ position: 'absolute', bottom: '20px' }}>confirmar</button>
+                </Contenido>
+              </ModalAppointment>
+            )
+            : <div />}
         </div>
         <br />
       </div>
@@ -174,39 +181,39 @@ InfoDoctor.defaultProps = {
 export default InfoDoctor;
 
 const ContentBotonModal = styled.div`
-	padding: 40px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 `;
 const Boton = styled.button`
-	display: block;
-	padding: 10px 30px;
-	border-radius: 100px;
-	color: #fff;
-	border: none;
-	background: #1766DC;
-	cursor: pointer;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
-	transition: .3s ease all;
-	&:hover {
-		background: #0066FF;
-	}
+  display: block;
+  padding: 10px 30px;
+  border-radius: 100px;
+  color: #fff;
+  border: none;
+  background: #1766DC;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: .3s ease all;
+  &:hover {
+    background: #0066FF;
+  }
 `;
 
 const Contenido = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	h1 {
-		font-size: 42px;
-		font-weight: 700;
-		margin-bottom: 10px;
-	}
-	p, span {
-		font-size: 18px;
-		margin-bottom: 5px;
-	}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  p, span {
+  font-size: 18px;
+  margin-bottom: 5px;
+  }
 `;
