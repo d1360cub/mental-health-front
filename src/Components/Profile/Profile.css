@@ -1,9 +1,21 @@
-table {
-  width: 50%;
-  margin: 2rem
+.profile__container {
+  display: flex;
 }
 
-th, td {
+.profile__table {
+  width: 30%;
+  margin: 2rem;
+  border: 1px solid #ccc;
+}
+
+.profile__table th {
+  width: 25%;
+  text-align: left;
+  vertical-align: top;
+  font-size: 2rem;
+}
+
+.profile__table td {
   width: 25%;
   text-align: left;
   vertical-align: top;
