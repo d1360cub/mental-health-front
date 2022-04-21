@@ -45,7 +45,7 @@ function InfoDoctor({ image = doctorImage }) {
     const appointmentConfirm = preAppointment;
     appointmentConfirm.patientId = `${patientId}`;
     createAppointmet(appointmentConfirm, localStorage.getItem('token'));
-    // dispatch(resetState());
+    dispatch(resetState());
   }
 
   const handleSubmit = async (event) => {
@@ -123,11 +123,7 @@ function InfoDoctor({ image = doctorImage }) {
           </fieldset>
           <button type="submit" className="btn-appointment">Reservar</button>
           <br />
-          <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
         </form>
-        {/* { Object.keys(preAppointment).length !== 0
-          ? () => setStateModal(true)
-          : setStateModal(false) } */}
         <div>
           <ContentBotonModal>
             <Boton onClick={() => setStateModal(!stateModal)}>solicitud cita</Boton>
@@ -157,7 +153,7 @@ function InfoDoctor({ image = doctorImage }) {
                 el valor a cancelar es:
                 {preAppointment.doctorId}
               </p>
-              <Boton>Confirmar</Boton>
+              <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
             </Contenido>
           </ModalAppointment>
         </div>
