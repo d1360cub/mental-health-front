@@ -1,3 +1,4 @@
+/* eslint-disable no-tabs */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-alert */
 import PropTypes from 'prop-types';
@@ -5,15 +6,18 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import sweetalert from 'sweetalert';
+import styled from 'styled-components';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment, resetState } from '../../store/actions';
 import { createAppointmet } from '../../services/appointments';
 import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
+import ModalAppointment from '../../Components/ModalAppointment';
 import './InfoDoctor.css';
 
 function InfoDoctor({ image = doctorImage }) {
   const navigate = useNavigate();
+  const [stateModal, setStateModal] = useState(false);
   const [doctor, setDoctor] = useState([]);
   const [form, setForm] = useState({});
   const params = useParams();
@@ -21,7 +25,6 @@ function InfoDoctor({ image = doctorImage }) {
   const preAppointment = useSelector((state) => state.preAppointment);
   const patient = useSelector((state) => state.user);
   const { user } = patient;
-  // const userLogin = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
@@ -42,7 +45,7 @@ function InfoDoctor({ image = doctorImage }) {
     const appointmentConfirm = preAppointment;
     appointmentConfirm.patientId = `${patientId}`;
     createAppointmet(appointmentConfirm, localStorage.getItem('token'));
-    dispatch(resetState());
+    // dispatch(resetState());
   }
 
   const handleSubmit = async (event) => {
@@ -66,7 +69,8 @@ function InfoDoctor({ image = doctorImage }) {
         if (respuesta) {
           navigate('/login');
         } else {
-          sweetalert({ text: 'resetear store', timer: '3000' });
+          sweetalert({ text: 'preagendamiento cancelado', timer: '3000' });
+          dispatch(resetState());
         }
       });
     }
@@ -75,7 +79,7 @@ function InfoDoctor({ image = doctorImage }) {
   useEffect(() => {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
-  }, []);
+  }, [params.doctorId]);
 
   return (
     <div className="calendar-perfilInfo">
@@ -120,25 +124,89 @@ function InfoDoctor({ image = doctorImage }) {
           <br />
           <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
         </form>
+        <div>
+          <ContentBotonModal>
+            <Boton onClick={() => setStateModal(!stateModal)}>solicitud cita</Boton>
+          </ContentBotonModal>
+          <ModalAppointment
+            stateModal={stateModal}
+            setStateModal={setStateModal}
+          >
+            <Contenido>
+              <h2>tu cita ha sido programada con el profesional:</h2>
+              <p>
+                {doctor.firstName}
+                {' '}
+                {doctor.lastName}
+              </p>
+              <span>
+                la hora de inicio es:
+                {preAppointment.start}
+              </span>
+              <br />
+              <span>
+                la hora de finalizacion es:
+                {preAppointment.end}
+              </span>
+              <br />
+              <p>
+                el valor a cancelar es:
+                {preAppointment.doctorId}
+              </p>
+              <Boton>Confirmar</Boton>
+            </Contenido>
+          </ModalAppointment>
+        </div>
         <br />
       </div>
     </div>
-
   );
 }
 
 InfoDoctor.propTypes = {
   image: PropTypes.string,
-
 };
 
 InfoDoctor.defaultProps = {
   image: doctorImage,
-
 };
-// dispatch(reserveOneAppointment({
-//   start: `${form.date}T${form.startTime}`,
-//   end: `${form.date}T${endHour}`,
-//   doctorId: params.doctorId,
-//   patientId: userLogin.user._id }));
+
 export default InfoDoctor;
+
+const ContentBotonModal = styled.div`
+	padding: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+`;
+const Boton = styled.button`
+	display: block;
+	padding: 10px 30px;
+	border-radius: 100px;
+	color: #fff;
+	border: none;
+	background: #1766DC;
+	cursor: pointer;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	transition: .3s ease all;
+	&:hover {
+		background: #0066FF;
+	}
+`;
+
+const Contenido = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	h1 {
+		font-size: 42px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	p, span {
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+`;
