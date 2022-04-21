@@ -17,7 +17,7 @@ function HistoryModal({ modal, setModal, userId, fullName }) {
   const handleAddDescription = async (_newHistoryP) => {
     try {
       const data = await newCHistoryPatient({ ..._newHistoryP, patientId: userId }, token);
-      dispatch(updateHistoryPatient([...cHistory, data]));
+      dispatch(updateHistoryPatient([data, ...cHistory]));
     } catch (error) {
       throw new Error(error);
     }
