@@ -1,16 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-alert */
-import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment } from '../../store/actions';
-import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
 import './InfoDoctor.css';
 
-function InfoDoctor({ image = doctorImage }) {
+function InfoDoctor() {
   const [user, setUser] = useState([]);
   const [form, setForm] = useState({});
   const params = useParams();
@@ -54,7 +52,7 @@ function InfoDoctor({ image = doctorImage }) {
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
         <div className="infobasica">
-          <img className="fotoperfil" src={image} alt="" />
+          <img className="fotoperfil" src={user.avatar} alt="" />
           <h1 className="tilesdoctor1">
             {user.firstName}
             {' '}
@@ -98,15 +96,5 @@ function InfoDoctor({ image = doctorImage }) {
 
   );
 }
-
-InfoDoctor.propTypes = {
-  image: PropTypes.string,
-
-};
-
-InfoDoctor.defaultProps = {
-  image: doctorImage,
-
-};
 
 export default InfoDoctor;
