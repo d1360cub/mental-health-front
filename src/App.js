@@ -13,6 +13,7 @@ import Modal from './Components/Modal/Modal';
 import InfoDoctor from './Pages/perfilDoctor/InfoDoctor';
 import UploadImage from './Components/UploadImage/UploadImage';
 import Activate from './Pages/Activate/Activate';
+import Stripe from './Components/Stripe/Stripe';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/perfil-doctor/:doctorId" element={<InfoDoctor />} />
         <Route path="/upload" element={<UploadImage />} />
         <Route path="/verify/:token" element={<Activate />} />
+        <Route path="/payment" element={<Stripe />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
