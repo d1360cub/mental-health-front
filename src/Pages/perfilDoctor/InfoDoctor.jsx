@@ -79,6 +79,7 @@ function InfoDoctor({ image = doctorImage }) {
   useEffect(() => {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
+    if (Object.keys(preAppointment).length !== 0) { setStateModal(true); }
   }, [params.doctorId]);
 
   return (
@@ -124,6 +125,9 @@ function InfoDoctor({ image = doctorImage }) {
           <br />
           <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
         </form>
+        {/* { Object.keys(preAppointment).length !== 0
+          ? () => setStateModal(true)
+          : setStateModal(false) } */}
         <div>
           <ContentBotonModal>
             <Boton onClick={() => setStateModal(!stateModal)}>solicitud cita</Boton>
