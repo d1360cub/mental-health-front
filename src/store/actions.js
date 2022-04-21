@@ -7,6 +7,7 @@ import {
   GET_USER,
   RESERVE_APPOINTMENT,
   GET_HISTORY_PATIENT,
+  RESET,
 } from './types';
 
 import {
@@ -20,6 +21,7 @@ import getAppointmentsByDoctorId from '../services/appointments';
 import getAllServices from '../services/serviceServices';
 import getCHistoryPatient from '../services/cHistory';
 
+export const resetState = () => ({ type: RESET });
 export const addUser = (user) => ({ type: ADD_USER, payload: user });
 export const getAllUsers = (users) => ({ type: GET_USERS, payload: users });
 export const loginUser = (user) => ({ type: LOGIN_USER, payload: user });

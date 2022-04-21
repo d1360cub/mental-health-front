@@ -4,22 +4,14 @@ import { useSelector } from 'react-redux';
 import CardViewer from '../../Components/CardViewer';
 import Checklist from '../../Components/Checklist/Checklist';
 import Welcome from '../../Components/Welcome';
-import { getAppointmentsByPatientId, createAppointmet } from '../../services/appointments';
+import { getAppointmentsByPatientId } from '../../services/appointments';
 import Calendar from '../../Components/Calendar';
 import '../HomeViewer.css';
 
 function ViewerPatient() {
   const [appointment, setAppointment] = useState([]);
   const patient = useSelector((state) => state.user);
-  const preAppointment = useSelector((state) => state.preAppointment);
   const { user, token } = patient;
-
-  function handleConfirm() {
-    const patientId = user._id;
-    const appointmentConfirm = preAppointment;
-    appointmentConfirm.patientId = `${patientId}`;
-    createAppointmet(appointmentConfirm, token);
-  }
 
   useEffect(async () => {
     const data = await getAppointmentsByPatientId(user._id);
@@ -31,7 +23,6 @@ function ViewerPatient() {
       <section className="home" id="home">
         <div>
           <Welcome information={user} key={user._id} />
-          <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
         </div>
         <div className="home_content">
           <div className="home_content--citas">

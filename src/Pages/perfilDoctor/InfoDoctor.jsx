@@ -3,25 +3,29 @@
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import sweetalert from 'sweetalert';
 import { getUser } from '../../services/user';
-import { showAppointByDocId, reserveOneAppointment } from '../../store/actions';
+import { showAppointByDocId, reserveOneAppointment, resetState } from '../../store/actions';
+import { createAppointmet } from '../../services/appointments';
 import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
 import './InfoDoctor.css';
 
 function InfoDoctor({ image = doctorImage }) {
   const navigate = useNavigate();
-  const [user, setUser] = useState([]);
+  const [doctor, setDoctor] = useState([]);
   const [form, setForm] = useState({});
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
+  const preAppointment = useSelector((state) => state.preAppointment);
+  const patient = useSelector((state) => state.user);
+  const { user } = patient;
   // const userLogin = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
-    setUser(data);
+    setDoctor(data);
   };
 
   const handleChange = (event) => {
@@ -33,6 +37,13 @@ function InfoDoctor({ image = doctorImage }) {
       },
     );
   };
+  function handleConfirm() {
+    const patientId = user._id;
+    const appointmentConfirm = preAppointment;
+    appointmentConfirm.patientId = `${patientId}`;
+    createAppointmet(appointmentConfirm, localStorage.getItem('token'));
+    dispatch(resetState());
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,28 +83,28 @@ function InfoDoctor({ image = doctorImage }) {
         <div className="infobasica">
           <img className="fotoperfil" src={image} alt="" />
           <h1 className="tilesdoctor1">
-            {user.firstName}
+            {doctor.firstName}
             {' '}
-            {user.lastName}
+            {doctor.lastName}
           </h1>
           <h3 className="tilesdoctor1">Matricula profesional</h3>
           <p>
-            {user?.description}
+            {doctor?.description}
             {' '}
           </p>
         </div>
         <div className="atencion">
           <h3 className="tilesdoctor1">Areas de atención</h3>
-          <p>{user?.atentionarea}</p>
+          <p>{doctor?.atentionarea}</p>
         </div>
         <div className="expProfesional">
           <h3 className="tilesdoctor1">Expriencia profesional</h3>
-          <p>{user?.experience}</p>
+          <p>{doctor?.experience}</p>
         </div>
         <div className="formacionAcademica">
           <h3 className="tilesdoctor1">Formación Académica</h3>
           <p>
-            <span>{user?.academic}</span>
+            <span>{doctor?.academic}</span>
             <br />
           </p>
         </div>
@@ -106,9 +117,10 @@ function InfoDoctor({ image = doctorImage }) {
             <input type="time" name="startTime" step="3600" min="00:00" className="form-control" onChange={handleChange} required />
           </fieldset>
           <button type="submit" className="btn-appointment">Reservar</button>
+          <br />
+          <button type="button" className="btn-appointment" onClick={handleConfirm}>confirmar</button>
         </form>
         <br />
-        <Link className="agendarcita" to="/Login"> iniciar sesion</Link>
       </div>
     </div>
 
