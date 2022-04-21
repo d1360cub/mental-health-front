@@ -75,12 +75,15 @@ function InfoDoctor({ image = doctorImage }) {
       });
     }
   };
+  function cancelPreAppointment() {
+    dispatch(resetState());
+  }
 
   useEffect(() => {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
     if (Object.keys(preAppointment).length !== 0) { setStateModal(true); }
-  }, [preAppointment]);
+  }, []);
 
   return (
     <div className="calendar-perfilInfo">
@@ -158,7 +161,34 @@ function InfoDoctor({ image = doctorImage }) {
                   <p>
                     el valor a cancelar es: $50.000 pesos
                   </p>
-                  <button type="button" className="btn-appointment" onClick={handleConfirm} style={{ position: 'absolute', bottom: '20px' }}>confirmar</button>
+                  <button
+                    type="button"
+                    className="btn-appointment"
+                    onClick={handleConfirm}
+                    style={
+                    {
+                      position: 'absolute',
+                      bottom: '20px',
+                      right: '40px',
+                    }
+                    }
+                  >
+                    Confirmar
+                  </button>
+                  <button
+                    type="button"
+                    className="btn-appointment"
+                    onClick={cancelPreAppointment}
+                    style={
+                    {
+                      position: 'absolute',
+                      bottom: '20px',
+                      left: '40px',
+                    }
+                    }
+                  >
+                    cancelar
+                  </button>
                 </Contenido>
               </ModalAppointment>
             )
