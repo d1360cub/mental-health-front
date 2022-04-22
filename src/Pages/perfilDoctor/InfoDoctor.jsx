@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-// import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -8,7 +7,6 @@ import styled from 'styled-components';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment, resetState } from '../../store/actions';
 import { createAppointmet } from '../../services/appointments';
-// import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
 import ModalAppointment from '../../Components/ModalAppointment';
 import './InfoDoctor.css';
