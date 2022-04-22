@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
+import Doctors from './Pages/Doctors/Doctors';
 import HomePage from './Pages/HomePage/HomePage';
 import Register from './Pages/Register/Register';
 import ViewerDoctor from './Pages/viewerDoctor/ViewerDoctor';
@@ -21,6 +22,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<HomePage />} />
+        <Route path="/doctors" exact element={<Doctors />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/doctor-signup" element={<DoctorSignup />} />

@@ -29,24 +29,39 @@ export default function Header() {
         Mental Health
       </NavLink>
       <nav className="header__navigation" ref={menu}>
-        <NavHashLink to="/" className="header__nav-link">Home</NavHashLink>
+        <NavHashLink to="/" className="header__nav-link">Inicio</NavHashLink>
         {!token && (
         <>
-          <NavHashLink to="/#about" className="header__nav-link">About</NavHashLink>
-          <NavHashLink to="/#services" className="header__nav-link" smooth>Services</NavHashLink>
-          <NavHashLink to="/#doctors" className="header__nav-link">Doctors</NavHashLink>
+          <NavHashLink to="/#about" className="header__nav-link">Acerca de</NavHashLink>
+          <NavHashLink to="/#services" className="header__nav-link" smooth>Servicios</NavHashLink>
+          <NavHashLink to="/#doctors" className="header__nav-link">Doctores</NavHashLink>
           <Link to="/login" className="btn-header-users header__nav-link">
-            Users
+            Usuarios
           </Link>
         </>
         )}
         {token && (
         <>
-          <NavHashLink to={userPage} className="header__nav-link">Appoiments</NavHashLink>
-          <NavHashLink to="/profile" className="header__nav-link">Profile</NavHashLink>
-          <button onClick={onLogout} className="btn-header-users header__nav-link">
-            Logout
-          </button>
+          {user?.role === 'patient' && (
+            <>
+              <NavHashLink to="/doctors" className="header__nav-link">Doctores</NavHashLink>
+              <NavHashLink to={userPage} className="header__nav-link">Mis Citas</NavHashLink>
+              <NavHashLink to="/profile" className="header__nav-link">Mi Perfil</NavHashLink>
+              <button onClick={onLogout} className="btn-header-users header__nav-link">
+                Salir
+              </button>
+            </>
+          )}
+          {user?.role === 'doctor' && (
+          <>
+            <NavHashLink to={userPage} className="header__nav-link">Mis Citas</NavHashLink>
+            <NavHashLink to="/profile" className="header__nav-link">Mi Perfil</NavHashLink>
+            <button onClick={onLogout} className="btn-header-users header__nav-link">
+              Salir
+            </button>
+          </>
+          )}
+
         </>
         )}
       </nav>
