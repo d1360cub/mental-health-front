@@ -8,6 +8,7 @@ import {
   GET_USER,
   RESERVE_APPOINTMENT,
   GET_HISTORY_PATIENT,
+  RESET,
   GET_TASKS_PATIENT,
 } from './types';
 
@@ -25,6 +26,11 @@ const initialState = {
 // eslint-disable-next-line default-param-last
 function reducers(state = initialState, action) {
   switch (action.type) {
+    case RESET:
+      return {
+        ...state,
+        preAppointment: initialState.preAppointment,
+      };
     case ADD_USER:
       return {
         ...state,
