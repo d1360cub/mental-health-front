@@ -8,6 +8,10 @@ fieldset {
   padding: 0.5rem;
   margin-bottom: 2rem;
 }
+.doctors{
+  position: relative;
+  top: 50px;
+}
 
 label {
   font-size: 2rem;
