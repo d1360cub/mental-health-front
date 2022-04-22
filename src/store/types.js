@@ -7,3 +7,4 @@ export const GET_USER = 'GET_USER';
 export const RESERVE_APPOINTMENT = 'RESERVE_APPOINTMENT';
 export const GET_HISTORY_PATIENT = 'GET_HISTORY_PATIENT';
 export const RESET = 'RESET';
+export const GET_TASKS_PATIENT = 'GET_TASKS_PATIENT';

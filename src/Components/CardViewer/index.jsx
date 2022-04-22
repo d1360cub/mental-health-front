@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import imageProfile from '../../image/doc-350x350.png';
 import HistoryModal from '../HistoryModal';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
@@ -27,7 +26,7 @@ function CardViewer({ userId, start, end, viewer }) {
     <div className="home_content--card" role="home_content--card">
       <div className="home_content--imagen">
         <figure>
-          <img src={imageProfile} alt="" />
+          <img src={user.avatar} alt="" />
         </figure>
       </div>
       <div className="home-content__card--perfil" role="home-content__card--perfil">

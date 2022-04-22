@@ -49,6 +49,7 @@ function Login() {
           <fieldset>
             <label htmlFor="email" className="login__label" onChange={handleChange}>
               Email *
+              <br />
               <input
                 type="email"
                 id="email"
@@ -61,11 +62,12 @@ function Login() {
           <fieldset>
             <label htmlFor="password" className="login__label" onChange={handleChange}>
               Contraseña *
+              <br />
               <input
                 type="password"
                 id="password"
                 name="password"
-                size="20"
+                size="25"
                 placeholder="contraseña"
               />
             </label>

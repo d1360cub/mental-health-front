@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -8,12 +8,12 @@ import styled from 'styled-components';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment, resetState } from '../../store/actions';
 import { createAppointmet } from '../../services/appointments';
-import doctorImage from '../../image/doc-350x350.png';
+// import doctorImage from '../../image/doc-350x350.png';
 import Calendar from '../../Components/Calendar/index';
 import ModalAppointment from '../../Components/ModalAppointment';
 import './InfoDoctor.css';
 
-function InfoDoctor({ image = doctorImage }) {
+function InfoDoctor() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [stateModal, setStateModal] = useState(false);
@@ -89,29 +89,29 @@ function InfoDoctor({ image = doctorImage }) {
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
         <div className="infobasica">
-          <img className="fotoperfil" src={image} alt="" />
+          <img className="fotoperfil" src={user.avatar} alt="" />
           <h1 className="tilesdoctor1">
             {doctor.firstName}
             {' '}
             {doctor.lastName}
           </h1>
           <h3 className="tilesdoctor1">Matricula profesional</h3>
-          <p>
+          <p className="perfilParrafo">
             {doctor?.description}
             {' '}
           </p>
         </div>
         <div className="atencion">
           <h3 className="tilesdoctor1">Areas de atención</h3>
-          <p>{doctor?.atentionarea}</p>
+          <p className="perfilParrafo">{doctor?.atentionarea}</p>
         </div>
         <div className="expProfesional">
           <h3 className="tilesdoctor1">Expriencia profesional</h3>
-          <p>{doctor?.experience}</p>
+          <p className="perfilParrafo">{doctor?.experience}</p>
         </div>
         <div className="formacionAcademica">
           <h3 className="tilesdoctor1">Formación Académica</h3>
-          <p>
+          <p className="perfilParrafo">
             <span>{doctor?.academic}</span>
             <br />
           </p>
@@ -199,14 +199,6 @@ function InfoDoctor({ image = doctorImage }) {
     </div>
   );
 }
-
-InfoDoctor.propTypes = {
-  image: PropTypes.string,
-};
-
-InfoDoctor.defaultProps = {
-  image: doctorImage,
-};
 
 export default InfoDoctor;
 
