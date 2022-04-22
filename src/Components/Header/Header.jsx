@@ -3,18 +3,15 @@
 import { useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
-import { useDispatch, useSelector } from 'react-redux';
-import { LogoutUsers } from '../../store/actions';
+import { useSelector } from 'react-redux';
 import './Header.css';
 
 export default function Header() {
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.user);
+
   const onLogout = async (e) => {
     e.preventDefault();
   };
-
-  dispatch(LogoutUsers());
 
   const menu = useRef();
 
@@ -30,8 +27,8 @@ export default function Header() {
         Mental Health
       </NavLink>
       <nav className="header__navigation" ref={menu}>
-        <NavHashLink to="/#home" className="header__nav-link">Home</NavHashLink>
-        {!user && (
+        <NavHashLink to="/" className="header__nav-link">Home</NavHashLink>
+        {!token && (
         <>
           <NavHashLink to="/#about" className="header__nav-link">About</NavHashLink>
           <NavHashLink to="/#services" className="header__nav-link" smooth>Services</NavHashLink>
@@ -41,10 +38,13 @@ export default function Header() {
           </Link>
         </>
         )}
-        {user && (
-        <button onClick={onLogout} className="btn-header-users header__nav-link">
-          Logout
-        </button>
+        {token && (
+        <>
+          <NavHashLink to="/profile" className="header__nav-link">Profile</NavHashLink>
+          <button onClick={onLogout} className="btn-header-users header__nav-link">
+            Logout
+          </button>
+        </>
         )}
       </nav>
 
