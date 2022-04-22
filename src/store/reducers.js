@@ -2,7 +2,6 @@ import {
   ADD_USER,
   GET_USERS,
   LOGIN_USER,
-  LOGOUT_USER,
   GET_SERVICES,
   GET_APPOINTMENTS,
   GET_USER,
@@ -45,11 +44,6 @@ function reducers(state = initialState, action) {
       return {
         ...state,
         user: action.payload,
-      };
-    case LOGOUT_USER:
-      return {
-        ...state,
-        user: null,
       };
     case GET_SERVICES:
       return {
