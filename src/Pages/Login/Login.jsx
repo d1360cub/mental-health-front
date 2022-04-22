@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { validateUser } from '../../store/actions';
 import LoginImage from '../../image/login.jpg';
 import './Login.css';
 
 function Login() {
-  // role = useSelector((state) => state.user.role);
+  const preAppointment = useSelector((state) => state.preAppointment);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const showPassword = () => {
@@ -30,8 +30,16 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const result = await dispatch(validateUser(form));
+    if (result.user.role === 'patient') {
+      if (Object.keys(preAppointment).length !== 0) {
+        navigate(`/perfil-doctor/${preAppointment.doctorId}`);
+      } else {
+        navigate('/viewerPatient');
+      }
+    } else {
+      navigate('/viewerDoctor');
+    }
     setForm({});
-    navigate(result.user.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
   };
   return (
     <div className="register__landing">
@@ -41,6 +49,7 @@ function Login() {
           <fieldset>
             <label htmlFor="email" className="login__label" onChange={handleChange}>
               Email *
+              <br />
               <input
                 type="email"
                 id="email"
@@ -53,11 +62,12 @@ function Login() {
           <fieldset>
             <label htmlFor="password" className="login__label" onChange={handleChange}>
               Contraseña *
+              <br />
               <input
                 type="password"
                 id="password"
                 name="password"
-                size="20"
+                size="25"
                 placeholder="contraseña"
               />
             </label>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
+import Doctors from './Pages/Doctors/Doctors';
 import HomePage from './Pages/HomePage/HomePage';
 import Register from './Pages/Register/Register';
 import ViewerDoctor from './Pages/viewerDoctor/ViewerDoctor';
@@ -14,14 +15,15 @@ import InfoDoctor from './Pages/perfilDoctor/InfoDoctor';
 import UploadImage from './Components/UploadImage/UploadImage';
 import Activate from './Pages/Activate/Activate';
 import Stripe from './Components/Stripe/Stripe';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
         <Route path="/" exact element={<HomePage />} />
+        <Route path="/doctors" exact element={<Doctors />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/doctor-signup" element={<DoctorSignup />} />
@@ -29,11 +31,11 @@ function App() {
         <Route path="/perfil-doctor/:doctorId" element={<InfoDoctor />} />
         <Route path="/upload" element={<UploadImage />} />
         <Route path="/verify/:token" element={<Activate />} />
-        <Route path="/payment" element={<Stripe />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
-
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/payment" element={<Stripe />} />
         </Route>
 
         <Route path="*" element={<Page404 />} />
