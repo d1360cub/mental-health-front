@@ -10,8 +10,9 @@ export default function Header() {
 
   const userPage = (user?.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
 
-  const onLogout = async (e) => {
-    e.preventDefault();
+  const onLogout = () => {
+    localStorage.clear();
+    window.location.href = '/';
   };
 
   const menu = useRef();
