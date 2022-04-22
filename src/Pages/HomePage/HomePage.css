@@ -69,6 +69,8 @@
 
 /* FOOTER */
 .footer {
+  position: relative;
+  top: 50px;
   text-transform: capitalize;
 }
 
