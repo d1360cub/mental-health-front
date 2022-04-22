@@ -87,7 +87,7 @@ function InfoDoctor() {
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
         <div className="infobasica">
-          <img className="fotoperfil" src={user.avatar} alt="" />
+          <img className="fotoperfil" src={doctor.avatar} alt={doctor.firstName} />
           <h1 className="tilesdoctor1">
             {doctor.firstName}
             {' '}
