@@ -83,8 +83,8 @@ export const handleUploadImage = async (file, image) => {
   try {
     const result = await fetch(`${API_URL}/api/upload/image`, payload);
     const data = await result.json();
-    const { url } = data;
-    return url;
+    const { secure_url } = data;
+    return secure_url;
   } catch (error) {
     throw new Error(error);
   }
