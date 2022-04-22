@@ -1,13 +1,14 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/button-has-type */
 import { useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useParams } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import { useSelector } from 'react-redux';
 import './Header.css';
 
 export default function Header() {
   const { token } = useSelector((state) => state.user);
+  const params = useParams();
+  const userRole = params.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient';
 
   const onLogout = async (e) => {
     e.preventDefault();
@@ -40,6 +41,7 @@ export default function Header() {
         )}
         {token && (
         <>
+          <NavHashLink to={userRole} className="header__nav-link">Appoiments</NavHashLink>
           <NavHashLink to="/profile" className="header__nav-link">Profile</NavHashLink>
           <button onClick={onLogout} className="btn-header-users header__nav-link">
             Logout
