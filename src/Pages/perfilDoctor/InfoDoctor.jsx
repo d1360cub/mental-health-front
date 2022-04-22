@@ -38,6 +38,17 @@ function InfoDoctor() {
     );
   };
 
+  async function formatDate() {
+    const splitTime = await form.startTime.split(':');
+    splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
+    const endHour = splitTime.join(':');
+    dispatch(reserveOneAppointment({
+      start: `${form.date}T${form.startTime}`,
+      end: `${form.date}T${endHour}`,
+      doctorId: params.doctorId,
+    }));
+  }
+
   function handleConfirm() {
     const patientId = user._id;
     const appointmentConfirm = preAppointment;
@@ -50,14 +61,8 @@ function InfoDoctor() {
     event.preventDefault();
     const token = localStorage.getItem('token');
     if (!token) {
-      const splitTime = await form.startTime.split(':');
-      splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
-      const endHour = splitTime.join(':');
-      dispatch(reserveOneAppointment({
-        start: `${form.date}T${form.startTime}`,
-        end: `${form.date}T${endHour}`,
-        doctorId: params.doctorId,
-      }));
+      setStateModal(false);
+      formatDate();
       sweetalert({
         title: 'Te falta un ultimo paso',
         text: 'para continuar con la solicitud de cita lo invitamos a que inicie sesion',
@@ -71,6 +76,9 @@ function InfoDoctor() {
           dispatch(resetState());
         }
       });
+    } else {
+      formatDate();
+      setStateModal(true);
     }
   };
   function cancelPreAppointment() {
@@ -87,7 +95,7 @@ function InfoDoctor() {
     <div className="calendar-perfilInfo">
       <div className="perfilInformacion">
         <div className="infobasica">
-          <img className="fotoperfil" src={user.avatar} alt="" />
+          <img className="fotoperfil" src={doctor.avatar} alt="" />
           <h1 className="tilesdoctor1">
             {doctor.firstName}
             {' '}
