@@ -6,7 +6,7 @@ const checkout = async (error, paymentMethod, token) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `bearer ${token}`,
+        authorization: `bearer ${token}`,
       },
       body: JSON.stringify({ paymentMethod, amount: 5_000 }),
     };

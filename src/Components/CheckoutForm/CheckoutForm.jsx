@@ -11,7 +11,7 @@ function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    checkout(error, paymentMethod);
+    checkout(error, paymentMethod, localStorage.getItem('token'));
   };
   return (
     <div>
