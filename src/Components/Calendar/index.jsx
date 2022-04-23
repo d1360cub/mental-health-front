@@ -22,7 +22,7 @@ function Calendar({ events }) {
         center: 'timeGridWeek,timeGridDay',
       }}
       events={events}
-      eventColor="green"
+      eventColor="#1977cc"
       nowIndicator="true"
     />
   );

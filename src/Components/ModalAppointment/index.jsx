@@ -12,7 +12,7 @@ function ModalAppointment({ children, stateModal, setStateModal }) {
       <Overlay>
         <ContenedorModal>
           <EncabezadoModal>
-            <h3>Aun paso de MENTAL HEALTH</h3>
+            <h3>A un paso de MENTAL HEALTH</h3>
           </EncabezadoModal>
 
           <BotonCerrar onClick={() => setStateModal(false)}>

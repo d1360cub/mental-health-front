@@ -17,6 +17,7 @@ function InfoDoctor() {
   const [stateModal, setStateModal] = useState(false);
   const [doctor, setDoctor] = useState([]);
   const [form, setForm] = useState({});
+  const [dataCalen, setDataCalen] = useState({ startTime: '', endTime: '', finalDate: '' });
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
   const preAppointment = useSelector((state) => state.preAppointment);
@@ -37,7 +38,19 @@ function InfoDoctor() {
       },
     );
   };
-
+  function datacalendar() {
+    const startSplitted = preAppointment.start.split('T');
+    const endSplitted = preAppointment.end.split('T');
+    const startDate = startSplitted[0].split('-');
+    const finalDate = [];
+    for (let i = 2; i >= 0; i -= 1) {
+      finalDate.push(startDate[i]);
+    }
+    const dataprue = finalDate.join('/');
+    const startTime = startSplitted[1];
+    const endTime = endSplitted[1];
+    setDataCalen({ startTime, endTime, dataprue });
+  }
   async function formatDate() {
     const splitTime = await form.startTime.split(':');
     splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
@@ -88,7 +101,10 @@ function InfoDoctor() {
   useEffect(() => {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
-    if (Object.keys(preAppointment).length !== 0) { setStateModal(true); }
+    if (Object.keys(preAppointment).length !== 0) {
+      setStateModal(true);
+      datacalendar();
+    }
   }, []);
 
   return (
@@ -135,7 +151,7 @@ function InfoDoctor() {
         </form>
         <div>
           <ContentBotonModal>
-            <Boton onClick={() => setStateModal(!stateModal)}>solicitud cita</Boton>
+            <Boton onClick={() => setStateModal(!stateModal)}>Solicitud cita</Boton>
           </ContentBotonModal>
           {(Object.keys(preAppointment).length !== 0)
             ? (
@@ -144,28 +160,28 @@ function InfoDoctor() {
                 setStateModal={setStateModal}
               >
                 <Contenido>
-                  <h2>tu cita ha sido programada con el profesional:</h2>
+                  <h2>Tu cita ha sido programada con el profesional:</h2>
                   <p>
                     {doctor.firstName}
                     {' '}
                     {doctor.lastName}
                   </p>
                   <span>
-                    el dia de la cita es :
-                    {preAppointment.start}
+                    El día de la cita es:
+                    {` ${dataCalen.dataprue}`}
                   </span>
                   <span>
-                    la hora de inicio es:
-                    {preAppointment.start}
+                    La hora de inicio es:
+                    {` ${dataCalen.startTime}`}
                   </span>
                   <br />
                   <span>
-                    la hora de finalizacion es:
-                    {preAppointment.end}
+                    La hora de finalizacion es:
+                    {` ${dataCalen.endTime}`}
                   </span>
                   <br />
                   <p>
-                    el valor a cancelar es: $50.000 pesos
+                    El valor a cancelar es: $50.000 pesos
                   </p>
                   <button
                     type="button"
@@ -193,12 +209,12 @@ function InfoDoctor() {
                     }
                     }
                   >
-                    cancelar
+                    Cancelar
                   </button>
                 </Contenido>
               </ModalAppointment>
             )
-            : <div />}
+            : null}
         </div>
         <br />
       </div>
