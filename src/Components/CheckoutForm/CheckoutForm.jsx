@@ -1,17 +1,32 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import checkout from '../../services/checkout';
+import { createAppointmet } from '../../services/appointments';
+import { resetState } from '../../store/actions';
 
 function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
+  const preAppointment = useSelector((state) => state.preAppointment);
+  const patientId = user._id;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    checkout(error, paymentMethod, localStorage.getItem('token'));
+    const payment = await checkout(error, paymentMethod, localStorage.getItem('token'));
+    const appointmentConfirm = preAppointment;
+    appointmentConfirm.patientId = `${patientId}`;
+    if (payment.status) {
+      createAppointmet(appointmentConfirm, localStorage.getItem('token'));
+      dispatch(resetState());
+    }
   };
   return (
     <div>

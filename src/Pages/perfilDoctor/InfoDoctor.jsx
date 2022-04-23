@@ -1,12 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import sweetalert from 'sweetalert';
 import styled from 'styled-components';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment, resetState } from '../../store/actions';
-import { createAppointmet } from '../../services/appointments';
 import Calendar from '../../Components/Calendar/index';
 import ModalAppointment from '../../Components/ModalAppointment';
 import './InfoDoctor.css';
@@ -20,8 +19,6 @@ function InfoDoctor() {
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
   const preAppointment = useSelector((state) => state.preAppointment);
-  const patient = useSelector((state) => state.user);
-  const { user } = patient;
 
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
@@ -47,14 +44,6 @@ function InfoDoctor() {
       end: `${form.date}T${endHour}`,
       doctorId: params.doctorId,
     }));
-  }
-
-  function handleConfirm() {
-    const patientId = user._id;
-    const appointmentConfirm = preAppointment;
-    appointmentConfirm.patientId = `${patientId}`;
-    createAppointmet(appointmentConfirm, localStorage.getItem('token'));
-    dispatch(resetState());
   }
 
   const handleSubmit = async (event) => {
@@ -167,20 +156,7 @@ function InfoDoctor() {
                   <p>
                     el valor a cancelar es: $50.000 pesos
                   </p>
-                  <button
-                    type="button"
-                    className="btn-appointment"
-                    onClick={handleConfirm}
-                    style={
-                    {
-                      position: 'absolute',
-                      bottom: '20px',
-                      right: '40px',
-                    }
-                    }
-                  >
-                    Confirmar
-                  </button>
+                  <Link to="/payment" className="btn-appointment">Realizar pago</Link>
                   <button
                     type="button"
                     className="btn-appointment"
