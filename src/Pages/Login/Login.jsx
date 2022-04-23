@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { React, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { validateUser } from '../../store/actions';
@@ -6,6 +8,7 @@ import LoginImage from '../../image/login.jpg';
 import './Login.css';
 
 function Login() {
+  const { register, handleSubmit, setError, formState: { errors } } = useForm();
   const preAppointment = useSelector((state) => state.preAppointment);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,25 +30,31 @@ function Login() {
       },
     );
   };
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const result = await dispatch(validateUser(form));
-    if (result.user.role === 'patient') {
-      if (Object.keys(preAppointment).length !== 0) {
-        navigate(`/perfil-doctor/${preAppointment.doctorId}`);
-      } else {
-        navigate('/viewerPatient');
-      }
-    } else {
-      navigate('/viewerDoctor');
+  const onSubmit = async (event) => {
+    // event.preventDefault();
+    const { error, user } = await dispatch(validateUser(form));
+    if (error) {
+      setError('email', { type: 'custom', message: error.message });
+      setError('password', { type: 'custom', message: error.message });
     }
-    setForm({});
+    if (user) {
+      if (user?.role === 'patient') {
+        if (Object.keys(preAppointment).length !== 0) {
+          navigate(`/perfil-doctor/${preAppointment.doctorId}`);
+        } else {
+          navigate('/viewerPatient');
+        }
+      } else {
+        navigate('/viewerDoctor');
+      }
+      setForm({});
+    }
   };
   return (
     <div className="register__landing">
       <section className="register" id="register">
         <div className="subtitle">Iniciar sesión</div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <fieldset>
             <label htmlFor="email" className="login__label" onChange={handleChange}>
               Email *
@@ -56,7 +65,19 @@ function Login() {
                 name="email"
                 size="25"
                 placeholder="correo@dominio.com"
+                {...register('email', {
+                  required: {
+                    value: true,
+                    message: 'El email es requerido',
+                  },
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: 'El formato no es correcto',
+                  },
+                })}
               />
+              <br />
+              {errors.email && <span className="validationP">{errors.email.message}</span>}
             </label>
           </fieldset>
           <fieldset>
@@ -69,7 +90,19 @@ function Login() {
                 name="password"
                 size="25"
                 placeholder="contraseña"
+                {...register('password', {
+                  required: {
+                    value: true,
+                    message: 'La contraseña es requerida',
+                  },
+                  minLength: {
+                    value: 3,
+                    message: 'La contraseña debe tener al menos 3 caracteres',
+                  },
+                })}
               />
+              <br />
+              {errors.password && <span className="validationP">{errors.password.message}</span>}
             </label>
             <button className="btn-appointment" onClick={showPassword} type="button">Mostrar contraseña</button>
           </fieldset>
