@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import sweetalert from 'sweetalert';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../store/actions';
 import './DoctorSignup.css';
@@ -18,6 +19,11 @@ function DoctorSignup() {
     event.preventDefault();
     dispatch(createUser(form));
     setForm({});
+    sweetalert({
+      title: 'Gracias por registrarte con nosotros.',
+      text: 'Para continuar con el proceso revisa tu correo',
+      buttons: ['Cancelar', 'Continuar'],
+    });
   };
   return (
     <div className="landing__doctor">
