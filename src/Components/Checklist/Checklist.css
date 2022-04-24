@@ -42,7 +42,7 @@ html {
   }
   
   .file-input > .text {
-    outline: none;
+    outline:10px;
     padding: 0px 10px;
     font-size: 15px;
     width: 230px;
@@ -57,7 +57,7 @@ html {
     padding: 1em 1em 1em 16%;
     margin: 0 auto;
     cursor: pointer; 
-    border-bottom: solid 1px #ddd; 
+    border-bottom: solid 10px #ddd; 
 }
   
   .todo.new-item {
@@ -83,13 +83,13 @@ html {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: auto;
     background-color: var(--blue);
     
     fill: none;
     stroke: stroke;
-    stroke-width: 2;
+    stroke-width: 4;
     stroke-linejoin: round;
     stroke-linecap: round;
   }

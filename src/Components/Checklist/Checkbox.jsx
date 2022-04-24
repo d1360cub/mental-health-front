@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Checkbox({ onChange, data: { _id, title, done } }) {
+function Checkbox({ onChange, data: { _id, title, status } }) {
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className="todo new-item">
@@ -10,8 +10,8 @@ function Checkbox({ onChange, data: { _id, title, done } }) {
         className="todo__state"
         name={_id}
         type="checkbox"
-        defaultChecked={done}
-        onChange={(_e) => onChange({ _id, title, status: !done })}
+        defaultChecked={status}
+        onChange={(_e) => onChange({ _id, title, status: !status })}
       />
       <div className="todo__text">{title}</div>
     </label>
