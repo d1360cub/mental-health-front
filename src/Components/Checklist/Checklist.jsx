@@ -35,7 +35,7 @@ function Checklist() {
   };
 
   return (
-    <div>
+    <div className="chechklist">
       <FormTodo handleAddItem={handleAddTask} />
       <TaskList list={tasks} setList={updateTasks} updateTask={handleUpdateTask} />
     </div>
