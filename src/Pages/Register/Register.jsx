@@ -20,10 +20,12 @@ function Register() {
     dispatch(createUser(form));
     setForm({});
     sweetalert({
+      icon: 'info',
       title: 'Gracias por registrarte con nosotros.',
       text: 'Para continuar con el proceso revisa tu correo',
-      buttons: ['Cancelar', 'Continuar'],
+      buttons: 'Continuar',
     });
+    event.target.reset();
   };
   return (
     <div className="register">

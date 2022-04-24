@@ -20,6 +20,7 @@ function DoctorSignup() {
     dispatch(createUser(form));
     setForm({});
     sweetalert({
+      icon: 'success',
       title: 'Gracias por registrarte con nosotros.',
       text: 'Para continuar con el proceso revisa tu correo',
       buttons: ['Cancelar', 'Continuar'],
