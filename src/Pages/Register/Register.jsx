@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import sweetalert from 'sweetalert';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -6,6 +8,7 @@ import './Register.css';
 import { createUser } from '../../store/actions';
 
 function Register() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [form, setForm] = useState({});
   const dispatch = useDispatch();
   const handleChange = (event) => {
@@ -15,12 +18,12 @@ function Register() {
       [name]: value,
     });
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const onSubmit = (event) => {
+    // event.preventDefault();
     dispatch(createUser(form));
     setForm({});
     sweetalert({
-      icon: 'info',
+      icon: 'success',
       title: 'Gracias por registrarte con nosotros.',
       text: 'Para continuar con el proceso revisa tu correo',
       buttons: 'Continuar',
@@ -31,7 +34,7 @@ function Register() {
     <div className="register">
       <div className="landingReg">
         <div className="subtitleReg">Registro</div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <fieldset>
             <label htmlFor="firstName" className="register__label">
               Nombre
@@ -42,7 +45,15 @@ function Register() {
                 name="firstName"
                 onChange={handleChange}
                 size="30"
+                {...register('firstName', {
+                  required: {
+                    value: true,
+                    message: 'El campo es requerido',
+                  },
+                })}
               />
+              <br />
+              {errors.firstName && <span className="validationP">{errors.firstName.message}</span>}
             </label>
           </fieldset>
           <fieldset>
@@ -55,7 +66,15 @@ function Register() {
                 name="lastName"
                 onChange={handleChange}
                 size="30"
+                {...register('lastName', {
+                  required: {
+                    value: true,
+                    message: 'El campo es requerido',
+                  },
+                })}
               />
+              <br />
+              {errors.lastName && <span className="validationP">{errors.lastName.message}</span>}
             </label>
           </fieldset>
           <fieldset>
@@ -68,7 +87,15 @@ function Register() {
                 name="phone"
                 onChange={handleChange}
                 size="30"
+                {...register('phone', {
+                  required: {
+                    value: true,
+                    message: 'El campo es requerido',
+                  },
+                })}
               />
+              <br />
+              {errors.phone && <span className="validationP">{errors.phone.message}</span>}
             </label>
           </fieldset>
           <fieldset>
@@ -81,7 +108,19 @@ function Register() {
                 name="email"
                 onChange={handleChange}
                 size="30"
+                {...register('email', {
+                  required: {
+                    value: true,
+                    message: 'El email es requerido',
+                  },
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: 'El formato no es correcto',
+                  },
+                })}
               />
+              <br />
+              {errors.email && <span className="validationP">{errors.email.message}</span>}
             </label>
           </fieldset>
           <fieldset>
@@ -94,7 +133,19 @@ function Register() {
                 name="password"
                 onChange={handleChange}
                 size="30"
+                {...register('password', {
+                  required: {
+                    value: true,
+                    message: 'La contraseña es requerida',
+                  },
+                  minLength: {
+                    value: 3,
+                    message: 'La contraseña debe tener al menos 3 caracteres',
+                  },
+                })}
               />
+              <br />
+              {errors.password && <span className="validationP">{errors.password.message}</span>}
             </label>
           </fieldset>
           <div className="btn__centered">

@@ -30,7 +30,7 @@ function Login() {
       },
     );
   };
-  const onSubmit = async (event) => {
+  const onSubmit = async () => {
     // event.preventDefault();
     const { error, user } = await dispatch(validateUser(form));
     if (error) {
