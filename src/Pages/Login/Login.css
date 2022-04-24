@@ -75,6 +75,11 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
+.validationP{
+  color: red;
+  padding: 1px;
+  font-size: small;
+}
 
 @media (min-width: 768px) {
 
