@@ -20,7 +20,7 @@ function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    const payment = await checkout(error, paymentMethod, localStorage.getItem('token'));
+    const payment = await checkout(error, paymentMethod, localStorage.getItem('token'), preAppointment);
     const appointmentConfirm = preAppointment;
     appointmentConfirm.patientId = `${patientId}`;
     if (payment.status) {
