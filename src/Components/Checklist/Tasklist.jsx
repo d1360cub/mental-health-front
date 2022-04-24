@@ -18,7 +18,7 @@ function TaskList({ list, updateTask }) {
 }
 
 TaskList.propTypes = {
-  list: PropTypes.string,
+  list: PropTypes.arrayOf(String),
   updateTask: PropTypes.func,
 };
 

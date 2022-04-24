@@ -14,7 +14,7 @@ import Modal from './Components/Modal/Modal';
 import InfoDoctor from './Pages/perfilDoctor/InfoDoctor';
 import UploadImage from './Components/UploadImage/UploadImage';
 import Activate from './Pages/Activate/Activate';
-import Stripe from './Components/Stripe/Stripe';
+import CheckoutForm from './Components/CheckoutForm/CheckoutForm';
 import Profile from './Components/Profile/Profile';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/payment" element={<Stripe />} />
+          <Route path="/payment" element={<CheckoutForm />} />
         </Route>
 
         <Route path="*" element={<Page404 />} />

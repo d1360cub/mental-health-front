@@ -83,6 +83,7 @@ function InfoDoctor() {
       formatDate();
       setStateModal(true);
     }
+    event.target.reset();
   };
   function cancelPreAppointment() {
     dispatch(resetState());
