@@ -12,7 +12,7 @@ function Activate() {
       const data = await response.json();
       if (data.token) {
         localStorage.setItem('token', data.token);
-        navigation('/login');
+        navigation('/');
       }
     };
     activate();
