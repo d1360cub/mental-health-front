@@ -33,7 +33,7 @@ Doctorcard.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   email: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.string,
   atentionarea: PropTypes.string,
 };
 
@@ -42,7 +42,7 @@ Doctorcard.defaultProps = {
   firstName: '',
   lastName: '',
   email: '',
-  id: 0,
+  id: '',
   atentionarea: '',
 };
 

@@ -20,6 +20,7 @@ function InfoDoctor() {
   const params = useParams();
   const dataAppointments = useSelector((state) => state.appointments);
   const preAppointment = useSelector((state) => state.preAppointment);
+  const dataUser = useSelector((state) => state.user);
 
   const fetchDoctors = async () => {
     const data = await getUser(params.doctorId);
@@ -48,8 +49,8 @@ function InfoDoctor() {
     const endTime = endSplitted[1];
     setDataCalen({ startTime, endTime, dataprue });
   }
-  async function formatDate() {
-    const splitTime = await form.startTime.split(':');
+  function formatDate() {
+    const splitTime = form.startTime.split(':');
     splitTime[0] = (parseInt((splitTime[0]), 10) + 1).toString();
     const endHour = splitTime.join(':');
     dispatch(reserveOneAppointment({
@@ -61,9 +62,9 @@ function InfoDoctor() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setStateModal(false);
     const token = localStorage.getItem('token');
     if (!token) {
-      setStateModal(false);
       formatDate();
       sweetalert({
         title: 'Te falta un ultimo paso',
@@ -90,11 +91,11 @@ function InfoDoctor() {
   useEffect(() => {
     fetchDoctors();
     dispatch(showAppointByDocId(params.doctorId));
-    if (Object.keys(preAppointment).length !== 0) {
-      setStateModal(true);
+    if ((Object.keys(preAppointment).length !== 0) && (Object.keys(dataUser).length !== 0)) {
       datacalendar();
+      setStateModal(true);
     }
-  }, []);
+  }, [preAppointment]);
 
   return (
     <div className="calendar-perfilInfo">
