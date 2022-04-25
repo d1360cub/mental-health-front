@@ -1,6 +1,6 @@
+/* eslint-disable max-len */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-// import { useForm } from 'react-hook-form';
 import sweetalert from 'sweetalert';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -18,8 +18,9 @@ function Register() {
       [name]: value,
     });
   };
+
   const onSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     dispatch(createUser(form));
     setForm({});
     sweetalert({
@@ -28,6 +29,7 @@ function Register() {
       text: 'Para continuar con el proceso revisa tu correo',
       buttons: 'Continuar',
     });
+    // event.target.reset();
   };
   return (
     <div className="register">
@@ -88,7 +90,7 @@ function Register() {
                 name="phone"
                 onChange={handleChange}
                 size="30"
-                /*{...register('phone', {
+                /* {...register('phone', {
                   required: {
                     value: true,
                     message: 'El campo es requerido',
@@ -96,7 +98,7 @@ function Register() {
                 })}
               />
               <br />
-              {errors.phone && <span className="validationP">{errors.phone.message}</span>}*/
+              {errors.phone && <span className="validationP">{errors.phone.message}</span>} */
               />
             </label>
           </fieldset>
@@ -110,7 +112,7 @@ function Register() {
                 name="email"
                 onChange={handleChange}
                 size="30"
-                /*{...register('email', {
+                /* {...register('email', {
                   required: {
                     value: true,
                     message: 'El email es requerido',
@@ -118,7 +120,7 @@ function Register() {
                 })}
               />
               <br />
-              {errors.email && <span className="validationP">{errors.email.message}</span>}*/
+              {errors.email && <span className="validationP">{errors.email.message}</span>} */
               />
             </label>
           </fieldset>
@@ -132,7 +134,7 @@ function Register() {
                 name="password"
                 onChange={handleChange}
                 size="30"
-                /*{...register('password', {
+                /* {...register('password', {
                   required: {
                     value: true,
                     message: 'La contraseña es requerida',
@@ -144,7 +146,7 @@ function Register() {
                 })}
               />
               <br />
-              {errors.password && <span className="validationP">{errors.password.message}</span>}*/
+              {errors.password && <span className="validationP">{errors.password.message}</span>} */
               />
             </label>
           </fieldset>

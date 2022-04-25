@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import sweetalert from 'sweetalert';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../store/actions';
 import './DoctorSignup.css';
 
 function DoctorSignup() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+ // const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   const [form, setForm] = useState({});
   const handleChange = (event) => {
@@ -19,7 +18,7 @@ function DoctorSignup() {
     });
   };
   const onSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     dispatch(createUser(form));
     setForm({});
     sweetalert({
@@ -28,11 +27,12 @@ function DoctorSignup() {
       text: 'Para continuar con el proceso revisa tu correo',
       buttons: ['Cancelar', 'Continuar'],
     });
+    event.target.reset();
   };
   return (
     <div className="landing__doctor">
       <div className="subtitle__doctor">Bienvenido, Doctor</div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={onSubmit}>
         <fieldset>
           <label htmlFor="firstName" className="doctors__label">
             Nombre

@@ -31,87 +31,89 @@ function Profile() {
   }, []);
   return (
     <div>
-      <p className="section-heading">Tu perfil</p>
+      <p className="section-heading">Mi perfil</p>
       <div className="box">
-        <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
         <div>
-          {userProfile.firstName}
-          {' '}
-          {userProfile.lastName}
-          {' '}
-          {userProfile.birthDate}
-          {' '}
-          {userProfile.phone}
+          <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
+          <UploadImage id={userProfile._id} />
         </div>
+        <table>
+          <tr>
+            <th>Nombres:</th>
+            <td rowSpan="4">
+              <form onSubmit={handleSubmit}>
+                <fieldset>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Nombres completos"
+                  />
+                  <td>
+                    <strong>{userProfile.firstName}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Apellidos completos"
+                  />
+                  <td>
+                    <strong>{userProfile.lastName}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Número de teléfono"
+                  />
+                  <td>
+                    <strong>{userProfile.phone}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <input
+                    type="date"
+                    id="birthDate"
+                    name="birthDate"
+                    size="20"
+                    min="1940-01-01"
+                    onChange={handleChange}
+                  />
+                  <td><strong>{userProfile.birthDate}</strong></td>
+                </fieldset>
+                <div className="btn__centered">
+                  <button type="submit" className="btn-appointment">
+                    Modifica tus datos
+                  </button>
+                </div>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>Apellidos:</th>
+          </tr>
+          <tr>
+            <th>Teléfono:</th>
+          </tr>
+          <tr>
+            <th>Fecha de nacimiento:</th>
+          </tr>
+        </table>
       </div>
-      <UploadImage id={userProfile._id} />
-      <table>
-        <tr>
-          <th>Nombres:</th>
-          <td>{userProfile.firstName}</td>
-          <td rowSpan="4">
-            <form onSubmit={handleSubmit}>
-              <fieldset>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  size="20"
-                  onChange={handleChange}
-                  placeholder="Nombres completos"
-                />
-              </fieldset>
-              <fieldset>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  size="20"
-                  onChange={handleChange}
-                  placeholder="Apellidos completos"
-                />
-              </fieldset>
-              <fieldset>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  size="20"
-                  onChange={handleChange}
-                  placeholder="Número de teléfono"
-                />
-              </fieldset>
-              <fieldset>
-                <input
-                  type="date"
-                  id="birthDate"
-                  name="birthDate"
-                  size="20"
-                  min="1940-01-01"
-                  onChange={handleChange}
-                />
-              </fieldset>
-              <div className="btn__centered">
-                <button type="submit" className="btn-appointment">
-                  Modifica tus datos
-                </button>
-              </div>
-            </form>
-          </td>
-        </tr>
-        <tr>
-          <th>Apellidos:</th>
-          <td>{userProfile.lastName}</td>
-        </tr>
-        <tr>
-          <th>Teléfono:</th>
-          <td>{userProfile.phone}</td>
-        </tr>
-        <tr>
-          <th>Fecha de nacimiento:</th>
-          <td>{userProfile.birthDate}</td>
-        </tr>
-      </table>
     </div>
   );
 }

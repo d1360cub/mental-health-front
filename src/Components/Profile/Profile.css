@@ -1,3 +1,7 @@
+.box{
+  display: flex;
+  justify-content: space-around;
+}
 .profile__container {
   display: flex;
 }

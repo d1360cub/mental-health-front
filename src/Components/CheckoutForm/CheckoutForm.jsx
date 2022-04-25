@@ -1,7 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import sweetalert from 'sweetalert';
 import checkout from '../../services/checkout';
 import { createAppointmet } from '../../services/appointments';
 import { resetState } from '../../store/actions';
@@ -10,6 +12,7 @@ function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
   const preAppointment = useSelector((state) => state.preAppointment);
   const patientId = user._id;
@@ -20,17 +23,25 @@ function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    const payment = await checkout(error, paymentMethod, localStorage.getItem('token'));
+    const payment = await checkout(error, paymentMethod, localStorage.getItem('token'), preAppointment);
     const appointmentConfirm = preAppointment;
     appointmentConfirm.patientId = `${patientId}`;
-    if (payment.status) {
+    if (payment.status === 'succeeded') {
       createAppointmet(appointmentConfirm, localStorage.getItem('token'));
       dispatch(resetState());
+      navigate('/viewerPatient');
+    } else {
+      sweetalert({
+        title: 'Transacción rechazada',
+        text: 'La transaccion no fue exitosa',
+        icon: 'error',
+        buttons: 'ok',
+      });
     }
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ width: '650px', margin: '0 auto' }}>
         <CardElement />
         <button type="submit" className="btn-appointment">Realizar pago</button>
       </form>
