@@ -41,7 +41,7 @@ function CheckoutForm() {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ width: '650px', margin: '0 auto' }}>
         <CardElement />
         <button type="submit" className="btn-appointment">Realizar pago</button>
       </form>
