@@ -1,6 +1,6 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-const checkout = async (error, paymentMethod, token) => {
+const checkout = async (error, paymentMethod, token, preAppointment) => {
   try {
     const payload = {
       method: 'POST',
@@ -8,7 +8,7 @@ const checkout = async (error, paymentMethod, token) => {
         'Content-Type': 'application/json',
         authorization: `bearer ${token}`,
       },
-      body: JSON.stringify({ paymentMethod, amount: 5_000 }),
+      body: JSON.stringify({ paymentMethod, amount: 5_000, preAppointment }),
     };
     const response = await fetch(`${API_URL}/api/checkout`, payload);
     const body = await response.json();
