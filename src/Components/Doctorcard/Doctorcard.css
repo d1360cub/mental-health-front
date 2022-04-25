@@ -7,11 +7,11 @@
   padding: 2rem;
 }
 .box img {
-    height: 20rem;
-    border: var(--border);
-    border-radius: 0.5rem;
+    max-width: 50px;
+    max-height: 50px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    border-radius: 100px;
 }
 .box h3 {
     color: var(--black);

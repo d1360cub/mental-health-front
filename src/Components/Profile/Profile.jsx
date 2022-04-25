@@ -33,7 +33,16 @@ function Profile() {
     <div>
       <p className="section-heading">Tu perfil</p>
       <div className="box">
-        <img src={userProfile.avatar} alt="imagen" />
+        <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
+        <div>
+          {userProfile.firstName}
+          {' '}
+          {userProfile.lastName}
+          {' '}
+          {userProfile.birthDate}
+          {' '}
+          {userProfile.phone}
+        </div>
       </div>
       <UploadImage id={userProfile._id} />
       <table>

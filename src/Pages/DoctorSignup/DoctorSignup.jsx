@@ -28,7 +28,6 @@ function DoctorSignup() {
       text: 'Para continuar con el proceso revisa tu correo',
       buttons: ['Cancelar', 'Continuar'],
     });
-    event.target.reset();
   };
   return (
     <div className="landing__doctor">

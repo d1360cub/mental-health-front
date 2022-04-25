@@ -11,7 +11,7 @@ function Checkbox({ onChange, data: { _id, title, status } }) {
         name={_id}
         type="checkbox"
         defaultChecked={status}
-        onChange={(_e) => onChange({ _id, title, status: !status })}
+        onChange={(_e) => onChange({ _id, title, status })}
       />
       <div className="todo__text">{title}</div>
     </label>
