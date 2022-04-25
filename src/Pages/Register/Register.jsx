@@ -16,7 +16,6 @@ function Register() {
       ...form,
       [name]: value,
     });
-    console.log(form);
   };
 
   const onSubmit = (event) => {
