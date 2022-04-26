@@ -131,19 +131,26 @@ function InfoDoctor() {
         </div>
       </div>
       <div className="calendariodoctor">
+        <div className="date__table">
+          <form onSubmit={handleSubmit}>
+            <table>
+              <tr>
+                <td>
+                  <input type="date" id="date" name="date" min="Date().now" className="form-control" onChange={handleChange} required />
+                </td>
+                <td>
+                  <input type="time" name="startTime" step="3600" min="00:00" className="form-control" onChange={handleChange} required />
+                </td>
+                <td>
+                  <button type="submit" className="btn-appointment">Reservar</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <br />
         <Calendar events={dataAppointments} />
-        <form onSubmit={handleSubmit}>
-          <fieldset>
-            <input type="date" name="date" min="Date().now" className="form-control" onChange={handleChange} required />
-            <input type="time" name="startTime" step="3600" min="00:00" className="form-control" onChange={handleChange} required />
-          </fieldset>
-          <button type="submit" className="btn-appointment">Reservar</button>
-          <br />
-        </form>
         <div>
-          <ContentBotonModal>
-            <Boton onClick={() => setStateModal(!stateModal)}>Solicitud cita</Boton>
-          </ContentBotonModal>
           {(Object.keys(preAppointment).length !== 0)
             ? (
               <ModalAppointment
@@ -201,29 +208,6 @@ function InfoDoctor() {
 }
 
 export default InfoDoctor;
-
-const ContentBotonModal = styled.div`
-  padding: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-`;
-const Boton = styled.button`
-  display: block;
-  padding: 10px 30px;
-  border-radius: 100px;
-  color: #fff;
-  border: none;
-  background: #1766DC;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  transition: .3s ease all;
-  &:hover {
-    background: #0066FF;
-  }
-`;
 
 const Contenido = styled.div`
   display: flex;

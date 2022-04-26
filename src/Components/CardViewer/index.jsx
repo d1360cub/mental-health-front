@@ -37,15 +37,17 @@ function CardViewer({ userId, start, end, viewer }) {
         </h3>
         <p>
           <span>
+            Teléfono:
+            {' '}
             {user.phone}
-            ,
-            {' '}
           </span>
+          <br />
           <span>
-            {user.email}
-            ,
+            Correo:
             {' '}
+            {user.email}
           </span>
+          <br />
         </p>
         {viewer
           ? (
