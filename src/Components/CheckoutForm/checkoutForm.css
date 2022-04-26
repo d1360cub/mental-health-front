@@ -1,0 +1,17 @@
+.checkoutForm{
+  width: 400px;
+  margin: 0 auto;
+  border:0.5px solid #F7F4F3;
+  padding: 15px;
+  background: #D3CDCB;
+  border-radius: 15px
+}
+.checkoutForm p{
+  text-align: left;
+  font-size: 12px;
+}
+.checkoutForm button{
+  position: absolute;
+  bottom:20px;
+  right: 30px;
+}
