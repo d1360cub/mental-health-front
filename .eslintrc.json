@@ -6,7 +6,8 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb"
+    "airbnb",
+    "plugin:cypress/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,7 +18,8 @@
   },
   "plugins": [
     "react",
-    "jest"
+    "jest",
+    "cypress"
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -27,6 +29,7 @@
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
+    "jest/expect-expect": "off",
     "object-curly-newline": [
       "error",
       {
