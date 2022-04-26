@@ -24,8 +24,12 @@
     font-size: medium;
     color:var(--blue);
 }
-fotoperfil{
-    align-items: center;
-    width: 50%;
-    height: 50%;
+.fotoperfilDev{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 160px;
+    border: 2px solid #1977cc;
+    position: relative;
+    left: 60px;
 }
