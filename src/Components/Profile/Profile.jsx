@@ -31,8 +31,8 @@ function Profile() {
   return (
     <div>
       <p className="section-heading">Mi perfil</p>
-      <div className="box">
-        <div>
+      <div className="profile__container">
+        <div className='imgupload'>
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
           <UploadImage id={userProfile._id} />
         </div>
@@ -51,7 +51,7 @@ function Profile() {
                   placeholder="Nombres completos"
                 />
                 <td>
-                  <strong>{userProfile.firstName}</strong>
+                  <strong className="actualtext">{userProfile.firstName}</strong>
                   {' '}
                 </td>
               </fieldset>
@@ -66,7 +66,7 @@ function Profile() {
                   placeholder="Apellidos completos"
                 />
                 <td>
-                  <strong>{userProfile.lastName}</strong>
+                  <strong className="actualtext">{userProfile.lastName}</strong>
                   {' '}
                 </td>
               </fieldset>
@@ -81,7 +81,7 @@ function Profile() {
                   placeholder="Número de teléfono"
                 />
                 <td>
-                  <strong>{userProfile.phone}</strong>
+                  <strong className="actualtext">{userProfile.phone}</strong>
                   {' '}
                 </td>
               </fieldset>
@@ -117,7 +117,7 @@ function Profile() {
                     placeholder="Nombres completos"
                   />
                   <td>
-                    <strong>{userProfile.firstName}</strong>
+                    <strong className="actualtext">{userProfile.firstName}</strong>
                     {' '}
                   </td>
                 </fieldset>
@@ -132,7 +132,7 @@ function Profile() {
                     placeholder="Apellidos completos"
                   />
                   <td>
-                    <strong>{userProfile.lastName}</strong>
+                    <strong className="actualtext">{userProfile.lastName}</strong>
                     {' '}
                   </td>
                 </fieldset>
@@ -147,7 +147,7 @@ function Profile() {
                     placeholder="Número de teléfono"
                   />
                   <td>
-                    <strong>{userProfile.phone}</strong>
+                    <strong className="actualtext">{userProfile.phone}</strong>
                     {' '}
                   </td>
                 </fieldset>
@@ -170,7 +170,7 @@ function Profile() {
                     name="atentionarea"
                     size="50"
                     onChange={handleChange}
-                    placeholder="Areas de atencións"
+                    placeholder="Areas de atención"
                   />
                 </fieldset>
                 <fieldset>
