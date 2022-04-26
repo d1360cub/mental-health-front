@@ -7,11 +7,10 @@ import UploadImage from '../UploadImage/UploadImage';
 import './Profile.css';
 
 function Profile() {
-  const patient = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [form, setForm] = useState({});
   const [userProfile, setUserProfile] = useState({});
-  const { user } = patient;
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm({
@@ -37,11 +36,12 @@ function Profile() {
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
           <UploadImage id={userProfile._id} />
         </div>
-        <table className="tableProfile">
+        <table>
           <td rowSpan="4">
-            <form onSubmit={handleSubmit}>
+            {user?.role === 'patient' && (
+            <form className="tableProfile" onSubmit={handleSubmit}>
               <fieldset>
-                <th>Nombres:</th>
+                <h2>Nombres:</h2>
                 <input
                   type="text"
                   id="firstName"
@@ -56,7 +56,7 @@ function Profile() {
                 </td>
               </fieldset>
               <fieldset>
-                <th>Apellidos:</th>
+                <h2>Apellidos:</h2>
                 <input
                   type="text"
                   id="lastName"
@@ -71,7 +71,7 @@ function Profile() {
                 </td>
               </fieldset>
               <fieldset>
-                <th>Teléfono:</th>
+                <h2>Teléfono:</h2>
                 <input
                   type="tel"
                   id="phone"
@@ -86,7 +86,7 @@ function Profile() {
                 </td>
               </fieldset>
               <fieldset>
-                <th>Fecha de nacimiento:</th>
+                <h2>Fecha de nacimiento:</h2>
                 <input
                   type="date"
                   id="birthDate"
@@ -103,6 +103,106 @@ function Profile() {
                 </button>
               </div>
             </form>
+            )}
+            {user?.role === 'doctor' && (
+              <form className="tableProfileDoctor" onSubmit={handleSubmit}>
+                <fieldset>
+                  <h2>Nombres:</h2>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Nombres completos"
+                  />
+                  <td>
+                    <strong>{userProfile.firstName}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <h2>Apellidos:</h2>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Apellidos completos"
+                  />
+                  <td>
+                    <strong>{userProfile.lastName}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <h2>Teléfono:</h2>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Número de teléfono"
+                  />
+                  <td>
+                    <strong>{userProfile.phone}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <h2>Descripción:</h2>
+                  <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Descripción"
+                  />
+                </fieldset>
+                <fieldset>
+                  <h2>Areas de atención:</h2>
+                  <input
+                    type="text"
+                    id="atentionarea"
+                    name="atentionarea"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Areas de atencións"
+                  />
+                </fieldset>
+                <fieldset>
+                  <h2>Expriencia profesional:</h2>
+                  <input
+                    type="text"
+                    id="experience"
+                    name="experience"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Expriencia profesional"
+                  />
+                </fieldset>
+                <fieldset>
+                  <h2>Formación Académica:</h2>
+                  <input
+                    type="text"
+                    id="academic"
+                    name="academic"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Formación Académica"
+                  />
+                </fieldset>
+                <div className="btn__centered">
+                  <button type="submit" className="btn-appointment">
+                    Modifica tus datos
+                  </button>
+                </div>
+              </form>
+            )}
+
           </td>
         </table>
       </div>
