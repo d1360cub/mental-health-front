@@ -5,7 +5,7 @@ import './Developers.css';
 function Developers() {
   return (
     <section>
-      <h1 className="section-heading"><span>Desarrolladores</span></h1>
+      <h1 className="section-headingDev"><span>Desarrolladores</span></h1>
       <div className="developers">
         <div className="box">
           <img className="fotoperfil" src="https://avatars.githubusercontent.com/u/87741454?v=4" alt="" />

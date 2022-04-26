@@ -1,6 +1,12 @@
-.section-heading{
+.section-headingProfile{
   position: relative;
-  top: 80px;
+  top: 60px;
+  padding-bottom: 2rem;
+  text-shadow: var(--text-shadow);
+  text-transform: capitalize;
+  color: var(--blue);
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
 }
 .imgupload{
   display: flex;

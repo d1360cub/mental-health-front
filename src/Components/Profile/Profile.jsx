@@ -30,7 +30,7 @@ function Profile() {
   }, []);
   return (
     <div>
-      <p className="section-heading">Mi perfil</p>
+      <p className="section-headingProfile">Mi perfil</p>
       <div className="profile__container">
         <div className="imgupload">
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
