@@ -6,7 +6,6 @@ import { createUser } from '../../store/actions';
 import './DoctorSignup.css';
 
 function DoctorSignup() {
- // const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   const [form, setForm] = useState({});
   const handleChange = (event) => {
@@ -43,15 +42,7 @@ function DoctorSignup() {
               name="firstName"
               size="30"
               onChange={handleChange}
-              {...register('firstName', {
-                required: {
-                  value: true,
-                  message: 'El campo es requerido',
-                },
-              })}
             />
-            <br />
-            {errors.firstName && <span className="validationP">{errors.firstName.message}</span>}
           </label>
         </fieldset>
         <fieldset>
@@ -64,15 +55,7 @@ function DoctorSignup() {
               name="lastName"
               size="30"
               onChange={handleChange}
-              {...register('lastName', {
-                required: {
-                  value: true,
-                  message: 'El campo es requerido',
-                },
-              })}
             />
-            <br />
-            {errors.lastName && <span className="validationP">{errors.lastName.message}</span>}
           </label>
         </fieldset>
         <fieldset>
@@ -85,19 +68,7 @@ function DoctorSignup() {
               name="email"
               onChange={handleChange}
               size="30"
-              {...register('email', {
-                required: {
-                  value: true,
-                  message: 'El email es requerido',
-                },
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: 'El formato no es correcto',
-                },
-              })}
             />
-            <br />
-            {errors.email && <span className="validationP">{errors.email.message}</span>}
           </label>
         </fieldset>
         <fieldset>
@@ -110,19 +81,7 @@ function DoctorSignup() {
               name="password"
               onChange={handleChange}
               size="30"
-              {...register('password', {
-                required: {
-                  value: true,
-                  message: 'La contraseña es requerida',
-                },
-                minLength: {
-                  value: 3,
-                  message: 'La contraseña debe tener al menos 3 caracteres',
-                },
-              })}
             />
-            <br />
-            {errors.password && <span className="validationP">{errors.password.message}</span>}
           </label>
         </fieldset>
         <fieldset>
@@ -135,15 +94,7 @@ function DoctorSignup() {
               name="phone"
               onChange={handleChange}
               size="30"
-              {...register('phone', {
-                required: {
-                  value: true,
-                  message: 'El campo es requerido',
-                },
-              })}
             />
-            <br />
-            {errors.phone && <span className="validationP">{errors.phone.message}</span>}
           </label>
         </fieldset>
         <fieldset>
@@ -156,15 +107,7 @@ function DoctorSignup() {
               name="academic"
               size="30"
               onChange={handleChange}
-              {...register('academic', {
-                required: {
-                  value: true,
-                  message: 'El campo es requerido',
-                },
-              })}
             />
-            <br />
-            {errors.academic && <span className="validationP">{errors.academic.message}</span>}
           </label>
         </fieldset>
         <fieldset>
@@ -177,15 +120,7 @@ function DoctorSignup() {
               name="atentionarea"
               size="30"
               onChange={handleChange}
-              {...register('atentionarea', {
-                required: {
-                  value: true,
-                  message: 'El campo es requerido',
-                },
-              })}
             />
-            <br />
-            {errors.atentionarea && <span className="validationP">{errors.atentionarea.message}</span>}
           </label>
         </fieldset>
         <div className="table">
@@ -199,15 +134,7 @@ function DoctorSignup() {
                 rows="8"
                 cols="34"
                 onChange={handleChange}
-                {...register('description', {
-                  required: {
-                    value: true,
-                    message: 'El campo es requerido',
-                  },
-                })}
               />
-              <br />
-              {errors.description && <span className="validationP">{errors.description.message}</span>}
             </label>
           </fieldset>
         </div>
@@ -221,15 +148,7 @@ function DoctorSignup() {
               name="experience"
               size="30"
               onChange={handleChange}
-              {...register('experience', {
-                required: {
-                  value: true,
-                  message: 'El campo es requerido',
-                },
-              })}
             />
-            <br />
-            {errors.experience && <span className="validationP">{errors.experience.message}</span>}
           </label>
         </fieldset>
         <input type="hidden" name="role" value="doctor" />
