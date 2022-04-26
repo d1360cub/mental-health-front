@@ -7,7 +7,7 @@ import Home from '../Home/Home';
 import About from '../About/About';
 import Services from '../Services/Services';
 import Doctors from '../Doctors/Doctors';
-import Developers from '../../Developers/Developers';
+import Developers from '../../Components/Developers/Developers';
 
 export default function HomePage() {
   return (
