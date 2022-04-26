@@ -1,0 +1,13 @@
+.developers{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+.linkredes{
+    font-size: medium;
+    color:var(--blue);
+}

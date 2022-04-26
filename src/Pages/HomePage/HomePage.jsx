@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 import React from 'react';
 import './HomePage.css';
 
@@ -5,6 +7,7 @@ import Home from '../Home/Home';
 import About from '../About/About';
 import Services from '../Services/Services';
 import Doctors from '../Doctors/Doctors';
+import Developers from '../../Developers/Developers';
 
 export default function HomePage() {
   return (
@@ -13,6 +16,7 @@ export default function HomePage() {
       <About />
       <Services />
       <Doctors />
+      <Developers />
       <section className="footer">
         <div className="footer__box-container">
           <div className="footer__box">
