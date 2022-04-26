@@ -14,8 +14,8 @@ function Developers() {
           </h3>
           <h4>description</h4>
           <p />
-          <a className="linkredes" href="https://github.com/AlexSuarezRodriguez">Linkedin</a>
-          <a className="linkredes" href="https://www.linkedin.com/in/alexander-suarez-rodriguez/">GitHub</a>
+          <a className="linkredes" href="https://github.com/AlexSuarezRodriguez">GitHub</a>
+          <a className="linkredes" href="https://www.linkedin.com/in/alexander-suarez-rodriguez/">Linkedin</a>
         </div>
         <div className="box">
           <img className="fotoperfil" src="https://avatars.githubusercontent.com/u/95053070?v=4" alt="" />
@@ -24,8 +24,8 @@ function Developers() {
           </h3>
           <h4>description</h4>
           <p />
-          <a className="linkredes" href="https://github.com/d1360cub">Linkedin</a>
-          <a className="linkredes" href="https://www.linkedin.com/in/diegocubides/">GitHub</a>
+          <a className="linkredes" href="https://github.com/d1360cub">GitHub</a>
+          <a className="linkredes" href="https://www.linkedin.com/in/diegocubides/">Linkedin</a>
         </div>
         <div className="box">
           <img className="fotoperfil" src="https://avatars.githubusercontent.com/u/78057584?v=4" alt="" />
@@ -34,8 +34,8 @@ function Developers() {
           </h3>
           <h4>description</h4>
           <p />
-          <a className="linkredes" href="https://github.com/endyleyms" src=" ">Linkedin</a>
-          <a className="linkredes" href="https://www.linkedin.com/in/wendy-medina-9205/">GitHub</a>
+          <a className="linkredes" href="https://github.com/endyleyms" src=" ">GitHub</a>
+          <a className="linkredes" href="https://www.linkedin.com/in/wendy-medina-9205/">Linkedin</a>
         </div>
         <div className="box">
           <img className="fotoperfil" src="https://avatars.githubusercontent.com/u/14990458?v=4" alt="" />
@@ -44,8 +44,8 @@ function Developers() {
           </h3>
           <h4>description</h4>
           <p />
-          <a className="linkredes" href="https://github.com/popehiflo">Linkedin</a>
-          <a className="linkredes" href="https://www.linkedin.com/in/popehiflo/">GitHub</a>
+          <a className="linkredes" href="https://github.com/popehiflo">GitHub</a>
+          <a className="linkredes" href="https://www.linkedin.com/in/popehiflo/">Linkedin</a>
         </div>
 
       </section>
