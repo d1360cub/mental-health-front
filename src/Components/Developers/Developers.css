@@ -1,7 +1,9 @@
 .developers{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 30fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 3fr));
+    gap: 1rem;
+    align-items: center;
+    box-sizing:border-box;
 }
 .box{
     display: flex;
@@ -10,4 +12,9 @@
 .linkredes{
     font-size: medium;
     color:var(--blue);
+}
+fotoperfil{
+    align-items: center;
+    width: 50%;
+    height: 50%;
 }
