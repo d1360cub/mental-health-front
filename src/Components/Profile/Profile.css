@@ -1,6 +1,6 @@
 .section-heading{
   position: relative;
-  top: 5px;
+  top: 80px;
 }
 .imgupload{
   display: flex;
@@ -10,10 +10,11 @@
 }
 .profile__container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   right: 200px;
+  top: 50px;
 }
 .imgPerfil{
   height: 300px;
