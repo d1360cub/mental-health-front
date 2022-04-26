@@ -7,6 +7,7 @@ import sweetalert from 'sweetalert';
 import checkout from '../../services/checkout';
 import { createAppointmet } from '../../services/appointments';
 import { resetState } from '../../store/actions';
+import './checkoutForm.css';
 
 function CheckoutForm() {
   const stripe = useStripe();
@@ -17,7 +18,7 @@ function CheckoutForm() {
   const preAppointment = useSelector((state) => state.preAppointment);
   const patientId = user._id;
 
-  const handleSubmit = async (event) => {
+  const handleSubmitModal = async (event) => {
     event.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
@@ -40,12 +41,11 @@ function CheckoutForm() {
     }
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit} style={{ width: '650px', margin: '0 auto' }}>
-        <CardElement />
-        <button type="submit" className="btn-appointment">Realizar pago</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmitModal} className="checkoutForm">
+      <p>Numero de la tarjeta</p>
+      <CardElement />
+      <button type="submit" className="btn-appointment">Realizar pago</button>
+    </form>
   );
 }
 
