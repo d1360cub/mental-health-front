@@ -1,6 +1,6 @@
+/* eslint-disable max-len */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-
 import sweetalert from 'sweetalert';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -28,7 +28,7 @@ function Register() {
       text: 'Para continuar con el proceso revisa tu correo',
       buttons: 'Continuar',
     });
-    // event.target.reset();
+    event.target.reset();
   };
   return (
     <div className="register">

@@ -1,0 +1,20 @@
+.developers{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 3fr));
+    gap: 1rem;
+    align-items: center;
+    box-sizing:border-box;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+.linkredes{
+    font-size: medium;
+    color:var(--blue);
+}
+fotoperfil{
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
