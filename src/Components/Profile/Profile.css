@@ -9,9 +9,11 @@
   left: 300px;
 }
 .profile__container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  right: 200px;
 }
 .imgPerfil{
   height: 300px;
@@ -31,4 +33,29 @@
 .tableProfileDoctor{
   display: flex;
   flex-direction: column;
+}
+
+@media(max-width:1200px){
+  .section-heading{
+    position: relative;
+    top: 100px;
+  }
+  .profile__container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top:100px;
+  }
+  .tableProfile{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 200px;
+    top:80px;
+  }
+  .tableProfileDoctor{
+    position: relative;
+    left: 200px;
+    top:80px;
+  }
 }
