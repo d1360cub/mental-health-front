@@ -108,7 +108,7 @@ function Login() {
           </fieldset>
           <div className="click">
             <Link to="/" className="password">¿Olvidaste tu contraseña?</Link>
-            <button type="submit" className="btn-appointment">Iniciar sesión</button>
+            <button type="submit" className="btn-appointment" data-cy="login-button">Iniciar sesión</button>
           </div>
         </form>
         <div className="first-time">
