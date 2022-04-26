@@ -76,14 +76,6 @@ ul.pagination li a:hover:not(.active) {
   padding: 2rem;
 }
 
-.doctors .doctors__box-container .box img {
-  height: 20rem;
-  border: var(--border);
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .doctors .doctors__box-container .box h3 {
   color: var(--black);
   font-size: 2.5rem;

@@ -1,6 +1,6 @@
 .calendar-perfilInfo{
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     width: 100%;
     margin: auto;
@@ -15,10 +15,6 @@
 }
 .perfilInformacion{
     width: 100%;
-
-}
-.fotoperfil{
-    width: 50%;
 }
 
 .infobasica{
@@ -60,10 +56,10 @@
 .calendariodoctor{
     margin: 0 auto;
     width: 100%;
-    height: 80%;
+    height: 75%;
     position: relative;
     right: 20%;
-    
+
 }
 .agendarcita{
     padding: 0 0.5rem;
@@ -73,10 +69,18 @@
     color: #fff !important;
     width: 100%;
     font-size: 2rem;
-    
+
 }
 .tilesdoctor1{
     color:  var(--blue);
+}
+
+.date__table table {
+  width: 100%;
+  border-spacing: 2rem;
+  align-self: center;
+  border: 1px solid #1977cc;
+  border-radius: 6px;
 }
 
 @media(width <= 768px){
@@ -92,6 +96,6 @@
         width: 80%;
         height: 80%;
         position: relative;
-        right: 0%;        
+        right: 0%;
     }
 }
