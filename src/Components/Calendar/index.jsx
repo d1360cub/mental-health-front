@@ -10,9 +10,10 @@ function Calendar({ events }) {
     <FullCalendar
       locale="es"
       weekends={false}
-      slotMinTime="07:00"
-      slotMaxTime="19:00"
+      slotMinTime="08:00"
+      slotMaxTime="17:00"
       allDaySlot={false}
+      slotDuration="01:00"
       expandRows
       height="100%"
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}

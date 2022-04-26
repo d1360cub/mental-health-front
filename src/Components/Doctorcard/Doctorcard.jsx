@@ -9,7 +9,7 @@ function Doctorcard({ image = doctorImage, firstName, lastName, email, id, atent
   return (
     <div className="box">
       <Link to={`/perfil-doctor/${id}`}>
-        <img src={image} alt="" />
+        <img className="fotoperfil" src={image} alt="" />
         <h3>
           {firstName}
           {' '}
