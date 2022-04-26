@@ -32,3 +32,11 @@
   vertical-align: top;
   font-size: 2rem;
 }
+.botoneditar{
+  width: 10px;
+  height: 10px;
+}
+.tableProfile{
+  display: grid;
+  grid-template-columns: 200px 200px;
+}

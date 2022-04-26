@@ -11,10 +11,10 @@ export default function Doctors() {
   const [card, setCard] = useState(1);
   // eslint-disable-next-line no-unused-vars
   const [porCard, setPorCard] = useState(8);
-  const maximo = users.length / porCard;
   const [query, setQuery] = useState('');
 
   const doctorFilter = users.filter((element) => element.role === 'doctor' && element.atentionarea.toLowerCase().includes(query));
+  const maximo = Math.ceil(doctorFilter.length / porCard);
   const fetchDoctors = async (querys = {}) => {
     const data = await getDoctors(querys);
     setUsers(data);
