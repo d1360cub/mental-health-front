@@ -32,7 +32,7 @@ function Profile() {
     <div>
       <p className="section-heading">Mi perfil</p>
       <div className="profile__container">
-        <div className='imgupload'>
+        <div className="imgupload">
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
           <UploadImage id={userProfile._id} />
         </div>
