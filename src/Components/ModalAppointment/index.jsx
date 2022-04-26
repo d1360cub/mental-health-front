@@ -56,12 +56,13 @@ const Overlay = styled.div`
 `;
 const ContenedorModal = styled.div`
   width: 500px;
-  height: 400px;
+  height: 475px;
   position: relative;
   boder-radius:5px;
   background:#fff;
   box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
   padding: 20px;
+  border-radius:20px
 `;
 const EncabezadoModal = styled.div`
   display: flex;

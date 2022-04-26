@@ -1,13 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import sweetalert from 'sweetalert';
 import styled from 'styled-components';
 import { getUser } from '../../services/user';
 import { showAppointByDocId, reserveOneAppointment, resetState } from '../../store/actions';
 import Calendar from '../../Components/Calendar/index';
 import ModalAppointment from '../../Components/ModalAppointment';
+import CheckoutForm from '../../Components/CheckoutForm/CheckoutForm';
 import './InfoDoctor.css';
 
 function InfoDoctor() {
@@ -181,7 +182,6 @@ function InfoDoctor() {
                   <p>
                     El valor a cancelar es: $50.000 pesos
                   </p>
-                  <Link to="/payment" className="btn-appointment">Realizar pago</Link>
                   <button
                     type="button"
                     className="btn-appointment"
@@ -196,6 +196,9 @@ function InfoDoctor() {
                   >
                     Cancelar
                   </button>
+                  <br />
+                  <br />
+                  <CheckoutForm />
                 </Contenido>
               </ModalAppointment>
             )
@@ -212,7 +215,8 @@ export default InfoDoctor;
 const Contenido = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: left;
+  padding-left: 30px;
   h1 {
     font-size: 42px;
     font-weight: 700;
