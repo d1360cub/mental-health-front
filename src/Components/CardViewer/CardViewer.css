@@ -26,9 +26,11 @@
   font-size: 1.2rem;
 }
 .home_content--imagen  img{
-  width: 8rem;
-  border-radius:100%; 
-  box-shadow: 2px 2px 5px rgb(194, 159, 117);
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 100px;
+  border:2px solid #1977cc;
 }
 .home_content__enlaces{
     gap: 2rem;
