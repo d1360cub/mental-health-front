@@ -5,7 +5,7 @@ import about from '../../image/about-us-img.svg';
 
 function About() {
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" data-cy="home-component">
       <h1 className="section-heading">
         <span>Nosotros</span>
       </h1>
@@ -29,7 +29,7 @@ function About() {
             se han convertido en el principal aliado de esta importante área de
             salud.
           </p>
-          <Link to="/login" className="btn-appointment">
+          <Link to="/login" className="btn-appointment" data-cy="about-button">
             Programa tu cita
           </Link>
         </div>

@@ -26,7 +26,7 @@ export default function Doctors() {
   }, []);
 
   return (
-    <section className="doctors" id="doctors">
+    <section className="doctors" id="doctors" data-cy="home-component">
       <h1 className="section-heading"><span>Doctores</span></h1>
       <div>
         <Searchdoctor setQuery={setQuery} />

@@ -13,7 +13,7 @@ export default function HomePage() {
       <About />
       <Services />
       <Doctors />
-      <section className="footer">
+      <section className="footer" data-cy="home-component">
         <div className="footer__box-container">
           <div className="footer__box">
             <h3>mental health</h3>
