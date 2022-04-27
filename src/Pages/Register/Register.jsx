@@ -45,6 +45,7 @@ function Register() {
                 name="firstName"
                 onChange={handleChange}
                 size="30"
+                required
               />
             </label>
           </fieldset>
@@ -58,6 +59,7 @@ function Register() {
                 name="lastName"
                 onChange={handleChange}
                 size="30"
+                required
               />
             </label>
           </fieldset>
@@ -71,6 +73,7 @@ function Register() {
                 name="phone"
                 onChange={handleChange}
                 size="30"
+                required
               />
             </label>
           </fieldset>
@@ -84,6 +87,7 @@ function Register() {
                 name="email"
                 onChange={handleChange}
                 size="30"
+                required
               />
             </label>
           </fieldset>
@@ -97,6 +101,7 @@ function Register() {
                 name="password"
                 onChange={handleChange}
                 size="30"
+                required
               />
             </label>
           </fieldset>

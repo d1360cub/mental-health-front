@@ -42,6 +42,7 @@ function DoctorSignup() {
               name="firstName"
               size="30"
               onChange={handleChange}
+              required
             />
           </label>
         </fieldset>
@@ -55,6 +56,7 @@ function DoctorSignup() {
               name="lastName"
               size="30"
               onChange={handleChange}
+              required
             />
           </label>
         </fieldset>
@@ -68,6 +70,7 @@ function DoctorSignup() {
               name="email"
               onChange={handleChange}
               size="30"
+              required
             />
           </label>
         </fieldset>
@@ -81,6 +84,7 @@ function DoctorSignup() {
               name="password"
               onChange={handleChange}
               size="30"
+              required
             />
           </label>
         </fieldset>
@@ -94,6 +98,7 @@ function DoctorSignup() {
               name="phone"
               onChange={handleChange}
               size="30"
+              required
             />
           </label>
         </fieldset>
@@ -107,6 +112,7 @@ function DoctorSignup() {
               name="academic"
               size="30"
               onChange={handleChange}
+              required
             />
           </label>
         </fieldset>
@@ -120,6 +126,7 @@ function DoctorSignup() {
               name="atentionarea"
               size="30"
               onChange={handleChange}
+              required
             />
           </label>
         </fieldset>
@@ -134,6 +141,7 @@ function DoctorSignup() {
                 rows="8"
                 cols="34"
                 onChange={handleChange}
+                required
               />
             </label>
           </fieldset>
@@ -148,12 +156,13 @@ function DoctorSignup() {
               name="experience"
               size="30"
               onChange={handleChange}
+              required
             />
           </label>
         </fieldset>
         <input type="hidden" name="role" value="doctor" />
         <div className="btn__centered">
-          <button type="submit" className="btn-appointment">
+          <button type="submit" className="btn-appointment" data-cy="button-register">
             Regístrate
           </button>
         </div>
