@@ -9,6 +9,8 @@ describe('Mental Health Login', () => {
     const randomDescription = faker.lorem.paragraph();
     const lastName = faker.name.lastName();
     const randomPhoneNumber = faker.phone.phoneNumber();
+    const avatar = ['avatar.jpg', 'avatar2.jpg', 'avatar3.jpg'];
+    const x = Math.floor(Math.random() * 3);
     cy.visit('/');
     cy.get('.btn-header-users').click();
     cy.url().should('include', '/login');
@@ -28,7 +30,7 @@ describe('Mental Health Login', () => {
     cy.get(':nth-child(1) > .home-content__card--perfil > #modal > .popup > .btn-close-popup').click();
     cy.get('.fc-timeGridDay-button').click();
     cy.get('[href="/profile"]').click();
-    cy.get('[data-cy="updateAvatar"]').attachFile('avatar.jpg');
+    cy.get('[data-cy="updateAvatar"]').attachFile(avatar[x]);
     cy.get('[data-cy="buttonUpdateAvatar"]').click();
     cy.get('#lastName').type(lastName);
     cy.get('#phone').type(randomPhoneNumber);
