@@ -24,6 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-localstorage-commands';
+// eslint-disable-next-line import/no-unresolved
+import 'cypress-file-upload';
 
 Cypress.Commands.add('getStripeElement', (fieldName) => {
   if (Cypress.config('chromeWebSecurity')) {
