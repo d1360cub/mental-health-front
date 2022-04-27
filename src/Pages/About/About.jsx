@@ -6,7 +6,7 @@ import about from '../../image/about-us-img.svg';
 function About() {
   return (
     <section className="about" id="about">
-      <h1 className="section-heading">
+      <h1 className="section-heading-about">
         <span>Nosotros</span>
       </h1>
       <div className="about__row">

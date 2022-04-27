@@ -31,6 +31,17 @@ input {
   margin-left: 1rem;
   max-width: 12.5rem;
 }
+.section-heading-doctors{
+  position: relative;
+    top: 0px;
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: capitalize;
+    color: var(--blue);
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+}
 
 ul.pagination {
   display: inline-block;

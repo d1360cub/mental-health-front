@@ -1,6 +1,12 @@
-.section-heading{
+.section-headingProfile{
   position: relative;
-  top: 5px;
+  top: 60px;
+  padding-bottom: 2rem;
+  text-shadow: var(--text-shadow);
+  text-transform: capitalize;
+  color: var(--blue);
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
 }
 .imgupload{
   display: flex;
@@ -9,9 +15,12 @@
   left: 300px;
 }
 .profile__container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  right: 200px;
+  top: 50px;
 }
 .imgPerfil{
   height: 300px;
@@ -31,4 +40,29 @@
 .tableProfileDoctor{
   display: flex;
   flex-direction: column;
+}
+
+@media(max-width:1200px){
+  .section-heading{
+    position: relative;
+    top: 100px;
+  }
+  .profile__container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top:100px;
+  }
+  .tableProfile{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 200px;
+    top:80px;
+  }
+  .tableProfileDoctor{
+    position: relative;
+    left: 200px;
+    top:80px;
+  }
 }

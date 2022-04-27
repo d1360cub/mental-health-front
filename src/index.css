@@ -44,7 +44,9 @@ section:nth-child(even) {
   color: var(--blue);
   font-size: 5rem;
   letter-spacing: 0.4rem;
+
 }
+
 
 /* .section-heading span{
   text-transform: uppercase;

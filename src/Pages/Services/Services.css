@@ -9,3 +9,14 @@
   text-align: center;
   width: 100%
 }
+.section-heading-services{
+  position: relative;
+    top: 0px;
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: capitalize;
+    color: var(--blue);
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+}
