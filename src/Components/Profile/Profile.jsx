@@ -7,11 +7,10 @@ import UploadImage from '../UploadImage/UploadImage';
 import './Profile.css';
 
 function Profile() {
-  const patient = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [form, setForm] = useState({});
   const [userProfile, setUserProfile] = useState({});
-  const { user } = patient;
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm({
@@ -31,18 +30,18 @@ function Profile() {
   }, []);
   return (
     <div>
-      <p className="section-heading">Tu perfil</p>
-      <div className="box">
-        <img src={userProfile.avatar} alt="imagen" />
-      </div>
-      <UploadImage id={userProfile._id} />
-      <table>
-        <tr>
-          <th>Nombres:</th>
-          <td>{userProfile.firstName}</td>
+      <p className="section-headingProfile">Mi perfil</p>
+      <div className="profile__container">
+        <div className="imgupload">
+          <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
+          <UploadImage id={userProfile._id} />
+        </div>
+        <table>
           <td rowSpan="4">
-            <form onSubmit={handleSubmit}>
+            {user?.role === 'patient' && (
+            <form className="tableProfile" onSubmit={handleSubmit}>
               <fieldset>
+                <h2>Nombres:</h2>
                 <input
                   type="text"
                   id="firstName"
@@ -51,8 +50,13 @@ function Profile() {
                   onChange={handleChange}
                   placeholder="Nombres completos"
                 />
+                <td>
+                  <strong className="actualtext">{userProfile.firstName}</strong>
+                  {' '}
+                </td>
               </fieldset>
               <fieldset>
+                <h2>Apellidos:</h2>
                 <input
                   type="text"
                   id="lastName"
@@ -61,8 +65,13 @@ function Profile() {
                   onChange={handleChange}
                   placeholder="Apellidos completos"
                 />
+                <td>
+                  <strong className="actualtext">{userProfile.lastName}</strong>
+                  {' '}
+                </td>
               </fieldset>
               <fieldset>
+                <h2>Teléfono:</h2>
                 <input
                   type="tel"
                   id="phone"
@@ -71,8 +80,13 @@ function Profile() {
                   onChange={handleChange}
                   placeholder="Número de teléfono"
                 />
+                <td>
+                  <strong className="actualtext">{userProfile.phone}</strong>
+                  {' '}
+                </td>
               </fieldset>
               <fieldset>
+                <h2>Fecha de nacimiento:</h2>
                 <input
                   type="date"
                   id="birthDate"
@@ -81,6 +95,7 @@ function Profile() {
                   min="1940-01-01"
                   onChange={handleChange}
                 />
+                <td><strong>{userProfile.birthDate}</strong></td>
               </fieldset>
               <div className="btn__centered">
                 <button type="submit" className="btn-appointment">
@@ -88,21 +103,109 @@ function Profile() {
                 </button>
               </div>
             </form>
+            )}
+            {user?.role === 'doctor' && (
+              <form className="tableProfileDoctor" onSubmit={handleSubmit}>
+                <fieldset>
+                  <h2>Nombres:</h2>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Nombres completos"
+                  />
+                  <td>
+                    <strong className="actualtext">{userProfile.firstName}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <h2>Apellidos:</h2>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Apellidos completos"
+                  />
+                  <td>
+                    <strong className="actualtext">{userProfile.lastName}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <h2>Teléfono:</h2>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    size="20"
+                    onChange={handleChange}
+                    placeholder="Número de teléfono"
+                  />
+                  <td>
+                    <strong className="actualtext">{userProfile.phone}</strong>
+                    {' '}
+                  </td>
+                </fieldset>
+                <fieldset>
+                  <h2>Descripción:</h2>
+                  <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Descripción"
+                  />
+                </fieldset>
+                <fieldset>
+                  <h2>Areas de atención:</h2>
+                  <input
+                    type="text"
+                    id="atentionarea"
+                    name="atentionarea"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Areas de atención"
+                  />
+                </fieldset>
+                <fieldset>
+                  <h2>Expriencia profesional:</h2>
+                  <input
+                    type="text"
+                    id="experience"
+                    name="experience"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Expriencia profesional"
+                  />
+                </fieldset>
+                <fieldset>
+                  <h2>Formación Académica:</h2>
+                  <input
+                    type="text"
+                    id="academic"
+                    name="academic"
+                    size="50"
+                    onChange={handleChange}
+                    placeholder="Formación Académica"
+                  />
+                </fieldset>
+                <div className="btn__centered">
+                  <button type="submit" className="btn-appointment">
+                    Modifica tus datos
+                  </button>
+                </div>
+              </form>
+            )}
+
           </td>
-        </tr>
-        <tr>
-          <th>Apellidos:</th>
-          <td>{userProfile.lastName}</td>
-        </tr>
-        <tr>
-          <th>Teléfono:</th>
-          <td>{userProfile.phone}</td>
-        </tr>
-        <tr>
-          <th>Fecha de nacimiento:</th>
-          <td>{userProfile.birthDate}</td>
-        </tr>
-      </table>
+        </table>
+      </div>
     </div>
   );
 }

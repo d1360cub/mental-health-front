@@ -47,4 +47,8 @@
     flex-direction: row;
     gap: 2rem;
 }
+.home_content--imagen  img{
+  height: 110px;
+  width: 110px;
+}
 }

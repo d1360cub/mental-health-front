@@ -14,7 +14,7 @@ export default function Services() {
   }, []);
   return (
     <section className="services" id="services" data-cy="home-component">
-      <h1 className="section-heading">
+      <h1 className="section-heading-services">
         <span>Servicios</span>
       </h1>
       <div className="services__box-container">
