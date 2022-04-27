@@ -14,9 +14,9 @@ function UploadImage({ id }) {
   return (
     <div>
       <table style={{ display: 'flex', flexDirection: 'column' }}>
-        <td><input type="file" name="avatar" id="file" accept="image/*" onChange={handleChange} size="30" /></td>
+        <td><input type="file" name="avatar" id="file" accept="image/*" onChange={handleChange} size="30" data-cy="updateAvatar" /></td>
         <td>
-          <button type="button" onClick={handleClick} className="btn-appointment">
+          <button type="button" onClick={handleClick} className="btn-appointment" data-cy="buttonUpdateAvatar">
             Cargar imagen
           </button>
         </td>

@@ -196,7 +196,7 @@ function Profile() {
                   />
                 </fieldset>
                 <div className="btn__centered">
-                  <button type="submit" className="btn-appointment">
+                  <button type="submit" className="btn-appointment" data-cy="updateData">
                     Modifica tus datos
                   </button>
                 </div>
