@@ -41,9 +41,9 @@ function CheckoutForm() {
     }
   };
   return (
-    <form onSubmit={handleSubmitModal} className="checkoutForm">
+    <form onSubmit={handleSubmitModal} className="checkoutForm" data-cy="card-form">
       <p>Numero de la tarjeta</p>
-      <CardElement />
+      <CardElement data-cy="input-card-form" />
       <button type="submit" className="btn-appointment">Realizar pago</button>
     </form>
   );
