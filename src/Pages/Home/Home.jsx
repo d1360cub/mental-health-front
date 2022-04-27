@@ -5,7 +5,7 @@ import brain from '../../image/home-mind-img.svg';
 
 function Home() {
   return (
-    <section className="home" id="home">
+    <section className="home" id="home" data-cy="home-component">
       <div className="home__image">
         <img src={brain} alt="mental health" />
       </div>

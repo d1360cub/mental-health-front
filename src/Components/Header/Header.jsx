@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
+    <header className="header" data-cy="home-component">
       <NavLink to="/" className="header__logo">
         <i className="fa fa-brain" />
         {' '}

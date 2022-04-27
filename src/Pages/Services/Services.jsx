@@ -13,7 +13,7 @@ export default function Services() {
     dispatch(showAllServices());
   }, []);
   return (
-    <section className="services" id="services">
+    <section className="services" id="services" data-cy="home-component">
       <h1 className="section-heading-services">
         <span>Servicios</span>
       </h1>

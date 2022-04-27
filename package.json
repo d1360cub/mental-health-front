@@ -14,6 +14,7 @@
     "@stripe/react-stripe-js": "^1.7.2",
     "@stripe/stripe-js": "^1.27.0",
     "@testing-library/react-hooks": "^8.0.0",
+    "cypress-localstorage-commands": "^1.7.0",
     "eslint-plugin-jest": "^26.1.3",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
@@ -34,8 +35,10 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
+    "cypress": "^9.6.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
@@ -55,7 +58,9 @@
     "lint": "eslint --ext .js,.jsx src/",
     "lint:fix": "eslint --ext .js,.jsx src/ --fix",
     "prepare": "husky install",
-    "db": "npx json-server --watch db.json --port 8080 --routes routes.json"
+    "db": "npx json-server --watch db.json --port 8080 --routes routes.json",
+    "cypress:run": "cypress run --record --env=jsdom",
+    "cypress:open": "cypress open"
   },
   "browserslist": {
     "production": [
