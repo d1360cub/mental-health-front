@@ -106,7 +106,7 @@ function Register() {
             </label>
           </fieldset>
           <div className="btn__centered">
-            <button type="submit" className="btn-appointment">
+            <button type="submit" className="btn-appointment" data-cy="button-register">
               Regístrate
             </button>
           </div>
