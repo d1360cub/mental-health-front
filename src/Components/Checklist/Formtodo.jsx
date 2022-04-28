@@ -26,6 +26,7 @@ function FormTodo({ handleAddItem }) {
           <button
             className="button pink"
             disabled={title ? '' : 'disabled'}
+            data-cy="button-add"
           >
             Add
           </button>

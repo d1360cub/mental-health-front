@@ -55,7 +55,7 @@ export default function Header() {
           {user?.role === 'doctor' && (
           <>
             <NavHashLink to={userPage} className="header__nav-link">Mis Citas</NavHashLink>
-            <NavHashLink to="/profile" className="header__nav-link">Mi Perfil</NavHashLink>
+            <NavHashLink to="/profile" className="header__nav-link" data-cy="button-profile">Mi Perfil</NavHashLink>
             <button onClick={onLogout} className="btn-header-users header__nav-link" data-cy="button-log-out">
               Salir
             </button>
