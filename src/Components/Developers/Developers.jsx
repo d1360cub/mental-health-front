@@ -21,7 +21,11 @@ function Developers() {
           <h3>
             Diego Cubides
           </h3>
-          <h4>description</h4>
+          <h4>
+            I believe that biggest challenges are outside of our comfort zone,
+            so right now,
+            I am pivoting my career and I want to face technology from software development.
+          </h4>
           <a className="linkredes" href="https://github.com/d1360cub">GitHub</a>
           <a className="linkredes" href="https://www.linkedin.com/in/diegocubides/">Linkedin</a>
         </div>
