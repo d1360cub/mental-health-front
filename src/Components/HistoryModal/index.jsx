@@ -42,7 +42,7 @@ function HistoryModal({ modal, setModal, userId, fullName }) {
                 {' '}
                 <br />
                 <strong>Fecha: </strong>
-                {cHistories.createdAt}
+                {cHistories.createdAt.split('', 10)}
                 <br />
                 <strong>Doctor: </strong>
                 {cHistories.doctorId.firstName}
