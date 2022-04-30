@@ -1,8 +1,11 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unreachable */
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getUser, updateUser } from '../../services/user';
+import { getUser, updateUser, deleteUser } from '../../services/user';
 import UploadImage from '../UploadImage/UploadImage';
 import './Profile.css';
 
@@ -23,6 +26,12 @@ function Profile() {
     updateUser(userProfile._id, form);
     setForm({});
     navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
+  };
+  const handleDeleteUser = async () => {
+    const data = await deleteUser(user._id);
+    localStorage.clear();
+    window.location.href = '/';
+    return data;
   };
   useEffect(async () => {
     const person = await getUser(user._id);
@@ -180,9 +189,12 @@ function Profile() {
                 </div>
               </form>
             )}
-
           </td>
         </table>
+      </div>
+      <div className="deleteUserButton">
+        <h3>Si deseas eliminar tu cuenta, da click en el seiguiente botón</h3>
+        <button className="btn-appointment" onClick={handleDeleteUser}>Eliminar cuenta</button>
       </div>
     </div>
   );
