@@ -14,6 +14,10 @@
   position: relative;
   left: 300px;
 }
+.deleteUserButton{
+  position: relative;
+  top: 150px;
+}
 .profile__container{
   display: flex;
   justify-content: space-between;
@@ -64,5 +68,9 @@
     position: relative;
     left: 200px;
     top:80px;
+  }
+  .deleteUserButton{
+    position: relative;
+    top: 300px;
   }
 }

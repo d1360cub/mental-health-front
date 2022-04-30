@@ -29,6 +29,8 @@ function Profile() {
   };
   const handleDeleteUser = async () => {
     const data = await deleteUser(user._id);
+    localStorage.clear();
+    window.location.href = '/';
     return data;
   };
   useEffect(async () => {
@@ -209,10 +211,12 @@ function Profile() {
                 </div>
               </form>
             )}
-            <button className="btn-appointment" onClick={handleDeleteUser}>Borrar cuenta</button>
-
           </td>
         </table>
+      </div>
+      <div className="deleteUserButton">
+        <h3>Si deseas eliminar tu cuenta, da click en el seiguiente botón</h3>
+        <button className="btn-appointment" onClick={handleDeleteUser}>Eliminar cuenta</button>
       </div>
     </div>
   );
