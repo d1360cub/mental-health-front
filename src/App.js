@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import Register from './Pages/Register/Register';
 import ViewerDoctor from './Pages/viewerDoctor/ViewerDoctor';
 import ViewerPatient from './Pages/viewerPatient/ViewerPatient';
+import ViewerAdmin from './Pages/viewerAdmin/viewerAdmin';
 import Login from './Pages/Login/Login';
 import ProtectedRoutes from './Routes/ProtectedRoutes';
 import Page404 from './Pages/Page404/Page404';
@@ -33,6 +34,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/viewerDoctor" element={<ViewerDoctor />} />
           <Route path="/viewerPatient" element={<ViewerPatient />} />
+          <Route path="/viewerAdmin" element={<ViewerAdmin />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
 
