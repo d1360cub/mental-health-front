@@ -1,11 +1,18 @@
+/* eslint-disable no-sequences */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import sweetalert from 'sweetalert';
 import HistoryModal from '../HistoryModal';
+import { deleteAppointment, deleteAppointmentDoctor, getAppointmentsByDoctorId, getAppointmentsByPatientId } from '../../services/appointments';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
 function CardViewer({ userId, start, end, viewer }) {
+  const { token } = useSelector((state) => state.user);
   const [modal, setModal] = useState(false);
   const startSplitted = start.split('T');
   const endSplitted = end.split('T');
@@ -21,6 +28,28 @@ function CardViewer({ userId, start, end, viewer }) {
     const userById = await getUser(userId);
     setUser(userById);
   }, []);
+  const handleDeleteAppointment = async () => {
+    const doctor = await getAppointmentsByPatientId(user._id);
+    const data = await deleteAppointment(user._id, token);
+    sweetalert({
+      icon: 'info',
+      title: 'Tu Cita ha sido cancelada',
+      text: 'A tu correo llegará una notificación',
+      buttons: 'Continuar',
+    });
+    return data, doctor;
+  };
+  const handleDeleteAppointmentDoctor = async () => {
+    const data = await deleteAppointmentDoctor(user._id, token);
+    const doctor = await getAppointmentsByDoctorId(user._id);
+    sweetalert({
+      icon: 'info',
+      title: 'Tu Cita ha sido cancelada',
+      text: 'A tu correo llegará una notificación',
+      buttons: 'Continuar',
+    });
+    return data, doctor;
+  };
 
   return (
     <div className="home_content--card" role="home_content--card">
@@ -66,6 +95,7 @@ function CardViewer({ userId, start, end, viewer }) {
                 userId={userId}
                 fullName={`${user.firstName} ${user.lastName}`}
               />
+              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment}>Eliminar Cita</button>
             </>
           )
           : (
@@ -79,6 +109,7 @@ function CardViewer({ userId, start, end, viewer }) {
               <div>
                 {`Hora final: ${endTime}`}
               </div>
+              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointmentDoctor}>Eliminar Cita</button>
             </>
           )}
       </div>
