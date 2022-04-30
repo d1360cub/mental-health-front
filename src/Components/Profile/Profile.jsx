@@ -1,16 +1,17 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import CloudinaryUploadWidget from '../UploadImage/CloudinaryUploadWidget';
 import { getUser, updateUser } from '../../services/user';
-import UploadImage from '../UploadImage/UploadImage';
 import './Profile.css';
 
 function Profile() {
   const { user } = useSelector((state) => state.user);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [form, setForm] = useState({});
   const [userProfile, setUserProfile] = useState({});
+  const [properties, setProperties] = useState(false);
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm({
@@ -22,20 +23,22 @@ function Profile() {
     event.preventDefault();
     updateUser(userProfile._id, form);
     setForm({});
-    navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
+    // navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
+    setProperties(!properties);
+    event.target.reset();
   };
   useEffect(async () => {
     const person = await getUser(user._id);
     setUserProfile(person);
-  }, []);
+  }, [properties]);
   return (
-    <div className="main__container">
+    <div className="main__container" style={{ marginTop: '8rem' }}>
       <p className="section-headingProfile">Mi perfil</p>
       <div className="profile__container">
         <div className="imgupload">
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
           <br />
-          <UploadImage id={userProfile._id} />
+          <CloudinaryUploadWidget />
         </div>
         <table className="tableProfile">
           <td rowSpan="4">
@@ -152,7 +155,7 @@ function Profile() {
                   />
                 </fieldset>
                 <fieldset>
-                  <h2>Expriencia profesional:</h2>
+                  <h2>Experiencia profesional:</h2>
                   <input
                     type="text"
                     id="experience"
