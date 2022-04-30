@@ -1,17 +1,16 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CloudinaryUploadWidget from '../UploadImage/CloudinaryUploadWidget';
-import { getUser, updateUser } from '../../services/user';
+import { getUser, updateUser, deleteUser } from '../../services/user';
 import './Profile.css';
 
 function Profile() {
   const { user } = useSelector((state) => state.user);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [form, setForm] = useState({});
   const [userProfile, setUserProfile] = useState({});
-  const [properties, setProperties] = useState(false);
   const handleChange = (event) => {
     const { value, name } = event.target;
     setForm({
@@ -23,14 +22,18 @@ function Profile() {
     event.preventDefault();
     updateUser(userProfile._id, form);
     setForm({});
-    // navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
-    setProperties(!properties);
-    event.target.reset();
+    navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
+  };
+  const handleDeleteUser = async () => {
+    const data = await deleteUser(user._id);
+    localStorage.clear();
+    window.location.href = '/';
+    return data;
   };
   useEffect(async () => {
     const person = await getUser(user._id);
     setUserProfile(person);
-  }, [properties]);
+  }, []);
   return (
     <div className="main__container" style={{ marginTop: '8rem' }}>
       <p className="section-headingProfile">Mi perfil</p>
@@ -183,9 +186,12 @@ function Profile() {
                 </div>
               </form>
             )}
-
           </td>
         </table>
+      </div>
+      <div className="deleteUserButton">
+        <h3>Si deseas eliminar tu cuenta, da click en el seiguiente botón</h3>
+        <button className="btn-appointment" onClick={handleDeleteUser} type="submit">Eliminar cuenta </button>
       </div>
     </div>
   );
