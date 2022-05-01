@@ -37,8 +37,8 @@ function Login() {
       setError('email', { type: 'custom', message: error.message });
       setError('password', { type: 'custom', message: error.message });
       if (!user) {
-        setError('email', { type: 'custom', message: 'El Usurario no existe' });
-        setError('password', { type: 'custom', message: 'El Usurario no existe' });
+        setError('email', { type: 'custom', message: 'El Usuario no existe' });
+        setError('password', { type: 'custom', message: 'El Usuario no existe' });
       }
     }
     if (user) {
