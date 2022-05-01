@@ -1,27 +1,16 @@
 .section-headingProfile{
-  position: relative;
-  top: 60px;
-  padding-bottom: 2rem;
   text-shadow: var(--text-shadow);
   text-transform: capitalize;
   color: var(--blue);
   font-size: 5rem;
   letter-spacing: 0.4rem;
+  padding-top: 10rem;
 }
-.imgupload{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 300px;
+
+.tableProfile{
+  margin: 0 auto;
 }
-.profile__container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  right: 200px;
-  top: 50px;
-}
+
 .imgPerfil{
   height: 300px;
   width: 300px;
@@ -29,40 +18,25 @@
   border-radius: 100px;
   border:2px solid #1977cc;
 }
-.tableProfile{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
-}
-.actualtext{
-  font-size:small;
-}
-.tableProfileDoctor{
-  display: flex;
-  flex-direction: column;
-}
+@media (min-width: 450px) {
 
-@media(max-width:1200px){
-  .section-heading{
+  .profile__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .section-headingProfile{
+    padding: 0;
+    margin: 0%;
+  }
+
+  .main__container{
+    padding: 0;
+    margin: 0%;
+  }
+  .deleteUserButton{
     position: relative;
     top: 100px;
-  }
-  .profile__container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    top:100px;
-  }
-  .tableProfile{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 200px;
-    top:80px;
-  }
-  .tableProfileDoctor{
-    position: relative;
-    left: 200px;
-    top:80px;
   }
 }

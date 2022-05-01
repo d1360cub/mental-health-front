@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 const API_URL = process.env.REACT_APP_API_URL;
@@ -64,6 +65,22 @@ export const updateUser = async (id, body) => {
       'Content-type': 'application/json',
     },
     body: JSON.stringify(body),
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/users/${id}`, payload);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const deleteUser = async (id) => {
+  const payload = {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
   };
   try {
     const response = await fetch(`${API_URL}/api/users/${id}`, payload);

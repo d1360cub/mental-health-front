@@ -1,8 +1,11 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unreachable */
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getUser, updateUser } from '../../services/user';
+import { getUser, updateUser, deleteUser } from '../../services/user';
 import UploadImage from '../UploadImage/UploadImage';
 import './Profile.css';
 
@@ -24,22 +27,29 @@ function Profile() {
     setForm({});
     navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
   };
+  const handleDeleteUser = async () => {
+    const data = await deleteUser(user._id);
+    localStorage.clear();
+    window.location.href = '/';
+    return data;
+  };
   useEffect(async () => {
     const person = await getUser(user._id);
     setUserProfile(person);
   }, []);
   return (
-    <div>
+    <div className="main__container">
       <p className="section-headingProfile">Mi perfil</p>
       <div className="profile__container">
         <div className="imgupload">
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
+          <br />
           <UploadImage id={userProfile._id} />
         </div>
-        <table>
+        <table className="tableProfile">
           <td rowSpan="4">
             {user?.role === 'patient' && (
-            <form className="tableProfile" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <fieldset>
                 <h2>Nombres:</h2>
                 <input
@@ -48,12 +58,8 @@ function Profile() {
                   name="firstName"
                   size="20"
                   onChange={handleChange}
-                  placeholder="Nombres completos"
+                  placeholder={userProfile.firstName}
                 />
-                <td>
-                  <strong className="actualtext">{userProfile.firstName}</strong>
-                  {' '}
-                </td>
               </fieldset>
               <fieldset>
                 <h2>Apellidos:</h2>
@@ -63,12 +69,8 @@ function Profile() {
                   name="lastName"
                   size="20"
                   onChange={handleChange}
-                  placeholder="Apellidos completos"
+                  placeholder={userProfile.lastName}
                 />
-                <td>
-                  <strong className="actualtext">{userProfile.lastName}</strong>
-                  {' '}
-                </td>
               </fieldset>
               <fieldset>
                 <h2>Teléfono:</h2>
@@ -78,12 +80,8 @@ function Profile() {
                   name="phone"
                   size="20"
                   onChange={handleChange}
-                  placeholder="Número de teléfono"
+                  placeholder={userProfile.phone}
                 />
-                <td>
-                  <strong className="actualtext">{userProfile.phone}</strong>
-                  {' '}
-                </td>
               </fieldset>
               <fieldset>
                 <h2>Fecha de nacimiento:</h2>
@@ -114,12 +112,8 @@ function Profile() {
                     name="firstName"
                     size="20"
                     onChange={handleChange}
-                    placeholder="Nombres completos"
+                    placeholder={userProfile.firstName}
                   />
-                  <td>
-                    <strong className="actualtext">{userProfile.firstName}</strong>
-                    {' '}
-                  </td>
                 </fieldset>
                 <fieldset>
                   <h2>Apellidos:</h2>
@@ -129,12 +123,8 @@ function Profile() {
                     name="lastName"
                     size="20"
                     onChange={handleChange}
-                    placeholder="Apellidos completos"
+                    placeholder={userProfile.lastName}
                   />
-                  <td>
-                    <strong className="actualtext">{userProfile.lastName}</strong>
-                    {' '}
-                  </td>
                 </fieldset>
                 <fieldset>
                   <h2>Teléfono:</h2>
@@ -144,22 +134,19 @@ function Profile() {
                     name="phone"
                     size="20"
                     onChange={handleChange}
-                    placeholder="Número de teléfono"
+                    placeholder={userProfile.phone}
                   />
-                  <td>
-                    <strong className="actualtext">{userProfile.phone}</strong>
-                    {' '}
-                  </td>
                 </fieldset>
                 <fieldset>
                   <h2>Descripción:</h2>
-                  <input
+                  <textarea
                     type="text"
                     id="description"
                     name="description"
-                    size="50"
+                    rows="8"
+                    cols="24"
                     onChange={handleChange}
-                    placeholder="Descripción"
+                    placeholder={userProfile.description}
                   />
                 </fieldset>
                 <fieldset>
@@ -168,9 +155,9 @@ function Profile() {
                     type="text"
                     id="atentionarea"
                     name="atentionarea"
-                    size="50"
+                    size="20"
                     onChange={handleChange}
-                    placeholder="Areas de atención"
+                    placeholder={userProfile.atentionarea}
                   />
                 </fieldset>
                 <fieldset>
@@ -179,9 +166,9 @@ function Profile() {
                     type="text"
                     id="experience"
                     name="experience"
-                    size="50"
+                    size="20"
                     onChange={handleChange}
-                    placeholder="Expriencia profesional"
+                    placeholder={userProfile.experience}
                   />
                 </fieldset>
                 <fieldset>
@@ -190,9 +177,9 @@ function Profile() {
                     type="text"
                     id="academic"
                     name="academic"
-                    size="50"
+                    size="20"
                     onChange={handleChange}
-                    placeholder="Formación Académica"
+                    placeholder={userProfile.academic}
                   />
                 </fieldset>
                 <div className="btn__centered">
@@ -202,9 +189,12 @@ function Profile() {
                 </div>
               </form>
             )}
-
           </td>
         </table>
+      </div>
+      <div className="deleteUserButton">
+        <h3>Si deseas eliminar tu cuenta, da click en el seiguiente botón</h3>
+        <button className="btn-appointment" onClick={handleDeleteUser}>Eliminar cuenta</button>
       </div>
     </div>
   );

@@ -26,8 +26,8 @@
   font-size: 1.2rem;
 }
 .home_content--imagen  img{
-  height: 140px;
-  width: 140px;
+  height: 110px;
+  width: 110px;
   object-fit: cover;
   border-radius: 100px;
   border:2px solid #1977cc;

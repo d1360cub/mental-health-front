@@ -36,6 +36,10 @@ function Login() {
     if (error) {
       setError('email', { type: 'custom', message: error.message });
       setError('password', { type: 'custom', message: error.message });
+      if (!user) {
+        setError('email', { type: 'custom', message: 'El Usurario no existe' });
+        setError('password', { type: 'custom', message: 'El Usurario no existe' });
+      }
     }
     if (user) {
       if (user?.role === 'patient') {
