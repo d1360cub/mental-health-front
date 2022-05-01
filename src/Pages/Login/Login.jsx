@@ -44,8 +44,10 @@ function Login() {
         } else {
           navigate('/viewerPatient');
         }
-      } else {
+      } else if (user.role === 'doctor') {
         navigate('/viewerDoctor');
+      } else {
+        navigate('/viewerAdmin');
       }
       setForm({});
     }

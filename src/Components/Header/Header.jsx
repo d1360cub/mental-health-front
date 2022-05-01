@@ -61,6 +61,14 @@ export default function Header() {
             </button>
           </>
           )}
+          {user?.role === 'admin' && (
+          <>
+            <NavHashLink to="/profile" className="header__nav-link" data-cy="button-profile">Mi Perfil</NavHashLink>
+            <button onClick={onLogout} className="btn-header-users header__nav-link" data-cy="button-log-out">
+              Salir
+            </button>
+          </>
+          )}
 
         </>
         )}
