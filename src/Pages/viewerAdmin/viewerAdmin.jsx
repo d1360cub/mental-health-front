@@ -64,7 +64,6 @@ export default function CustomizedTables() {
       if (respuesta) {
         deleteUser(id);
         dispatch(showAllUsers());
-        console.log(nombre, id);
       }
     });
   }

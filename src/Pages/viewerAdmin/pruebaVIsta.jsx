@@ -42,7 +42,6 @@ export default function StickyHeadTable() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
-  console.log(users);
   useEffect(() => {
     dispatch(showAllUsers());
   }, []);
