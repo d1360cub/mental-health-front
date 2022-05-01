@@ -13,10 +13,8 @@ import TablePagination from '@mui/material/TablePagination';
 import { Avatar, Grid, Typography } from '@mui/material';
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import sweetalert from 'sweetalert';
-import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 import { showAllUsers } from '../../store/actions';
 import { deleteUser } from '../../services/user';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './viewerAdmin.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -43,15 +41,8 @@ const StyledTableRow = styled(TableRow)(() => ({
 export default function CustomizedTables() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  // const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState('1');
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
-
-  const radios = [
-    { name: 'Usuarios', value: '1' },
-    { name: 'citas', value: '2' },
-  ];
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -79,25 +70,6 @@ export default function CustomizedTables() {
   }, []);
   return (
     <div style={{ margin: '100px auto 50px', width: '80%', display: 'grid', gap: '25px' }}>
-      <div className="mx-0" style={{ textAlign: 'center' }}>
-        <ButtonGroup style={{ margin: ' 0 auto' }}>
-          {radios.map((radio, idx) => (
-            <ToggleButton
-              // eslint-disable-next-line react/no-array-index-key
-              key={idx}
-              id={`radio-${idx}`}
-              type="radio"
-              variant={idx % 2 ? 'outline-primary' : 'outline-primary'}
-              name="radio"
-              value={radio.value}
-              checked={radioValue === radio.value}
-              onChange={(e) => setRadioValue(e.currentTarget.value)}
-            >
-              {radio.name}
-            </ToggleButton>
-          ))}
-        </ButtonGroup>
-      </div>
       <div className="table-responsive" style={{ border: '1px solid black', borderRadius: 8 }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 768 }} aria-label="customized table">
