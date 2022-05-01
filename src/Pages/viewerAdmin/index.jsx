@@ -15,7 +15,6 @@ import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import sweetalert from 'sweetalert';
 import { showAllUsers } from '../../store/actions';
 import { deleteUser } from '../../services/user';
-import './viewerAdmin.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -52,7 +51,7 @@ export default function CustomizedTables() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  function removeUser(nombre, id) {
+  async function removeUser(nombre, id) {
     sweetalert({
       title: 'Confirmacion',
       text: `Esta seguro de eliminar al usuario ${nombre} con el id ${id}`,
@@ -67,9 +66,9 @@ export default function CustomizedTables() {
   }
   useEffect(() => {
     dispatch(showAllUsers());
-  }, []);
+  }, [showAllUsers()]);
   return (
-    <div style={{ margin: '100px auto 50px', width: '80%', display: 'grid', gap: '25px' }}>
+    <div style={{ margin: '100px auto 50px', padding: '2rem 9%' }}>
       <div className="table-responsive" style={{ border: '1px solid black', borderRadius: 8 }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 768 }} aria-label="customized table">
