@@ -1,8 +1,8 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { styled } from '@mui/material/styles';
-// import { makeStyles } from '@material-ui/core/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -12,8 +12,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
 import { Avatar, Grid, Typography } from '@mui/material';
-import Remove from '@material-ui/icons/Remove';
+import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import sweetalert from 'sweetalert';
 import { showAllUsers } from '../../store/actions';
+import { deleteUser } from '../../services/user';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './viewerAdmin.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -31,30 +34,17 @@ const StyledTableRow = styled(TableRow)(() => ({
   '&:nth-of-type(odd)': {
     backgroundColor: '#eaf2f8',
   },
-  // hide last border
+
   '&:last-child td, &:last-child th': {
     border: 0,
   },
 }));
-// const useStyles = makeStyles((theme) => ({
-//   TableRow: {
-//     backgroundColor: 'blue',
-//   },
-//   tableHeaderCell: {
-//     fontWeigth: 'bold',
-//     backgroundColor: theme.palette.primary.dark,
-//     color: theme.palette.getContrastText(theme.palette.primary.dark),
-//     fontSize: 28,
-//   },
-//   avatar: {
-//     backgroundColor: theme.palette.primary.light,
-//     color: theme.palette.getContrastText(theme.palette.primary.light),
-//   },
-// }));
 
 export default function CustomizedTables() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -64,15 +54,25 @@ export default function CustomizedTables() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
-  // const classes = useStyles();
-  console.log(users);
+  function removeUser(nombre, id) {
+    sweetalert({
+      title: 'Confirmacion',
+      text: `Esta seguro de eliminar al usuario ${nombre} con el id ${id}`,
+      icon: 'info',
+      buttons: ['Cancelar', 'Continuar'],
+    }).then((respuesta) => {
+      if (respuesta) {
+        deleteUser(id);
+        dispatch(showAllUsers());
+        console.log(nombre, id);
+      }
+    });
+  }
   useEffect(() => {
     dispatch(showAllUsers());
   }, []);
   return (
-    <div style={{ margin: '150px auto 0', width: '80%', border: '1px solid black', borderRadius: 8 }}>
+    <div style={{ margin: '150px auto 0', width: '80%', border: '1px solid black', borderRadius: 8 }} className="table-responsive">
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 768 }} aria-label="customized table">
           <TableHead>
@@ -120,10 +120,19 @@ export default function CustomizedTables() {
                   </Typography>
                   {' '}
                 </StyledTableCell>
-                <StyledTableCell>hola</StyledTableCell>
+                <StyledTableCell align="center">
+                  <DeleteForeverSharpIcon
+                    fontSize="large"
+                    color="black"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => removeUser(`${row.firstName} ${row.lastName}`, row._id)}
+                  />
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
+        </Table>
+        <div style={{ background: 'yellow', fontSize: '30px' }}>
           <TablePagination
             rowsPerPageOptions={[10, 25, 100]}
             component="div"
@@ -132,8 +141,10 @@ export default function CustomizedTables() {
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
+            style={{ background: '#eaf2c4' }}
+            align="rigth"
           />
-        </Table>
+        </div>
       </TableContainer>
     </div>
   );

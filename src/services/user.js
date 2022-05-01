@@ -90,3 +90,18 @@ export const handleUploadImage = async (file, image) => {
     throw new Error(error);
   }
 };
+export const deleteUser = async (id) => {
+  const payload = {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/users/${id}`, payload);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
