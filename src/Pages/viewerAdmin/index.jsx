@@ -15,6 +15,7 @@ import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import sweetalert from 'sweetalert';
 import { showAllUsers } from '../../store/actions';
 import { deleteUser } from '../../services/user';
+import Loading from '../../Components/Loading';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -40,6 +41,7 @@ const StyledTableRow = styled(TableRow)(() => ({
 export default function CustomizedTables() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [load, setLoad] = useState(true);
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
@@ -66,84 +68,94 @@ export default function CustomizedTables() {
   }
   useEffect(() => {
     dispatch(showAllUsers());
+    setTimeout(() => {
+      setLoad(false);
+    }, 1000);
   }, [showAllUsers()]);
   return (
-    <div style={{ margin: '100px auto 50px', padding: '2rem 9%' }}>
-      <div className="table-responsive" style={{ border: '1px solid black', borderRadius: 8 }}>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 768 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <StyledTableCell>Nombre</StyledTableCell>
-                <StyledTableCell align="left">Email</StyledTableCell>
-                <StyledTableCell align="left">Telefono</StyledTableCell>
-                <StyledTableCell align="left">Rol</StyledTableCell>
-                <StyledTableCell align="left">Estado</StyledTableCell>
-                <StyledTableCell align="left">Eliminar</StyledTableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {users.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-                <StyledTableRow key={row._id}>
-                  <StyledTableCell component="th" scope="row">
-                    <Grid container>
-                      <Grid item lg={2}>
-                        <Avatar alt={row.firstName} src="." style={{ backgroundColor: ' #3498db ' }} />
-                      </Grid>
-                      <Grid item lg={10}>
-                        {`${row.firstName} ${row.lastName}`}
-                      </Grid>
-                    </Grid>
-                  </StyledTableCell>
-                  <StyledTableCell align="left">{row.email}</StyledTableCell>
-                  <StyledTableCell align="left">{row.phone}</StyledTableCell>
-                  <StyledTableCell align="left">{row.role}</StyledTableCell>
-                  <StyledTableCell align="left">
-                    <Typography
-                      style={{
-                        backgroundColor:
+    <div>
+      {load
+        ? <Loading />
+        : (
+          <div style={{ margin: '100px auto 50px', padding: '2rem 9%' }}>
+            <div className="table-responsive" style={{ border: '1px solid black', borderRadius: 8 }}>
+              <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 768 }} aria-label="customized table">
+                  <TableHead>
+                    <TableRow>
+                      <StyledTableCell>Nombre</StyledTableCell>
+                      <StyledTableCell align="left">Email</StyledTableCell>
+                      <StyledTableCell align="left">Telefono</StyledTableCell>
+                      <StyledTableCell align="left">Rol</StyledTableCell>
+                      <StyledTableCell align="left">Estado</StyledTableCell>
+                      <StyledTableCell align="left">Eliminar</StyledTableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {users.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                      .map((row) => (
+                        <StyledTableRow key={row._id}>
+                          <StyledTableCell component="th" scope="row">
+                            <Grid container>
+                              <Grid item lg={2}>
+                                <Avatar alt={row.firstName} src="." style={{ backgroundColor: ' #3498db ' }} />
+                              </Grid>
+                              <Grid item lg={10}>
+                                {`${row.firstName} ${row.lastName}`}
+                              </Grid>
+                            </Grid>
+                          </StyledTableCell>
+                          <StyledTableCell align="left">{row.email}</StyledTableCell>
+                          <StyledTableCell align="left">{row.phone}</StyledTableCell>
+                          <StyledTableCell align="left">{row.role}</StyledTableCell>
+                          <StyledTableCell align="left">
+                            <Typography
+                              style={{
+                                backgroundColor:
                       ((`${row.isActive}` === 'true' && 'green')
                       || (`${row.isActive}` === 'false' && 'red')),
-                        fontSize: '1.3rem',
-                        borderRadius: 8,
-                        color: 'white',
-                        padding: '3px 10px',
-                        fontWeight: 'auto',
-                        display: 'inline-block',
-                      }}
-                    >
-                      {`${row.isActive}`}
+                                fontSize: '1.3rem',
+                                borderRadius: 8,
+                                color: 'white',
+                                padding: '3px 10px',
+                                fontWeight: 'auto',
+                                display: 'inline-block',
+                              }}
+                            >
+                              {`${row.isActive}`}
 
-                    </Typography>
-                    {' '}
-                  </StyledTableCell>
-                  <StyledTableCell align="center">
-                    <DeleteForeverSharpIcon
-                      fontSize="large"
-                      color="black"
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => removeUser(`${row.firstName} ${row.lastName}`, row._id)}
-                    />
-                  </StyledTableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-          <div style={{ background: 'yellow', fontSize: '30px' }}>
-            <TablePagination
-              rowsPerPageOptions={[10, 25, 100]}
-              component="div"
-              count={users.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              style={{ background: '#eaf2c4' }}
-              align="rigth"
-            />
+                            </Typography>
+                            {' '}
+                          </StyledTableCell>
+                          <StyledTableCell align="center">
+                            <DeleteForeverSharpIcon
+                              fontSize="large"
+                              color="black"
+                              style={{ cursor: 'pointer' }}
+                              onClick={() => removeUser(`${row.firstName} ${row.lastName}`, row._id)}
+                            />
+                          </StyledTableCell>
+                        </StyledTableRow>
+                      ))}
+                  </TableBody>
+                </Table>
+                <div style={{ background: 'yellow', fontSize: '30px' }}>
+                  <TablePagination
+                    rowsPerPageOptions={[10, 25, 100]}
+                    component="div"
+                    count={users.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    style={{ background: '#eaf2c4' }}
+                    align="rigth"
+                  />
+                </div>
+              </TableContainer>
+            </div>
           </div>
-        </TableContainer>
-      </div>
+        )}
     </div>
   );
 }
