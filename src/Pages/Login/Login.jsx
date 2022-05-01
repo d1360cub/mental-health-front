@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
 import { React, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -48,8 +49,10 @@ function Login() {
         } else {
           navigate('/viewerPatient');
         }
-      } else {
+      } else if (user.role === 'doctor') {
         navigate('/viewerDoctor');
+      } else {
+        navigate(`/viewerAdmin/userList/${user._id}`);
       }
       setForm({});
     }
