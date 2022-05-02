@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-sequences */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/button-has-type */
@@ -7,11 +8,11 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import sweetalert from 'sweetalert';
 import HistoryModal from '../HistoryModal';
-import { deleteAppointment, deleteAppointmentDoctor, getAppointmentsByDoctorId, getAppointmentsByPatientId } from '../../services/appointments';
+import { deleteAppointment } from '../../services/appointments';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
-function CardViewer({ userId, start, end, viewer }) {
+function CardViewer({ userId, start, end, viewer, appointment_id }) {
   const { token } = useSelector((state) => state.user);
   const [modal, setModal] = useState(false);
   const startSplitted = start.split('T');
@@ -29,28 +30,14 @@ function CardViewer({ userId, start, end, viewer }) {
     setUser(userById);
   }, []);
   const handleDeleteAppointment = async () => {
-    const doctor = await getAppointmentsByPatientId(user._id);
-    const data = await deleteAppointment(user._id, token);
+    await deleteAppointment(appointment_id, token);
     sweetalert({
       icon: 'info',
       title: 'Tu Cita ha sido cancelada',
       text: 'A tu correo llegará una notificación',
       buttons: 'Continuar',
     });
-    return data, doctor;
   };
-  const handleDeleteAppointmentDoctor = async () => {
-    const data = await deleteAppointmentDoctor(user._id, token);
-    const doctor = await getAppointmentsByDoctorId(user._id);
-    sweetalert({
-      icon: 'info',
-      title: 'Tu Cita ha sido cancelada',
-      text: 'A tu correo llegará una notificación',
-      buttons: 'Continuar',
-    });
-    return data, doctor;
-  };
-
   return (
     <div className="home_content--card" role="home_content--card">
       <div className="home_content--imagen">
@@ -95,7 +82,7 @@ function CardViewer({ userId, start, end, viewer }) {
                 userId={userId}
                 fullName={`${user.firstName} ${user.lastName}`}
               />
-              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment}>Eliminar Cita</button>
+              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment}>Cancelar Cita</button>
             </>
           )
           : (
@@ -109,7 +96,7 @@ function CardViewer({ userId, start, end, viewer }) {
               <div>
                 {`Hora final: ${endTime}`}
               </div>
-              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointmentDoctor}>Eliminar Cita</button>
+              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment}>Cancelar Cita</button>
             </>
           )}
       </div>
@@ -121,12 +108,14 @@ CardViewer.propTypes = {
   start: PropTypes.string,
   end: PropTypes.string,
   viewer: PropTypes.bool,
+  appointment_id: PropTypes.string,
 };
 CardViewer.defaultProps = {
   userId: '',
   start: '',
   end: '',
   viewer: false,
+  appointment_id: '',
 };
 
 export default CardViewer;

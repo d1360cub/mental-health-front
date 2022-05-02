@@ -55,23 +55,6 @@ export const updateAppointment = async (id, body) => {
     throw new Error(error);
   }
 };
-
-export const deleteAppointmentDoctor = async (id, token) => {
-  const payload = {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json',
-      authorization: `bearer ${token}`,
-    },
-  };
-  try {
-    const response = await fetch(`${API_URL}/api/appointments/${id}`, payload);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw new Error(error);
-  }
-};
 export const deleteAppointment = async (id, token) => {
   const payload = {
     method: 'DELETE',
@@ -81,7 +64,7 @@ export const deleteAppointment = async (id, token) => {
     },
   };
   try {
-    const response = await fetch(`${API_URL}/api/appointments/appointmentPatient/${id}`, payload);
+    const response = await fetch(`${API_URL}/api/appointments/${id}`, payload);
     const data = await response.json();
     return data;
   } catch (error) {

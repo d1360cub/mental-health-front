@@ -40,6 +40,7 @@ function ViewerDoctor() {
                     key={element._id}
                     userId={element.patientId._id}
                     viewer
+                    appointment_id={element._id}
                   />
                 ))}
               </div>
