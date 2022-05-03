@@ -25,10 +25,6 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
   const startTime = startSplitted[1];
   const endTime = endSplitted[1];
   const [user, setUser] = useState({});
-  useEffect(async () => {
-    const userById = await getUser(userId);
-    setUser(userById);
-  }, []);
   const handleDeleteAppointment = async () => {
     await deleteAppointment(appointmentId, token);
     sweetalert({
@@ -37,6 +33,10 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
       buttons: 'Continuar',
     });
   };
+  useEffect(async () => {
+    const userById = await getUser(userId);
+    setUser(userById);
+  }, []);
   return (
     <div className="home_content--card" role="home_content--card">
       <div className="home_content--imagen">

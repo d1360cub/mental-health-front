@@ -55,7 +55,7 @@ export const updateAppointment = async (id, body) => {
     throw new Error(error);
   }
 };
-export const deleteAppointment = async (_id, token) => {
+export const deleteAppointment = async (id, token) => {
   const payload = {
     method: 'DELETE',
     headers: {
@@ -64,7 +64,7 @@ export const deleteAppointment = async (_id, token) => {
     },
   };
   try {
-    const response = await fetch(`${API_URL}/api/appointments/${_id}`, payload);
+    const response = await fetch(`${API_URL}/api/appointments/${id}`, payload);
     const data = await response.json();
     return data;
   } catch (error) {
