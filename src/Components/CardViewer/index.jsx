@@ -12,7 +12,7 @@ import { deleteAppointment } from '../../services/appointments';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
-function CardViewer({ userId, start, end, viewer, appointment_id }) {
+function CardViewer({ userId, start, end, viewer, appointmentId }) {
   const { token } = useSelector((state) => state.user);
   const [modal, setModal] = useState(false);
   const startSplitted = start.split('T');
@@ -30,7 +30,7 @@ function CardViewer({ userId, start, end, viewer, appointment_id }) {
     setUser(userById);
   }, []);
   const handleDeleteAppointment = async () => {
-    await deleteAppointment(appointment_id, token);
+    await deleteAppointment(appointmentId, token);
     sweetalert({
       icon: 'info',
       title: 'Tu Cita ha sido cancelada',
@@ -108,14 +108,14 @@ CardViewer.propTypes = {
   start: PropTypes.string,
   end: PropTypes.string,
   viewer: PropTypes.bool,
-  appointment_id: PropTypes.string,
+  appointmentId: PropTypes.string,
 };
 CardViewer.defaultProps = {
   userId: '',
   start: '',
   end: '',
   viewer: false,
-  appointment_id: '',
+  appointmentId: '',
 };
 
 export default CardViewer;
