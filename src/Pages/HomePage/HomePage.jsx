@@ -7,7 +7,6 @@ import Home from '../Home/Home';
 import About from '../About/About';
 import Services from '../Services/Services';
 import Doctors from '../Doctors/Doctors';
-import Developers from '../../Components/Developers/Developers';
 
 export default function HomePage() {
   return (
@@ -16,7 +15,6 @@ export default function HomePage() {
       <About />
       <Services />
       <Doctors />
-      <Developers />
       <section className="footer" data-cy="home-component">
         <div className="footer__box-container">
           <div className="footer__box">
