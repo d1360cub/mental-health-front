@@ -71,7 +71,7 @@ export default function CustomizedTables() {
     setTimeout(() => {
       setLoad(false);
     }, 1000);
-  }, [showAllUsers()]);
+  }, [users]);
   return (
     <div>
       {load
