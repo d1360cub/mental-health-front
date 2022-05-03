@@ -40,6 +40,9 @@
 #H-clinica{
   width: 15rem;
 }
+#CancelDate{
+  width: 15rem;
+}
 
 @media(max-width:1200px){
   .home_content__enlaces{

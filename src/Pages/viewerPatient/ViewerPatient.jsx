@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -33,6 +35,7 @@ function ViewerPatient() {
                 start={element.start}
                 end={element.end}
                 key={user._id}
+                appointment_id={element._id}
               />
             ))}
             <div>

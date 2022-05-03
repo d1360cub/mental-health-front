@@ -1,6 +1,7 @@
+/* eslint-disable no-underscore-dangle */
 const API_URL = process.env.REACT_APP_API_URL;
 
-const getAppointmentsByDoctorId = async (id) => {
+export const getAppointmentsByDoctorId = async (id) => {
   try {
     const response = await fetch(`${API_URL}/api/appointments/${id}`);
     const appointmentForId = await response.json();
@@ -9,8 +10,6 @@ const getAppointmentsByDoctorId = async (id) => {
     throw new Error(error);
   }
 };
-
-export default getAppointmentsByDoctorId;
 
 export const getAppointmentsByPatientId = async (id) => {
   try {
@@ -33,6 +32,39 @@ export const createAppointmet = async (newApointment, token) => {
       body: JSON.stringify(newApointment),
     };
     const response = await fetch(`${API_URL}/api/appointments`, payload);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const updateAppointment = async (id, body) => {
+  const payload = {
+    method: 'PATCH',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/appointments/${id}`, payload);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+export const deleteAppointment = async (id, token) => {
+  const payload = {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+      authorization: `bearer ${token}`,
+    },
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/appointments/${id}`, payload);
     const data = await response.json();
     return data;
   } catch (error) {
