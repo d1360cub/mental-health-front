@@ -1,7 +1,12 @@
+/* eslint-disable consistent-return */
+/* eslint-disable camelcase */
+/* eslint-disable no-unreachable */
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import sweetalert from 'sweetalert';
 import CloudinaryUploadWidget from '../UploadImage/CloudinaryUploadWidget';
 import { getUser, updateUser, deleteUser } from '../../services/user';
 import './Profile.css';
@@ -25,10 +30,20 @@ function Profile() {
     navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
   };
   const handleDeleteUser = async () => {
-    const data = await deleteUser(user._id);
-    localStorage.clear();
-    window.location.href = '/';
-    return data;
+    sweetalert({
+      icon: 'info',
+      title: '¿Estás seguro de eliminar tu cuenta?',
+      text: 'Si es asi, selecciona "Continuar"',
+      buttons: ['Cancelar', 'Continuar'],
+    }).then((respuesta) => {
+      if (respuesta) {
+        const data = deleteUser(user._id);
+        localStorage.clear();
+        window.location.href = '/';
+        return data;
+      }
+      sweetalert({ text: 'Eliminación cancelada' });
+    });
   };
   useEffect(async () => {
     const person = await getUser(user._id);

@@ -18,7 +18,7 @@ import {
   getUser,
 } from '../services/user';
 
-import getAppointmentsByDoctorId from '../services/appointments';
+import { getAppointmentsByDoctorId } from '../services/appointments';
 import getAllServices from '../services/serviceServices';
 import { getCHistoryPatient } from '../services/cHistory';
 import { getTasks } from '../services/tasks';
