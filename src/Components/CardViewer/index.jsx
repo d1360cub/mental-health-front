@@ -82,7 +82,7 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
                 userId={userId}
                 fullName={`${user.firstName} ${user.lastName}`}
               />
-              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment}>Cancelar Cita</button>
+              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment} id="CancelDate">Cancelar Cita</button>
             </>
           )
           : (
@@ -96,7 +96,7 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
               <div>
                 {`Hora final: ${endTime}`}
               </div>
-              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment}>Cancelar Cita</button>
+              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment} id="CancelDate">Cancelar Cita</button>
             </>
           )}
       </div>
