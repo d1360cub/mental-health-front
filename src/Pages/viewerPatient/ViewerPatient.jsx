@@ -1,23 +1,27 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import CardViewer from '../../Components/CardViewer';
 import Checklist from '../../Components/Checklist/Checklist';
 import Welcome from '../../Components/Welcome';
-import { getAppointmentsByPatientId } from '../../services/appointments';
+// import { getAppointmentsByPatientId } from '../../services/appointments';
+import { showAppointmentPatient } from '../../store/actions';
 import Calendar from '../../Components/Calendar';
 import '../HomeViewer.css';
 
 function ViewerPatient() {
-  const [appointment, setAppointment] = useState([]);
+  const dispatch = useDispatch();
+  // const [appointment, setAppointment] = useState([]);
+  const appointment = useSelector((state) => state.appointmentsPatient);
   const patient = useSelector((state) => state.user);
   const { user, token } = patient;
 
   useEffect(async () => {
-    const data = await getAppointmentsByPatientId(user._id);
-    setAppointment(data);
+    // const data = await getAppointmentsByPatientId(user._id);
+    // setAppointment(data);
+    dispatch(showAppointmentPatient(user._id));
   }, [token]);
 
   return (
