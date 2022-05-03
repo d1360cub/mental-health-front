@@ -34,7 +34,6 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
     sweetalert({
       icon: 'info',
       title: 'Tu Cita ha sido cancelada',
-      text: 'A tu correo llegará una notificación',
       buttons: 'Continuar',
     });
   };
