@@ -16,7 +16,7 @@ describe('Mental Health Login', () => {
   it('should set an appointment', () => {
     const user = 'javier@marulanda.com';
     const password = '123';
-    const date = '2022-04-29';
+    const date = '2022-05-13';
     const time = '08:00:00';
     cy.get('#email').clear();
     cy.get('#password').clear();
