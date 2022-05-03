@@ -42,7 +42,7 @@ function Profile() {
         window.location.href = '/';
         return data;
       }
-      sweetalert({ text: 'Eliminación cancelado' });
+      sweetalert({ text: 'Eliminación cancelada' });
     });
   };
   useEffect(async () => {

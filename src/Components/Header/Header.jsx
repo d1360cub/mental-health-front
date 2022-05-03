@@ -14,6 +14,7 @@ export default function Header() {
     localStorage.clear();
     window.location.href = '/';
   };
+
   const menu = useRef();
 
   const showMenu = () => {
@@ -62,7 +63,7 @@ export default function Header() {
           )}
           {user?.role === 'admin' && (
           <>
-            <NavHashLink to="/viewerAdmin/:adminId" className="header__nav-link" data-cy="button-profile">Portal</NavHashLink>
+            <NavHashLink to="/viewerAdmin/userList/:adminId" className="header__nav-link" data-cy="button-profile">Portal</NavHashLink>
             <button onClick={onLogout} className="btn-header-users header__nav-link" data-cy="button-log-out">
               Salir
             </button>
