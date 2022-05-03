@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable camelcase */
 /* eslint-disable no-unreachable */
 /* eslint-disable react/button-has-type */
@@ -5,8 +6,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import sweetalert from 'sweetalert';
+import CloudinaryUploadWidget from '../UploadImage/CloudinaryUploadWidget';
 import { getUser, updateUser, deleteUser } from '../../services/user';
-import UploadImage from '../UploadImage/UploadImage';
 import './Profile.css';
 
 function Profile() {
@@ -28,23 +30,33 @@ function Profile() {
     navigate(userProfile.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
   };
   const handleDeleteUser = async () => {
-    const data = await deleteUser(user._id);
-    localStorage.clear();
-    window.location.href = '/';
-    return data;
+    sweetalert({
+      icon: 'info',
+      title: '¿Estás seguro de eliminar tu cuenta?',
+      text: 'Si es asi, selecciona "Continuar"',
+      buttons: ['Cancelar', 'Continuar'],
+    }).then((respuesta) => {
+      if (respuesta) {
+        const data = deleteUser(user._id);
+        localStorage.clear();
+        window.location.href = '/';
+        return data;
+      }
+      sweetalert({ text: 'Eliminación cancelado' });
+    });
   };
   useEffect(async () => {
     const person = await getUser(user._id);
     setUserProfile(person);
   }, []);
   return (
-    <div className="main__container">
+    <div className="main__container" style={{ marginTop: '8rem' }}>
       <p className="section-headingProfile">Mi perfil</p>
       <div className="profile__container">
         <div className="imgupload">
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
           <br />
-          <UploadImage id={userProfile._id} />
+          <CloudinaryUploadWidget />
         </div>
         <table className="tableProfile">
           <td rowSpan="4">
@@ -161,7 +173,7 @@ function Profile() {
                   />
                 </fieldset>
                 <fieldset>
-                  <h2>Expriencia profesional:</h2>
+                  <h2>Experiencia profesional:</h2>
                   <input
                     type="text"
                     id="experience"
@@ -194,7 +206,7 @@ function Profile() {
       </div>
       <div className="deleteUserButton">
         <h3>Si deseas eliminar tu cuenta, da click en el seiguiente botón</h3>
-        <button className="btn-appointment" onClick={handleDeleteUser}>Eliminar cuenta</button>
+        <button className="btn-appointment" onClick={handleDeleteUser} type="submit">Eliminar cuenta </button>
       </div>
     </div>
   );

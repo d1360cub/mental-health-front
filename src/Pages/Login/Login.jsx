@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
 import { React, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -37,8 +38,8 @@ function Login() {
       setError('email', { type: 'custom', message: error.message });
       setError('password', { type: 'custom', message: error.message });
       if (!user) {
-        setError('email', { type: 'custom', message: 'El Usurario no existe' });
-        setError('password', { type: 'custom', message: 'El Usurario no existe' });
+        setError('email', { type: 'custom', message: 'El Usuario no existe' });
+        setError('password', { type: 'custom', message: 'El Usuario no existe' });
       }
     }
     if (user) {
@@ -48,8 +49,10 @@ function Login() {
         } else {
           navigate('/viewerPatient');
         }
-      } else {
+      } else if (user.role === 'doctor') {
         navigate('/viewerDoctor');
+      } else {
+        navigate(`/viewerAdmin/userList/${user._id}`);
       }
       setForm({});
     }
