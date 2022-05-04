@@ -23,7 +23,6 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
   const startTime = startSplitted[1];
   const endTime = endSplitted[1];
   const [user, setUser] = useState({});
-
   const handleDeleteAppointment = () => {
     sweetalert({
       title: 'Confirmación',
