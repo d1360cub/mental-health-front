@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable camelcase */
-/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
