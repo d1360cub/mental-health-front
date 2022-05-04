@@ -10,6 +10,8 @@ import {
   RESET,
   GET_TASKS_PATIENT,
   APPOINTMENTS_PATIENT,
+  UPDATE_LIST_USERS,
+  DELETE_APPOINTMENT,
 } from './types';
 
 import {
@@ -34,8 +36,10 @@ export const getUserId = (user) => ({ type: GET_USER, payload: user });
 export const reserveOneAppointment = (date) => ({ type: RESERVE_APPOINTMENT, payload: date });
 export const getHistoryPatient = (cHistory) => ({ type: GET_HISTORY_PATIENT, payload: cHistory });
 export const getTasksPatient = (tasks) => ({ type: GET_TASKS_PATIENT, payload: tasks });
-export const getAppointmentsPatient = (appointment) => (
-  { type: APPOINTMENTS_PATIENT, payload: appointment });
+export const updateListUsers = (id) => ({ type: UPDATE_LIST_USERS, payload: id });
+export const getAppointmentsPatient = (appointments) => (
+  { type: APPOINTMENTS_PATIENT, payload: appointments });
+export const removeAppointment = (id) => ({ type: DELETE_APPOINTMENT, payload: id });
 
 export const createUser = (user) => async (dispatch) => {
   const userCreated = await newUser(user);

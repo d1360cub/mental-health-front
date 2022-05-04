@@ -11,7 +11,7 @@ import './ViewerDoctor.css';
 function ViewerDoctor() {
   const [load, setLoad] = useState(true);
   const dispatch = useDispatch();
-  const dataAppointments = useSelector((state) => state.appointments);
+  const dataAppointments = useSelector((state) => state.listAppointments);
   const doctor = useSelector((state) => state.user);
   const { user, token } = doctor;
 
