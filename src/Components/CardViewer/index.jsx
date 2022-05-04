@@ -1,18 +1,16 @@
-/* eslint-disable camelcase */
-/* eslint-disable no-sequences */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import sweetalert from 'sweetalert';
 import HistoryModal from '../HistoryModal';
 import { deleteAppointment } from '../../services/appointments';
+import { removeAppointment } from '../../store/actions';
 import { getUser } from '../../services/user';
 import './CardViewer.css';
 
 function CardViewer({ userId, start, end, viewer, appointmentId }) {
+  const dispatch = useDispatch();
   const { token } = useSelector((state) => state.user);
   const [modal, setModal] = useState(false);
   const startSplitted = start.split('T');
@@ -25,19 +23,24 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
   const startTime = startSplitted[1];
   const endTime = endSplitted[1];
   const [user, setUser] = useState({});
+
+  const handleDeleteAppointment = () => {
+    sweetalert({
+      title: 'Confirmación',
+      text: 'Esta seguro que desea cancelar la cita',
+      icon: 'info',
+      buttons: ['Cancelar', 'Continuar'],
+    }).then((respuesta) => {
+      if (respuesta) {
+        deleteAppointment(appointmentId, token);
+        dispatch(removeAppointment(appointmentId));
+      }
+    });
+  };
   useEffect(async () => {
     const userById = await getUser(userId);
     setUser(userById);
   }, []);
-  const handleDeleteAppointment = async () => {
-    await deleteAppointment(appointmentId, token);
-    sweetalert({
-      icon: 'info',
-      title: 'Tu Cita ha sido cancelada',
-      text: 'A tu correo llegará una notificación',
-      buttons: 'Continuar',
-    });
-  };
   return (
     <div className="home_content--card" role="home_content--card">
       <div className="home_content--imagen">
@@ -82,7 +85,15 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
                 userId={userId}
                 fullName={`${user.firstName} ${user.lastName}`}
               />
-              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment} id="CancelDate">Cancelar Cita</button>
+              <button
+                type="button"
+                className="btn-header-users header__nav-link"
+                onClick={handleDeleteAppointment}
+                id="CancelDate"
+                style={{ cursor: 'pointer' }}
+              >
+                Cancelar Cita
+              </button>
             </>
           )
           : (
@@ -96,7 +107,15 @@ function CardViewer({ userId, start, end, viewer, appointmentId }) {
               <div>
                 {`Hora final: ${endTime}`}
               </div>
-              <button className="btn-header-users header__nav-link" onClick={handleDeleteAppointment} id="CancelDate">Cancelar Cita</button>
+              <button
+                type="button"
+                className="btn-header-users header__nav-link"
+                onClick={handleDeleteAppointment}
+                id="CancelDate"
+                style={{ cursor: 'pointer' }}
+              >
+                Cancelar Cita
+              </button>
             </>
           )}
       </div>

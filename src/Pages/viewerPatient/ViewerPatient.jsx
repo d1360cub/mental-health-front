@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable camelcase */
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
@@ -12,13 +13,12 @@ import '../HomeViewer.css';
 
 function ViewerPatient() {
   const dispatch = useDispatch();
-  const appointment = useSelector((state) => state.appointmentsPatient);
-  const patient = useSelector((state) => state.user);
-  const { user, token } = patient;
+  const appointment = useSelector((state) => state.listAppointments);
+  const { user } = useSelector((state) => state.user);
 
-  useEffect(async () => {
+  useEffect(() => {
     dispatch(showAppointmentPatient(user._id));
-  }, [token]);
+  }, []);
 
   return (
     <div>
@@ -35,7 +35,7 @@ function ViewerPatient() {
                 start={element.start}
                 end={element.end}
                 key={user._id}
-                appointment_id={element._id}
+                appointmentId={element._id}
               />
             ))}
             <div>
