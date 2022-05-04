@@ -30,10 +30,9 @@ describe('Mental Health Login', () => {
     cy.get(':nth-child(1) > .home-content__card--perfil > #modal > .popup > .btn-close-popup').click();
     cy.get('.fc-timeGridDay-button').click();
     cy.get('[href="/profile"]').click();
-    cy.get('[data-cy="updateAvatar"]').attachFile(avatar[x]);
-    cy.get('[data-cy="buttonUpdateAvatar"]').click();
     cy.get('#lastName').type(lastName);
     cy.get('#phone').type(randomPhoneNumber);
     cy.get('[data-cy="updateData"]').click();
+    cy.get('.btn-header-users').click();
   });
 });
