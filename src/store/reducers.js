@@ -58,7 +58,7 @@ function reducers(state = initialState, action) {
     case GET_APPOINTMENTS:
       return {
         ...state,
-        appointments: action.payload,
+        listAppointments: action.payload,
       };
     case GET_USER:
       return {
