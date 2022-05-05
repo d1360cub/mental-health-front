@@ -19,7 +19,7 @@ function InfoDoctor() {
   const [form, setForm] = useState({});
   const [dataCalen, setDataCalen] = useState({ startTime: '', endTime: '', finalDate: '' });
   const params = useParams();
-  const dataAppointments = useSelector((state) => state.appointments);
+  const dataAppointments = useSelector((state) => state.listAppointments);
   const preAppointment = useSelector((state) => state.preAppointment);
   const dataUser = useSelector((state) => state.user);
 
