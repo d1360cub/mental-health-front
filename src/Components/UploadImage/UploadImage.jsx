@@ -10,6 +10,7 @@ function UploadImage({ id }) {
   const handleClick = async (avatar) => {
     const uploadedImage = await handleUploadImage(avatar, image);
     updateUser(id, { avatar: uploadedImage });
+    window.location.reload();
   };
   return (
     <div>

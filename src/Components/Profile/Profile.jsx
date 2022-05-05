@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import sweetalert from 'sweetalert';
-import CloudinaryUploadWidget from '../UploadImage/CloudinaryUploadWidget';
+import UploadImage from '../UploadImage/UploadImage';
 import { getUser, updateUser, deleteUser } from '../../services/user';
 import './Profile.css';
 
@@ -52,7 +52,7 @@ function Profile() {
         <div className="imgupload">
           <img className="imgPerfil" src={userProfile.avatar} alt="imagen" />
           <br />
-          <CloudinaryUploadWidget />
+          <UploadImage id={user._id} />
         </div>
         <table className="tableProfile">
           <td rowSpan="4">
