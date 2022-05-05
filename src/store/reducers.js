@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import {
   ADD_USER,
   GET_USERS,
@@ -9,6 +10,9 @@ import {
   GET_HISTORY_PATIENT,
   RESET,
   GET_TASKS_PATIENT,
+  UPDATE_LIST_USERS,
+  APPOINTMENTS_PATIENT,
+  DELETE_APPOINTMENT,
 } from './types';
 
 const initialState = {
@@ -20,6 +24,7 @@ const initialState = {
   preAppointment: {},
   cHistory: [],
   tasks: [],
+  listAppointments: [],
 };
 
 // eslint-disable-next-line default-param-last
@@ -53,7 +58,7 @@ function reducers(state = initialState, action) {
     case GET_APPOINTMENTS:
       return {
         ...state,
-        appointments: action.payload,
+        listAppointments: action.payload,
       };
     case GET_USER:
       return {
@@ -74,6 +79,22 @@ function reducers(state = initialState, action) {
       return {
         ...state,
         tasks: action.payload,
+      };
+    case APPOINTMENTS_PATIENT:
+      return {
+        ...state,
+        listAppointments: action.payload,
+      };
+    case UPDATE_LIST_USERS:
+      return {
+        ...state,
+        users: state.users.filter((element) => element._id !== action.payload),
+      };
+    case DELETE_APPOINTMENT:
+      return {
+        ...state,
+        listAppointments: state.listAppointments
+          .filter((element) => element._id !== action.payload),
       };
     default:
       return state;

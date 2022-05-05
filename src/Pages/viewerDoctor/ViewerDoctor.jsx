@@ -11,7 +11,7 @@ import './ViewerDoctor.css';
 function ViewerDoctor() {
   const [load, setLoad] = useState(true);
   const dispatch = useDispatch();
-  const dataAppointments = useSelector((state) => state.appointments);
+  const dataAppointments = useSelector((state) => state.listAppointments);
   const doctor = useSelector((state) => state.user);
   const { user, token } = doctor;
 
@@ -19,7 +19,6 @@ function ViewerDoctor() {
     return x.start.localeCompare(y.start, 'fr', { ignorePunctuation: true });
   }
   const appointmentsSorted = dataAppointments.sort(sortAppointment);
-
   useEffect(() => {
     dispatch(showAppointByDocId(user._id));
     setTimeout(() => {
@@ -40,6 +39,7 @@ function ViewerDoctor() {
                     key={element._id}
                     userId={element.patientId._id}
                     viewer
+                    appointmentId={element._id}
                   />
                 ))}
               </div>

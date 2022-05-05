@@ -13,7 +13,7 @@ import TablePagination from '@mui/material/TablePagination';
 import { Avatar, Grid, Typography } from '@mui/material';
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import sweetalert from 'sweetalert';
-import { showAllUsers } from '../../store/actions';
+import { updateListUsers, showAllUsers } from '../../store/actions';
 import { deleteUser } from '../../services/user';
 import Loading from '../../Components/Loading';
 
@@ -38,7 +38,7 @@ const StyledTableRow = styled(TableRow)(() => ({
   },
 }));
 
-export default function CustomizedTables() {
+function ViewerAdmin() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [load, setLoad] = useState(true);
@@ -62,7 +62,7 @@ export default function CustomizedTables() {
     }).then((respuesta) => {
       if (respuesta) {
         deleteUser(id);
-        dispatch(showAllUsers());
+        dispatch(updateListUsers(id));
       }
     });
   }
@@ -71,7 +71,7 @@ export default function CustomizedTables() {
     setTimeout(() => {
       setLoad(false);
     }, 1000);
-  }, [showAllUsers()]);
+  }, []);
   return (
     <div>
       {load
@@ -159,3 +159,4 @@ export default function CustomizedTables() {
     </div>
   );
 }
+export default ViewerAdmin;
