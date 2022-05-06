@@ -1,11 +1,12 @@
 /* eslint-disable react/button-has-type */
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import { useSelector } from 'react-redux';
 import './Header.css';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { token, user } = useSelector((state) => state.user);
 
   const userPage = (user?.role === 'doctor' ? '/viewerDoctor' : '/viewerPatient');
@@ -19,6 +20,13 @@ export default function Header() {
 
   const showMenu = () => {
     menu.current.classList.toggle('active');
+    setIsMenuOpen(!isMenuOpen);
+  };
+  window.onscroll = () => {
+    if (isMenuOpen) {
+      menu.current.classList.remove('active');
+      setIsMenuOpen(!isMenuOpen);
+    }
   };
 
   return (
