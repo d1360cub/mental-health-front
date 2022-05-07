@@ -201,7 +201,7 @@ function Profile() {
         </table>
       </div>
       <div className="deleteUserButton">
-        <h3>Si deseas eliminar tu cuenta, da click en el seiguiente botón</h3>
+        <h3>Si deseas eliminar tu cuenta, da click en el siguiente botón</h3>
         <button className="btn-appointment" onClick={handleDeleteUser} type="submit">Eliminar cuenta </button>
       </div>
     </div>
